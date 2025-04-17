@@ -28,9 +28,9 @@ const HeroSection = () => {
           
           <div className="md:w-1/2 flex justify-center">
             <img 
-              src="/logo.svg" 
-              alt="Buckazoid Logo" 
-              className="w-64 h-64 md:w-80 md:h-80 animate-float"
+              src="/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png" 
+              alt="Buckazoid Coin" 
+              className="w-64 h-64 md:w-80 md:h-80 animate-float object-contain"
             />
           </div>
         </div>
