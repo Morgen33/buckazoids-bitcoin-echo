@@ -9,18 +9,18 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Buckazoid
+              Buckazoids
               <br />
-              <span className="text-buckazoid-orange">The Original Digital Currency</span>
+              <span className="text-buckazoids-orange">The Original Digital Currency</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-lg">
               A Digital Currency from 1989... Rediscovered in 2025. The meme that preceded Bitcoin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white text-lg px-8 py-6">
+              <Button className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6">
                 Get Started
               </Button>
-              <Button variant="outline" className="border-buckazoid-blue text-buckazoid-blue hover:bg-buckazoid-blue/10 text-lg px-8 py-6">
+              <Button variant="outline" className="border-buckazoids-blue text-buckazoids-blue hover:bg-buckazoids-blue/10 text-lg px-8 py-6">
                 Read Whitepaper <ArrowRight className="ml-2" size={18} />
               </Button>
             </div>
@@ -29,7 +29,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 flex justify-center">
             <img 
               src="/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png" 
-              alt="Buckazoid Coin" 
+              alt="Buckazoids Coin" 
               className="w-64 h-64 md:w-80 md:h-80 animate-float object-contain"
             />
           </div>
