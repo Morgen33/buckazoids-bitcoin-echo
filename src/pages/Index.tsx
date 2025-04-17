@@ -10,7 +10,7 @@ import CallToActionSection from "@/components/CallToActionSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-buckazoid-dark">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-grow">
         <HeroSection />

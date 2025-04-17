@@ -40,7 +40,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-buckazoid-dark shadow-md">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -50,7 +50,7 @@ const Header = () => {
                 src="/logo.svg"
                 alt="Buckazoid Logo"
               />
-              <span className="ml-2 text-xl font-bold text-buckazoid-yellow">
+              <span className="ml-2 text-xl font-bold text-buckazoid-blue">
                 BUCKAZOID
               </span>
             </Link>
@@ -62,19 +62,19 @@ const Header = () => {
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="px-3 py-2 text-buckazoid-yellow hover:text-buckazoid-orange flex items-center"
+                  className="px-3 py-2 text-gray-700 hover:text-buckazoid-orange flex items-center"
                 >
                   {item.name}
                   <ChevronDown size={16} className="ml-1" />
                 </button>
                 {activeDropdown === item.name && (
-                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-buckazoid-navy ring-1 ring-black ring-opacity-5 z-50">
+                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
                     <div className="py-1">
                       {item.submenu.map((subItem) => (
                         <a
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-buckazoid-blue"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           onClick={() => setActiveDropdown(null)}
                         >
                           {subItem.name}
@@ -94,7 +94,7 @@ const Header = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-buckazoid-yellow"
+              className="text-gray-700"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -105,13 +105,13 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-buckazoid-navy">
+        <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <div key={item.name}>
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="w-full text-left px-3 py-2 text-buckazoid-yellow hover:text-buckazoid-orange flex items-center justify-between"
+                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoid-orange flex items-center justify-between"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -122,7 +122,7 @@ const Header = () => {
                       <a
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-3 py-2 text-sm text-white hover:bg-buckazoid-blue"
+                        className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         onClick={() => {
                           setActiveDropdown(null);
                           setIsOpen(false);

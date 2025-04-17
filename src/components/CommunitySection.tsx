@@ -4,24 +4,24 @@ import { Twitter, Github, MessageCircle } from "lucide-react";
 
 const CommunitySection = () => {
   return (
-    <section className="py-24 bg-buckazoid-navy" id="community">
+    <section className="py-24 bg-gray-100" id="community">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-buckazoid-yellow mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-buckazoid-blue mb-4">
             Join Our Community
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Connect with fellow Buckazoid enthusiasts, developers, and crypto historians to explore this rediscovered piece of digital currency history.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-buckazoid-dark rounded-lg shadow-xl p-8 text-center">
-            <div className="mb-6 w-16 h-16 bg-buckazoid-blue/20 rounded-full flex items-center justify-center mx-auto">
-              <Twitter className="text-buckazoid-yellow w-8 h-8" />
+          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+              <Twitter className="text-buckazoid-blue w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-buckazoid-yellow mb-4">Twitter</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Twitter</h3>
+            <p className="text-gray-600 mb-6">
               Follow us for the latest updates, community events, and discussions about Buckazoids and crypto history.
             </p>
             <Button className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white">
@@ -29,12 +29,12 @@ const CommunitySection = () => {
             </Button>
           </div>
 
-          <div className="bg-buckazoid-dark rounded-lg shadow-xl p-8 text-center">
-            <div className="mb-6 w-16 h-16 bg-buckazoid-blue/20 rounded-full flex items-center justify-center mx-auto">
+          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
               <MessageCircle className="text-buckazoid-orange w-8 h-8" />
             </div>
             <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Discord</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-600 mb-6">
               Join our vibrant Discord community to discuss theories, share discoveries, and connect with like-minded enthusiasts.
             </p>
             <Button className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white">
@@ -42,12 +42,12 @@ const CommunitySection = () => {
             </Button>
           </div>
 
-          <div className="bg-buckazoid-dark rounded-lg shadow-xl p-8 text-center">
-            <div className="mb-6 w-16 h-16 bg-buckazoid-blue/20 rounded-full flex items-center justify-center mx-auto">
-              <Github className="text-buckazoid-yellow w-8 h-8" />
+          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+              <Github className="text-buckazoid-blue w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-buckazoid-yellow mb-4">GitHub</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">GitHub</h3>
+            <p className="text-gray-600 mb-6">
               Contribute to our open-source projects, documentation, and help preserve this unique piece of cryptocurrency history.
             </p>
             <Button className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white">
