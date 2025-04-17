@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -48,10 +47,10 @@ const Header = () => {
               <img
                 className="h-12 w-12 object-contain"
                 src="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png"
-                alt="Buckazoid Coin"
+                alt="Buckazoids Coin"
               />
-              <span className="ml-2 text-xl font-bold text-buckazoid-blue">
-                BUCKAZOID
+              <span className="ml-2 text-xl font-bold text-buckazoids-blue">
+                BUCKAZOIDS
               </span>
             </Link>
           </div>
@@ -62,7 +61,7 @@ const Header = () => {
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="px-3 py-2 text-gray-700 hover:text-buckazoid-orange flex items-center"
+                  className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center"
                 >
                   {item.name}
                   <ChevronDown size={16} className="ml-1" />
@@ -85,7 +84,7 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <Button className="ml-4 bg-buckazoid-orange hover:bg-buckazoid-yellow text-white">
+            <Button className="ml-4 bg-buckazoids-orange hover:bg-buckazoids-yellow text-white">
               Get Started
             </Button>
           </nav>
@@ -111,7 +110,7 @@ const Header = () => {
               <div key={item.name}>
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoid-orange flex items-center justify-between"
+                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center justify-between"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -136,7 +135,7 @@ const Header = () => {
               </div>
             ))}
             <div className="pt-2">
-              <Button className="w-full bg-buckazoid-orange hover:bg-buckazoid-yellow text-white">
+              <Button className="w-full bg-buckazoids-orange hover:bg-buckazoids-yellow text-white">
                 Get Started
               </Button>
             </div>
