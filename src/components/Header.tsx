@@ -46,9 +46,9 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
-                className="h-12 w-12"
-                src="/logo.svg"
-                alt="Buckazoid Logo"
+                className="h-12 w-12 object-contain"
+                src="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png"
+                alt="Buckazoid Coin"
               />
               <span className="ml-2 text-xl font-bold text-buckazoid-blue">
                 BUCKAZOID
