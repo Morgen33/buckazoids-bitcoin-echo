@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-buckazoid-navy font-semibold tracking-tight;
   }
 }
+
