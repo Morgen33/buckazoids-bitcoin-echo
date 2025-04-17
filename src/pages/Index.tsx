@@ -7,6 +7,7 @@ import WhitePaperSection from "@/components/WhitePaperSection";
 import CommunitySection from "@/components/CommunitySection";
 import TokenomicsSection from "@/components/TokenomicsSection";
 import CallToActionSection from "@/components/CallToActionSection";
+import OverviewSection from "@/components/OverviewSection";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        <OverviewSection />
         <AboutSection />
         <WhitePaperSection />
         <TokenomicsSection />
