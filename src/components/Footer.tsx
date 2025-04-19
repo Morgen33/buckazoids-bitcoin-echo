@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ExternalLink, Twitter } from "lucide-react";
 
@@ -6,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <div className="flex items-center mb-4">
               <img src="/logo.svg" alt="Buckazoids Logo" className="h-8 w-8" />
@@ -64,6 +63,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        
         
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="text-xs text-gray-500 space-y-6 mb-8">
