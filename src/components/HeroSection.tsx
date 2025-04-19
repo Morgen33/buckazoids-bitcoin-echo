@@ -50,7 +50,7 @@ const HeroSection = () => {
               </div>
             </div>
             <Button 
-              className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6 w-full sm:w-auto"
+              className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6 w-full sm:w-auto mb-4"
               onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")}
             >
               View on DEXScreener <ExternalLink className="ml-2" />
