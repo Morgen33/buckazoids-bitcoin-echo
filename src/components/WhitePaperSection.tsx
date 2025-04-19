@@ -67,7 +67,7 @@ const WhitePaperSection = () => {
             onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)', '_blank')}
           >
             <Download className="mr-2" size={18} />
-            View Technical Whitepaper
+            View Whitepaper
           </Button>
         </div>
       </div>
