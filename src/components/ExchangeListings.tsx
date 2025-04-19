@@ -15,6 +15,11 @@ const exchanges: Exchange[] = [
     url: "https://www.mexc.com/exchange/BUCKAZOIDS_USDT",
   },
   {
+    name: "Gate.io",
+    logo: "/lovable-uploads/2bcff12f-e806-46c5-b957-052d88cfec4f.png",
+    url: "https://www.gate.io/pilot/solana/buckazoids-buckazoids",
+  },
+  {
     name: "Binance",
     logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
     url: "https://www.binance.com/",
@@ -23,11 +28,6 @@ const exchanges: Exchange[] = [
     name: "KuCoin",
     logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
     url: "https://www.kucoin.com/",
-  },
-  {
-    name: "Gate.io",
-    logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
-    url: "https://www.gate.io/",
   },
   {
     name: "OKX",
