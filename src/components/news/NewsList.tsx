@@ -56,7 +56,7 @@ export const NewsList = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-buckazoids-orange hover:text-buckazoids-yellow"
               >
-                Read Analysis <ExternalLink className="ml-1 h-4 w-4" />
+                Read Article <ExternalLink className="ml-1 h-4 w-4" />
               </a>
             )}
           </CardContent>
