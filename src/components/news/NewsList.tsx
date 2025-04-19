@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
@@ -40,7 +41,7 @@ export const NewsList = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             {item.image && (
-              <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title}
