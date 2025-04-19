@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -22,11 +23,7 @@ const Header = () => {
     },
     {
       name: "News",
-      submenu: [
-        { name: "Latest Updates", href: "/news" },
-        { name: "Announcements", href: "/news#announcements" },
-        { name: "Press Releases", href: "/news#press" },
-      ],
+      href: "/news",
     },
     {
       name: "Community",
@@ -73,17 +70,26 @@ const Header = () => {
           <nav className="hidden md:flex space-x-4 items-center">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
-                <button
-                  onClick={() => toggleDropdown(item.name)}
-                  className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center"
-                >
-                  {item.name}
-                  <ChevronDown size={16} className="ml-1" />
-                </button>
-                {activeDropdown === item.name && (
+                {item.href ? (
+                  <Link
+                    to={item.href}
+                    className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center"
+                  >
+                    {item.name}
+                    <ChevronDown size={16} className="ml-1" />
+                  </button>
+                )}
+                {!item.href && activeDropdown === item.name && (
                   <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
                     <div className="py-1">
-                      {item.submenu.map((subItem) => (
+                      {item.submenu?.map((subItem) => (
                         <a
                           key={subItem.name}
                           href={subItem.href}
@@ -122,29 +128,41 @@ const Header = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <div key={item.name}>
-                <button
-                  onClick={() => toggleDropdown(item.name)}
-                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center justify-between"
-                >
-                  {item.name}
-                  <ChevronDown size={16} />
-                </button>
-                {activeDropdown === item.name && (
-                  <div className="pl-4">
-                    {item.submenu.map((subItem) => (
-                      <a
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          setIsOpen(false);
-                        }}
-                      >
-                        {subItem.name}
-                      </a>
-                    ))}
-                  </div>
+                {item.href ? (
+                  <Link
+                    to={item.href}
+                    className="block px-3 py-2 text-gray-700 hover:text-buckazoids-orange"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(item.name)}
+                      className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center justify-between"
+                    >
+                      {item.name}
+                      <ChevronDown size={16} />
+                    </button>
+                    {activeDropdown === item.name && (
+                      <div className="pl-4">
+                        {item.submenu?.map((subItem) => (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setIsOpen(false);
+                            }}
+                          >
+                            {subItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             ))}
