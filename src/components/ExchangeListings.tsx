@@ -41,7 +41,7 @@ const exchanges: Exchange[] = [
   },
   {
     name: "LBank",
-    logo: "/lovable-uploads/072078c0-6f32-4434-9d20-c0e5e7fab037.png",
+    logo: "/lovable-uploads/fb2287c5-ac6a-4372-bc30-b06337157743.png",
     url: "https://www.lbank.com/trade/buckazoids_usdt",
   },
 ];
