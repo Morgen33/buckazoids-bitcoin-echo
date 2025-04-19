@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -58,7 +57,7 @@ const ExchangeListings = () => {
               alt={`${exchange.name} logo`}
               className={`w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
                 exchange.name === 'Bitget' || exchange.name === 'LBank' 
-                  ? 'max-h-32' 
+                  ? 'max-h-48' 
                   : 'max-h-24'
               }`}
             />
@@ -70,4 +69,3 @@ const ExchangeListings = () => {
 };
 
 export default ExchangeListings;
-
