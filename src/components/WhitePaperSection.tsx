@@ -61,7 +61,11 @@ const WhitePaperSection = () => {
               <CardContent className="p-6">
                 <div className="flex justify-between items-center mb-6">
                   <div className="flex items-center">
-                    <img src="/logo.svg" alt="Buckazoid Logo" className="h-10 w-10 mr-3" />
+                    <img 
+                      src="/lovable-uploads/buckazoid-token.png" 
+                      alt="Buckazoid Token" 
+                      className="h-10 w-10 mr-3 rounded-full" 
+                    />
                     <h3 className="text-xl font-bold text-buckazoid-blue">BUCKAZOIDS</h3>
                   </div>
                   <span className="text-sm text-gray-500">CTO</span>
