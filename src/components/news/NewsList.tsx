@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
@@ -24,24 +23,24 @@ const newsItems = [
 
 export const NewsList = () => {
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-4 md:grid-cols-2 max-w-6xl mx-auto">
       {newsItems.map((item) => (
         <Card 
           key={item.id}
           className="w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-buckazoid-navy/5 to-buckazoid-blue/10 border border-buckazoid-blue/20"
         >
-          <CardHeader className="space-y-4">
+          <CardHeader className="space-y-2 pb-2">
             <div className="flex items-center gap-3 text-buckazoids-orange">
-              <Star className="h-6 w-6" />
-              <time className="text-sm font-medium">{item.date}</time>
+              <Star className="h-5 w-5" />
+              <time className="text-xs font-medium">{item.date}</time>
             </div>
-            <CardTitle className="text-2xl md:text-3xl font-bold text-buckazoid-navy hover:text-buckazoids-blue transition-colors">
+            <CardTitle className="text-xl font-bold text-buckazoid-navy hover:text-buckazoids-blue transition-colors">
               {item.title}
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-3">
             {item.image && (
-              <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+              <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title}
@@ -49,19 +48,16 @@ export const NewsList = () => {
                 />
               </div>
             )}
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed">
               {item.summary}
-            </p>
-            <p className="text-gray-500">
-              {item.content}
             </p>
             <a 
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-buckazoids-orange hover:text-buckazoids-yellow transition-colors text-lg font-medium"
+              className="inline-flex items-center gap-2 text-buckazoids-orange hover:text-buckazoids-yellow transition-colors text-sm font-medium"
             >
-              Read Full Article <ExternalLink className="h-5 w-5" />
+              Read Full Article <ExternalLink className="h-4 w-4" />
             </a>
           </CardContent>
         </Card>
