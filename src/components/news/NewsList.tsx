@@ -45,7 +45,7 @@ export const NewsList = () => {
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-full object-contain"
                 />
               </div>
             )}
