@@ -44,10 +44,15 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="#twitter" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
+                <a 
+                  href="https://x.com/BuckazoidsSOL" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
                   <span>Twitter</span>
                   <Twitter size={14} className="ml-1" />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -84,7 +89,10 @@ const Footer = () => {
               © 2025 Buckazoids. All rights reserved. Not affiliated with the original creators of Star Control.
             </p>
             <div className="flex space-x-6">
-              <a href="#twitter" className="text-gray-500 hover:text-buckazoids-orange">
+              <a 
+                href="https://x.com/BuckazoidsSOL" 
+                className="text-gray-500 hover:text-buckazoids-orange"
+              >
                 <Twitter size={20} />
               </a>
             </div>
