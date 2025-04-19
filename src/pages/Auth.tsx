@@ -79,7 +79,7 @@ export default function Auth() {
             console.error("Error updating registration code:", updateCodeError);
           }
 
-          // Insert admin profile - Using direct insert instead of RPC
+          // Insert admin profile - Using direct insert
           const { error: profileError } = await supabase
             .from('profiles')
             .insert({
