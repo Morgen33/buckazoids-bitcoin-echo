@@ -38,6 +38,11 @@ const exchanges: Exchange[] = [
     logo: "/lovable-uploads/8fb9a61f-2190-49d2-86a3-8ede72b837ff.png",
     url: "https://www.xt.com/en/trade/buckazoids_usdt?channel=XTENX",
   },
+  {
+    name: "Dextools",
+    logo: "/lovable-uploads/f7c1a289-7500-437c-a394-10e9f1f4344e.png",
+    url: "https://www.dextools.io/app/en/solana/pair-explorer/8KhsZhgWBEfDyTqJGMgZsmqgQUhB2mHj9CnaxcLXAYdm?t=1745055142630",
+  },
 ];
 
 const ExchangeListings = () => {
