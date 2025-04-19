@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -42,6 +43,11 @@ const exchanges: Exchange[] = [
     name: "Dextools",
     logo: "/lovable-uploads/f7c1a289-7500-437c-a394-10e9f1f4344e.png",
     url: "https://www.dextools.io/app/en/solana/pair-explorer/8KhsZhgWBEfDyTqJGMgZsmqgQUhB2mHj9CnaxcLXAYdm?t=1745055142630",
+  },
+  {
+    name: "Dexscreener",
+    logo: "/lovable-uploads/3b7c9b44-9e7a-4f86-96b8-b026490eea72.png",
+    url: "https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku",
   },
 ];
 
