@@ -17,6 +17,7 @@ import { toast } from "@/components/ui/sonner";
 import { Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -34,10 +35,20 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Message sent successfully!");
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([values]);
+      
+      if (error) throw error;
+
+      toast.success("Message sent successfully!");
+      form.reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error("Failed to send message. Please try again later.");
+    }
   }
 
   return (
