@@ -62,6 +62,8 @@ export default function Auth() {
           password: values.password,
         });
 
+        if (response.error) throw response.error;
+
         if (response.data.user) {
           // Mark the registration code as used
           const { error: updateCodeError } = await supabase
@@ -77,19 +79,18 @@ export default function Auth() {
             console.error("Error updating registration code:", updateCodeError);
           }
 
-          // Insert admin profile
+          // Insert admin profile - Using direct RPC to bypass RLS
           const { error: profileError } = await supabase
-            .from('profiles')
-            .insert({
-              id: response.data.user.id,
-              is_admin: true
-            });
+            .rpc('create_admin_profile', { user_id: response.data.user.id });
 
           if (profileError) {
             console.error("Error creating admin profile:", profileError);
             toast.error("Failed to set up admin account");
             return;
           }
+
+          toast.success("Admin registration successful!");
+          navigate("/admin");
         }
       } else {
         // Login process
@@ -97,14 +98,9 @@ export default function Auth() {
           email: values.email,
           password: values.password,
         });
-      }
-
-      if (response.error) throw response.error;
-
-      if (isSignUp) {
-        toast.success("Admin registration successful!");
-        navigate("/admin");
-      } else {
+        
+        if (response.error) throw response.error;
+        
         toast.success("Login successful!");
         navigate("/admin");
       }
