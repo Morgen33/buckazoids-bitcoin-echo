@@ -92,11 +92,6 @@ const Footer = () => {
                   Login
                 </Link>
               </li>
-              <li>
-                <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
-                  Dashboard
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
