@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -37,6 +38,11 @@ const exchanges: Exchange[] = [
     name: "Bitget",
     logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
     url: "https://x.com/Bitget_zh/status/1906972298604638539",
+  },
+  {
+    name: "LBank",
+    logo: "/lovable-uploads/072078c0-6f32-4434-9d20-c0e5e7fab037.png",
+    url: "https://www.lbank.com/trade/buckazoids_usdt",
   },
 ];
 
