@@ -56,7 +56,11 @@ const ExchangeListings = () => {
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
-              className="w-full max-h-24 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+              className={`w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
+                exchange.name === 'Bitget' || exchange.name === 'LBank' 
+                  ? 'max-h-32' 
+                  : 'max-h-24'
+              }`}
             />
           </Card>
         </a>
@@ -66,3 +70,4 @@ const ExchangeListings = () => {
 };
 
 export default ExchangeListings;
+
