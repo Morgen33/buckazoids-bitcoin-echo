@@ -1,9 +1,28 @@
+
 import { Link } from "react-router-dom";
 import { ExternalLink, Twitter } from "lucide-react";
-import { useAuth } from "@/hooks/useAuth"; // Import the auth hook
+import { supabase } from "@/integrations/supabase/client"; 
+import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const { session } = useAuth(); // Get the current session
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check authentication status when component mounts
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data } = await supabase.auth.getSession();
+      setIsAuthenticated(!!data.session);
+    };
+    
+    checkAuth();
+
+    // Subscribe to auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
@@ -73,7 +92,7 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              {session && ( // Only show admin link if user is logged in
+              {isAuthenticated && ( // Only show admin link if user is logged in
                 <li>
                   <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
                     Admin
