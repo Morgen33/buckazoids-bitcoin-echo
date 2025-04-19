@@ -125,9 +125,15 @@ export default function Auth() {
             </h1>
             <p className="text-gray-600 mt-2">
               {isSignUp
-                ? "Create an admin account to access contact submissions"
-                : "Login to view contact submissions"}
+                ? "Use the admin registration code to create an admin account"
+                : "Login to access admin dashboard"}
             </p>
+            {isSignUp && (
+              <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-4" role="alert">
+                <p className="font-bold">First Time Admin Setup</p>
+                <p>For your first admin account, use the code: ADMIN123456</p>
+              </div>
+            )}
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md">
