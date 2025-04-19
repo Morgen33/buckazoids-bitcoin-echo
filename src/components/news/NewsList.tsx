@@ -5,6 +5,15 @@ import { ExternalLink, Star } from "lucide-react";
 const newsItems = [
   {
     id: 1,
+    title: "Support Buckazoids to be the Next Rising Star on MEXC",
+    date: "2025-04-17",
+    summary: "Join the MEXC Rising Star S3 campaign and help Buckazoids secure its place on one of the leading cryptocurrency exchanges.",
+    content: "Get involved in the MEXC Rising Star Season 3 initiative and support Buckazoids' journey to be listed on MEXC exchange. Your participation can make a difference!",
+    link: "https://x.com/TrenchSniper69/status/1912965612407775713",
+    image: "/lovable-uploads/2e54fe60-c3d8-4ffd-b251-38a77b5f170d.png"
+  },
+  {
+    id: 2,
     title: "The Greatest Discovery in Crypto History Has Just Been Uncovered",
     date: "2025-04-15",
     summary: "A fascinating analysis of Buckazoids' role in early digital currency history.",
@@ -15,34 +24,48 @@ const newsItems = [
 
 export const NewsList = () => {
   return (
-    <div className="flex justify-center items-center">
-      <Card className="max-w-3xl w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-buckazoid-navy/5 to-buckazoid-blue/10 border border-buckazoid-blue/20">
-        <CardHeader className="space-y-4">
-          <div className="flex items-center gap-3 text-buckazoids-orange">
-            <Star className="h-6 w-6" />
-            <time className="text-sm font-medium">{newsItems[0].date}</time>
-          </div>
-          <CardTitle className="text-2xl md:text-3xl font-bold text-buckazoid-navy hover:text-buckazoids-blue transition-colors">
-            {newsItems[0].title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <p className="text-lg text-gray-600 leading-relaxed">
-            {newsItems[0].summary}
-          </p>
-          <p className="text-gray-500">
-            {newsItems[0].content}
-          </p>
-          <a 
-            href={newsItems[0].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-buckazoids-orange hover:text-buckazoids-yellow transition-colors text-lg font-medium"
-          >
-            Read Full Article <ExternalLink className="h-5 w-5" />
-          </a>
-        </CardContent>
-      </Card>
+    <div className="grid gap-8">
+      {newsItems.map((item) => (
+        <Card 
+          key={item.id}
+          className="w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-buckazoid-navy/5 to-buckazoid-blue/10 border border-buckazoid-blue/20"
+        >
+          <CardHeader className="space-y-4">
+            <div className="flex items-center gap-3 text-buckazoids-orange">
+              <Star className="h-6 w-6" />
+              <time className="text-sm font-medium">{item.date}</time>
+            </div>
+            <CardTitle className="text-2xl md:text-3xl font-bold text-buckazoid-navy hover:text-buckazoids-blue transition-colors">
+              {item.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {item.image && (
+              <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <p className="text-lg text-gray-600 leading-relaxed">
+              {item.summary}
+            </p>
+            <p className="text-gray-500">
+              {item.content}
+            </p>
+            <a 
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-buckazoids-orange hover:text-buckazoids-yellow transition-colors text-lg font-medium"
+            >
+              Read Full Article <ExternalLink className="h-5 w-5" />
+            </a>
+          </CardContent>
+        </Card>
+      ))}
     </div>
   );
 };
