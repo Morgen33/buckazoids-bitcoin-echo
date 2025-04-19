@@ -10,6 +10,11 @@ type Exchange = {
 
 const exchanges: Exchange[] = [
   {
+    name: "MEXC",
+    logo: "/lovable-uploads/1d6fc8af-36eb-4bc4-849c-d2f4f8997b9a.png",
+    url: "https://www.mexc.com/exchange/BUCKAZOIDS_USDT",
+  },
+  {
     name: "Binance",
     logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
     url: "https://www.binance.com/",
