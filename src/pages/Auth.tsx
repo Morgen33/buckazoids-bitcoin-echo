@@ -19,19 +19,15 @@ import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Add admin registration code to the form schema
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  adminCode: z.string().optional() // Optional admin registration code
+  adminCode: z.string().optional()
 });
 
 export default function Auth() {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
-  
-  // Hardcoded admin registration code (you should change this!)
-  const ADMIN_REGISTRATION_CODE = "BUCKAZOIDS_ADMIN_2024";
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -46,18 +42,41 @@ export default function Auth() {
     try {
       let response;
       if (isSignUp) {
-        // Check admin registration code if signing up
-        if (values.adminCode !== ADMIN_REGISTRATION_CODE) {
-          toast.error("Invalid admin registration code");
+        // Validate admin registration code
+        if (values.adminCode) {
+          const { data, error: validateError } = await supabase
+            .rpc('validate_admin_code', { registration_code: values.adminCode });
+
+          if (validateError || !data) {
+            toast.error("Invalid or expired admin registration code");
+            return;
+          }
+        } else {
+          toast.error("Admin registration code is required");
           return;
         }
 
+        // Signup process
         response = await supabase.auth.signUp({
           email: values.email,
           password: values.password,
         });
 
         if (response.data.user) {
+          // Mark the registration code as used
+          const { error: updateCodeError } = await supabase
+            .from('admin_registration_codes')
+            .update({ 
+              is_used: true, 
+              used_by: response.data.user.id,
+              used_at: new Date().toISOString()
+            })
+            .eq('code', values.adminCode);
+
+          if (updateCodeError) {
+            console.error("Error updating registration code:", updateCodeError);
+          }
+
           // Insert admin profile
           const { error: profileError } = await supabase
             .from('profiles')
@@ -73,6 +92,7 @@ export default function Auth() {
           }
         }
       } else {
+        // Login process
         response = await supabase.auth.signInWithPassword({
           email: values.email,
           password: values.password,
