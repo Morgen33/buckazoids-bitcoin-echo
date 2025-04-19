@@ -79,9 +79,13 @@ export default function Auth() {
             console.error("Error updating registration code:", updateCodeError);
           }
 
-          // Insert admin profile - Using direct RPC to bypass RLS
+          // Insert admin profile - Using direct insert instead of RPC
           const { error: profileError } = await supabase
-            .rpc('create_admin_profile', { user_id: response.data.user.id });
+            .from('profiles')
+            .insert({
+              id: response.data.user.id,
+              is_admin: true
+            });
 
           if (profileError) {
             console.error("Error creating admin profile:", profileError);
