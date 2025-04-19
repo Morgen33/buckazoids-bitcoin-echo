@@ -21,6 +21,14 @@ const Header = () => {
       ],
     },
     {
+      name: "News",
+      submenu: [
+        { name: "Latest Updates", href: "/news" },
+        { name: "Announcements", href: "/news#announcements" },
+        { name: "Press Releases", href: "/news#press" },
+      ],
+    },
+    {
       name: "Community",
       submenu: [
         { name: "Join Us", href: "#community" },
