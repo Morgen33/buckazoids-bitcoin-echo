@@ -39,11 +39,6 @@ const exchanges: Exchange[] = [
     logo: "/lovable-uploads/8fb9a61f-2190-49d2-86a3-8ede72b837ff.png",
     url: "https://www.xt.com/en/trade/buckazoids_usdt?channel=XTENX",
   },
-  {
-    name: "Bitget",
-    logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
-    url: "https://x.com/Bitget_zh/status/1906972298604638539",
-  },
 ];
 
 const ExchangeListings = () => {
