@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -34,7 +33,7 @@ const Header = () => {
       submenu: [
         { name: "Join Us", href: "#community" },
         { name: "Discord", href: "#discord" },
-        { name: "Twitter", href: "#twitter" },
+        { name: "Twitter", href: "https://x.com/BuckazoidsSOL" },
       ],
     },
     {
