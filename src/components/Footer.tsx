@@ -32,6 +32,23 @@ const Footer = () => {
           </div>
           
           <div>
+            <h3 className="text-buckazoids-blue font-medium mb-4">Community</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="#discord" className="text-gray-600 hover:text-buckazoids-orange text-sm">
+                  Discord
+                </Link>
+              </li>
+              <li>
+                <Link to="#twitter" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
+                  <span>Twitter</span>
+                  <Twitter size={14} className="ml-1" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-buckazoids-blue font-medium mb-4">About</h3>
             <ul className="space-y-2">
               <li>
