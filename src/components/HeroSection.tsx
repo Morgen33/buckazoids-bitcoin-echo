@@ -49,12 +49,14 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Fixed DEXScreener button - added explicit colors and increased visibility */}
             <div className="mt-6 mb-4">
               <Button 
-                className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6 w-full sm:w-auto"
                 onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")}
+                className="bg-[#F77F00] hover:bg-[#FFBB1C] text-white font-medium text-lg py-6 px-8 rounded-md inline-flex items-center justify-center w-full sm:w-auto"
               >
-                View on DEXScreener <ExternalLink className="ml-2" />
+                View on DEXScreener <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
