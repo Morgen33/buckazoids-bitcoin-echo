@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -24,19 +25,9 @@ const exchanges: Exchange[] = [
     url: "https://www.binance.com/",
   },
   {
-    name: "KuCoin",
-    logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
-    url: "https://www.kucoin.com/",
-  },
-  {
-    name: "OKX",
-    logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
-    url: "https://www.okx.com/",
-  },
-  {
-    name: "Bitget",
-    logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
-    url: "https://x.com/Bitget_zh/status/1906972298604638539",
+    name: "MaxBid",
+    logo: "/lovable-uploads/a946ddf3-ca0a-455d-abb7-20dc29fa43ce.png",
+    url: "https://maxbid.pro/trade/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump",
   },
   {
     name: "LBank",
@@ -49,9 +40,9 @@ const exchanges: Exchange[] = [
     url: "https://www.xt.com/en/trade/buckazoids_usdt?channel=XTENX",
   },
   {
-    name: "MaxBid",
-    logo: "/lovable-uploads/a946ddf3-ca0a-455d-abb7-20dc29fa43ce.png",
-    url: "https://maxbid.pro/trade/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump",
+    name: "Bitget",
+    logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
+    url: "https://x.com/Bitget_zh/status/1906972298604638539",
   },
 ];
 
