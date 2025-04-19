@@ -37,9 +37,10 @@ export default function Contact() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      // Fix: Pass values directly as a single object, not wrapped in an array
       const { error } = await supabase
         .from('contact_submissions')
-        .insert([values]);
+        .insert(values);
       
       if (error) throw error;
 
