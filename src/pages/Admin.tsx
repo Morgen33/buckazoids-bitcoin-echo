@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
@@ -14,6 +13,7 @@ import {
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
+import AdminRegistrationCodes from "@/components/AdminRegistrationCodes";
 
 type Submission = {
   id: string;
@@ -73,52 +73,55 @@ export default function Admin() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-buckazoid-navy mb-8">Contact Submissions</h1>
-          
-          {loading ? (
-            <p>Loading submissions...</p>
-          ) : (
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Message</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {submissions.map((submission) => (
-                    <TableRow key={submission.id}>
-                      <TableCell>{format(new Date(submission.created_at), 'PPp')}</TableCell>
-                      <TableCell>{submission.name}</TableCell>
-                      <TableCell>{submission.email}</TableCell>
-                      <TableCell className="max-w-md truncate">{submission.message}</TableCell>
-                      <TableCell>
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          submission.read ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                        }`}>
-                          {submission.read ? 'Read' : 'Unread'}
-                        </span>
-                      </TableCell>
-                      <TableCell>
-                        <Button
-                          variant="outline"
-                          onClick={() => toggleRead(submission.id, submission.read)}
-                        >
-                          Mark as {submission.read ? 'unread' : 'read'}
-                        </Button>
-                      </TableCell>
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div>
+            <h1 className="text-4xl font-bold text-buckazoid-navy mb-8">Contact Submissions</h1>
+            {loading ? (
+              <p>Loading submissions...</p>
+            ) : (
+              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Name</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>Message</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          )}
+                  </TableHeader>
+                  <TableBody>
+                    {submissions.map((submission) => (
+                      <TableRow key={submission.id}>
+                        <TableCell>{format(new Date(submission.created_at), 'PPp')}</TableCell>
+                        <TableCell>{submission.name}</TableCell>
+                        <TableCell>{submission.email}</TableCell>
+                        <TableCell className="max-w-md truncate">{submission.message}</TableCell>
+                        <TableCell>
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                            submission.read ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                          }`}>
+                            {submission.read ? 'Read' : 'Unread'}
+                          </span>
+                        </TableCell>
+                        <TableCell>
+                          <Button
+                            variant="outline"
+                            onClick={() => toggleRead(submission.id, submission.read)}
+                          >
+                            Mark as {submission.read ? 'unread' : 'read'}
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            )}
+          </div>
+
+          <AdminRegistrationCodes />
         </div>
       </main>
       <Footer />
