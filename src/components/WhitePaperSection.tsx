@@ -79,7 +79,11 @@ const WhitePaperSection = () => {
                 
                 <div className="mt-6 pt-6 border-t border-gray-200 flex justify-between items-center">
                   <span className="text-sm text-gray-500">Full document available</span>
-                  <Button variant="ghost" className="text-buckazoid-blue hover:text-buckazoid-orange hover:bg-transparent p-0">
+                  <Button 
+                    variant="ghost" 
+                    className="text-buckazoid-blue hover:text-buckazoid-orange hover:bg-transparent p-0"
+                    onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)', '_blank')}
+                  >
                     Read More →
                   </Button>
                 </div>
