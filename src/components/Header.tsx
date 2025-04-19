@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -48,7 +49,6 @@ const Header = () => {
       name: "Contact",
       submenu: [
         { name: "Contact Us", href: "/contact" },
-        { name: "Support", href: "/contact" },
       ],
     },
   ];
