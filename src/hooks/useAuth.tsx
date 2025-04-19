@@ -56,23 +56,23 @@ export function useAuth() {
             console.error("Error updating registration code:", updateCodeError);
           }
 
-          // Then use the service_role key or a stored procedure to insert the profile with admin role
-          // This is a direct insert - not using RPC anymore since it's not defined in the database
-          const { error: profileError } = await supabase
-            .from('profiles')
-            .insert({
-              id: response.data.user.id,
-              is_admin: true
-            });
+          // Using a server-side SQL function approach to bypass RLS policies
+          // This will create the admin profile without running into RLS issues
+          const { error: profileSetupError } = await supabase.rpc(
+            'setup_admin_profile',
+            { 
+              user_id: response.data.user.id 
+            }
+          );
 
-          if (profileError) {
-            console.error("Error creating admin profile:", profileError);
+          if (profileSetupError) {
+            console.error("Error creating admin profile:", profileSetupError);
             toast.error("Failed to set up admin account");
             return;
           }
 
-          toast.success("Admin registration successful!");
-          navigate("/admin");
+          toast.success("Admin registration successful! Please verify your email before logging in.");
+          setIsSignUp(false); // Switch to login view after successful registration
         }
       } else {
         response = await supabase.auth.signInWithPassword({
