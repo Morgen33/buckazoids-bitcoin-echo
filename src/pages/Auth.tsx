@@ -19,20 +19,26 @@ import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Add admin registration code to the form schema
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(6, "Password must be at least 6 characters"),
+  adminCode: z.string().optional() // Optional admin registration code
 });
 
 export default function Auth() {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
+  
+  // Hardcoded admin registration code (you should change this!)
+  const ADMIN_REGISTRATION_CODE = "BUCKAZOIDS_ADMIN_2024";
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       password: "",
+      adminCode: "",
     },
   });
 
@@ -40,10 +46,32 @@ export default function Auth() {
     try {
       let response;
       if (isSignUp) {
+        // Check admin registration code if signing up
+        if (values.adminCode !== ADMIN_REGISTRATION_CODE) {
+          toast.error("Invalid admin registration code");
+          return;
+        }
+
         response = await supabase.auth.signUp({
           email: values.email,
           password: values.password,
         });
+
+        if (response.data.user) {
+          // Insert admin profile
+          const { error: profileError } = await supabase
+            .from('profiles')
+            .insert({
+              id: response.data.user.id,
+              is_admin: true
+            });
+
+          if (profileError) {
+            console.error("Error creating admin profile:", profileError);
+            toast.error("Failed to set up admin account");
+            return;
+          }
+        }
       } else {
         response = await supabase.auth.signInWithPassword({
           email: values.email,
@@ -54,7 +82,8 @@ export default function Auth() {
       if (response.error) throw response.error;
 
       if (isSignUp) {
-        toast.success("Registration successful! Please check your email to verify your account.");
+        toast.success("Admin registration successful!");
+        navigate("/admin");
       } else {
         toast.success("Login successful!");
         navigate("/admin");
@@ -72,11 +101,11 @@ export default function Auth() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-buckazoid-navy">
-              {isSignUp ? "Create Account" : "Login"}
+              {isSignUp ? "Admin Registration" : "Admin Login"}
             </h1>
             <p className="text-gray-600 mt-2">
               {isSignUp
-                ? "Sign up to access admin features"
+                ? "Create an admin account to access contact submissions"
                 : "Login to view contact submissions"}
             </p>
           </div>
@@ -110,8 +139,27 @@ export default function Auth() {
                     </FormItem>
                   )}
                 />
+                {isSignUp && (
+                  <FormField
+                    control={form.control}
+                    name="adminCode"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Admin Registration Code</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="Enter admin registration code" 
+                            type="text" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
                 <Button type="submit" className="w-full">
-                  {isSignUp ? "Sign Up" : "Login"}
+                  {isSignUp ? "Register Admin" : "Login"}
                 </Button>
               </form>
             </Form>
@@ -122,8 +170,8 @@ export default function Auth() {
                 className="text-sm text-gray-600 hover:underline"
               >
                 {isSignUp
-                  ? "Already have an account? Login"
-                  : "Need an account? Sign Up"}
+                  ? "Already have an admin account? Login"
+                  : "Need to create an admin account? Register"}
               </button>
             </div>
           </div>
