@@ -42,6 +42,7 @@ export function useAuth() {
         if (response.error) throw response.error;
 
         if (response.data.user) {
+          // First update the registration code to mark it as used
           const { error: updateCodeError } = await supabase
             .from('admin_registration_codes')
             .update({ 
@@ -55,6 +56,8 @@ export function useAuth() {
             console.error("Error updating registration code:", updateCodeError);
           }
 
+          // Then use the service_role key or a stored procedure to insert the profile with admin role
+          // This is a direct insert - not using RPC anymore since it's not defined in the database
           const { error: profileError } = await supabase
             .from('profiles')
             .insert({
