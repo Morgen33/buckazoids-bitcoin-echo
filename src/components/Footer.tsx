@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { ExternalLink, Twitter } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth"; // Import the auth hook
 
 const Footer = () => {
+  const { session } = useAuth(); // Get the current session
+
   return (
     <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,6 +73,13 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              {session && ( // Only show admin link if user is logged in
+                <li>
+                  <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
+                    Admin
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
