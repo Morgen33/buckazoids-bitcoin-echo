@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,9 +47,12 @@ const WhitePaperSection = () => {
               </div>
             </div>
             
-            <Button className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white px-6 py-2 text-lg">
+            <Button 
+              className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white px-6 py-2 text-lg"
+              onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)', '_blank')}
+            >
               <Download className="mr-2" size={18} />
-              Download White Paper
+              View Technical Whitepaper
             </Button>
           </div>
           
