@@ -29,9 +29,6 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     name: "Contact",
-    submenu: [
-      { name: "Contact Us", href: "/contact" },
-    ],
+    href: "/contact", // Direct link instead of submenu
   },
 ];
-
