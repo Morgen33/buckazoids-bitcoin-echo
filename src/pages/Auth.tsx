@@ -1,11 +1,43 @@
 
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AuthForm } from "@/components/auth/AuthForm";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
+import { Loader2 } from "lucide-react";
 
 export default function Auth() {
   const { isSignUp, setIsSignUp, handleAuth } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user is already logged in
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        // User is already logged in, redirect to admin page
+        navigate('/admin');
+      }
+      setLoading(false);
+    });
+  }, [navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow container mx-auto px-4 py-12 flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="h-8 w-8 animate-spin mx-auto" />
+            <p className="mt-2">Checking authentication...</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -21,12 +53,6 @@ export default function Auth() {
                 ? "Use the admin registration code to create an admin account"
                 : "Login to access admin dashboard"}
             </p>
-            {isSignUp && (
-              <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-4" role="alert">
-                <p className="font-bold">First Time Admin Setup</p>
-                <p>For your first admin account, use the code: ADMIN123456</p>
-              </div>
-            )}
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md">
