@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -65,7 +64,7 @@ const WhitePaperSection = () => {
                     <img 
                       src="/lovable-uploads/78a6f5a0-7fe9-4a6a-85ad-6fd1ba0d2adc.png" 
                       alt="Buckazoid Token" 
-                      className="h-10 w-10 mr-3 rounded-full" 
+                      className="h-10 w-10 mr-3 rounded-full object-cover" 
                     />
                     <h3 className="text-xl font-bold text-buckazoid-blue">BUCKAZOIDS</h3>
                   </div>
