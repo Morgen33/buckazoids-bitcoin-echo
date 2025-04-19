@@ -1,24 +1,31 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Newspaper } from "lucide-react";
+import { ExternalLink, Newspaper } from "lucide-react";
 
 const newsItems = [
   {
     id: 1,
+    title: "Analysis: Buckazoids & Early Digital Currency",
+    date: "2024-01-22",
+    summary: "A fascinating analysis of Buckazoids' role in early digital currency history.",
+    content: "Check out this detailed analysis of Buckazoids and its historical significance in digital currency evolution.",
+    link: "https://x.com/frequencycheck/status/1912231457332031925"
+  },
+  {
+    id: 2,
     title: "Buckazoids Launch Success",
     date: "2025-04-19",
     summary: "The successful launch of Buckazoids marks a new era in digital currency.",
     content: "We're excited to announce the successful launch of Buckazoids, bringing the 1989 digital currency concept into 2025..."
   },
   {
-    id: 2,
+    id: 3,
     title: "Community Growth Milestone",
     date: "2025-04-18",
     summary: "Buckazoids community reaches significant milestone in adoption.",
     content: "The Buckazoids community continues to grow at an unprecedented rate..."
   },
   {
-    id: 3,
+    id: 4,
     title: "New Partnership Announcement",
     date: "2025-04-17",
     summary: "Strategic partnership to enhance Buckazoids ecosystem.",
@@ -40,7 +47,17 @@ export const NewsList = () => {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">{item.summary}</p>
-            <p className="text-sm text-gray-500">{item.content.substring(0, 100)}...</p>
+            <p className="text-sm text-gray-500 mb-4">{item.content.substring(0, 100)}...</p>
+            {item.link && (
+              <a 
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-buckazoids-orange hover:text-buckazoids-yellow"
+              >
+                Read Analysis <ExternalLink className="ml-1 h-4 w-4" />
+              </a>
+            )}
           </CardContent>
         </Card>
       ))}
