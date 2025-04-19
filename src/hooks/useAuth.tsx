@@ -13,6 +13,9 @@ export const formSchema = z.object({
 
 export type FormData = z.infer<typeof formSchema>;
 
+// Extend the types to include our new function
+type RpcFunctions = "is_admin" | "generate_admin_code" | "validate_admin_code" | "setup_admin_profile";
+
 export function useAuth() {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
@@ -23,7 +26,7 @@ export function useAuth() {
       if (isSignUp) {
         if (values.adminCode) {
           const { data, error: validateError } = await supabase
-            .rpc('validate_admin_code', { registration_code: values.adminCode });
+            .rpc('validate_admin_code' as RpcFunctions, { registration_code: values.adminCode });
 
           if (validateError || !data) {
             toast.error("Invalid or expired admin registration code");
@@ -59,7 +62,7 @@ export function useAuth() {
           // Using a server-side SQL function approach to bypass RLS policies
           // This will create the admin profile without running into RLS issues
           const { error: profileSetupError } = await supabase.rpc(
-            'setup_admin_profile',
+            'setup_admin_profile' as RpcFunctions,
             { 
               user_id: response.data.user.id 
             }

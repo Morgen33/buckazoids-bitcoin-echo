@@ -97,6 +97,10 @@ export type Database = {
         Args: { user_id: string }
         Returns: boolean
       }
+      setup_admin_profile: {
+        Args: { user_id: string }
+        Returns: undefined
+      }
       validate_admin_code: {
         Args: { registration_code: string }
         Returns: boolean
