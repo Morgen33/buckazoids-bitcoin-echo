@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -33,6 +32,11 @@ const exchanges: Exchange[] = [
     name: "OKX",
     logo: "/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png",
     url: "https://www.okx.com/",
+  },
+  {
+    name: "Bitget",
+    logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
+    url: "https://x.com/Bitget_zh/status/1906972298604638539",
   },
 ];
 
