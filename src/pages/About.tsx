@@ -115,22 +115,22 @@ const About = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-br from-buckazoids-blue to-buckazoids-navy text-white rounded-lg p-8 mb-12">
+          <div className="bg-gradient-to-br from-buckazoid-blue to-buckazoid-navy rounded-lg p-8 mb-12">
             <div className="flex items-center gap-4 mb-6">
-              <Rocket className="w-8 h-8" />
-              <h2 className="text-3xl font-bold">Join the Movement</h2>
+              <Rocket className="w-8 h-8 text-white" />
+              <h2 className="text-3xl font-bold text-white">Join the Movement</h2>
             </div>
-            <p className="text-lg mb-6 opacity-90">
+            <p className="text-lg mb-6 text-white">
               As of today, April 15th, 2025, the Buckazoids token is just under 3 weeks old 
               with a market cap of roughly $4 million. For comparison, Bitcoin is currently 
               over $1 trillion.
             </p>
-            <p className="text-xl font-semibold">
+            <p className="text-xl font-semibold text-white">
               If you could go back to 2011 and buy Bitcoin, would you? Because this is that 
               moment again.
             </p>
             <div className="mt-6">
-              <p className="text-lg mb-4">
+              <p className="text-lg mb-4 text-white">
                 We believe Buckazoids is the spiritual predecessor to Bitcoin. It's built for 
                 the future, it's built to scale, and most importantly — it's just getting started.
               </p>
@@ -168,4 +168,3 @@ const About = () => {
 };
 
 export default About;
-
