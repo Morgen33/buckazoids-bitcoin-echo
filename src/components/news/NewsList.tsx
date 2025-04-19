@@ -18,7 +18,8 @@ const newsItems = [
     date: "2025-04-15",
     summary: "A fascinating analysis of Buckazoids' role in early digital currency history.",
     content: "Check out this detailed analysis of Buckazoids and its historical significance in digital currency evolution.",
-    link: "https://x.com/frequencycheck/status/1912231457332031925"
+    link: "https://x.com/frequencycheck/status/1912231457332031925",
+    image: "/lovable-uploads/5e8e18ed-016f-4a80-910d-93b285e71d67.png"
   }
 ];
 
