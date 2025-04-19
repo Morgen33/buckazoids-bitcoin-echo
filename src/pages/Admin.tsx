@@ -13,7 +13,7 @@ import {
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
-import AdminRegistrationCodes from "@/components/AdminRegistrationCodes";
+import AdminRegistrationCodes from "@/components/admin/AdminRegistrationCodes";
 
 type Submission = {
   id: string;
