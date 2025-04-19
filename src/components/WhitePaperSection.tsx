@@ -1,6 +1,6 @@
+
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const WhitePaperSection = () => {
   return (
@@ -54,45 +54,6 @@ const WhitePaperSection = () => {
               <Download className="mr-2" size={18} />
               View Technical Whitepaper
             </Button>
-          </div>
-          
-          <div className="md:w-1/2 flex justify-center">
-            <Card className="w-full max-w-md bg-white border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex justify-between items-center mb-6">
-                  <div className="flex items-center">
-                    <img 
-                      src="/lovable-uploads/78a6f5a0-7fe9-4a6a-85ad-6fd1ba0d2adc.png" 
-                      alt="Buckazoid Token" 
-                      className="h-10 w-10 mr-3 rounded-full object-cover" 
-                    />
-                    <h3 className="text-xl font-bold text-buckazoid-blue">BUCKAZOIDS</h3>
-                  </div>
-                  <span className="text-sm text-gray-500">CTO</span>
-                </div>
-                
-                <div className="space-y-4 text-gray-700">
-                  <h4 className="text-lg font-semibold text-buckazoid-blue">White Paper Excerpt:</h4>
-                  <p className="text-sm text-gray-600">
-                    "Buckazoids were introduced in Star Control (1990) as a universal currency used for trade throughout the galaxy... The circular gold coin with the distinctive 'B' symbol bears a striking resemblance to what would later become the Bitcoin logo..."
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    "This remarkable coincidence raises questions about whether the creators of Bitcoin were inspired by this early digital currency concept, or if there are deeper connections yet to be discovered..."
-                  </p>
-                </div>
-                
-                <div className="mt-6 pt-6 border-t border-gray-200 flex justify-between items-center">
-                  <span className="text-sm text-gray-500">Full document available</span>
-                  <Button 
-                    variant="ghost" 
-                    className="text-buckazoid-blue hover:text-buckazoid-orange hover:bg-transparent p-0"
-                    onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)', '_blank')}
-                  >
-                    Read More →
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
