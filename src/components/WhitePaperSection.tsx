@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
 
@@ -11,11 +10,6 @@ const WhitePaperSection = () => {
             Buckazoids White Paper
           </h2>
           <div className="flex items-center justify-center gap-4 mb-8">
-            <img 
-              src="/lovable-uploads/78a6f5a0-7fe9-4a6a-85ad-6fd1ba0d2adc.png" 
-              alt="Buckazoid Token" 
-              className="h-12 w-12 rounded-full object-cover" 
-            />
             <span className="text-xl font-semibold text-buckazoid-blue">BUCKAZOIDS (CTO)</span>
           </div>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-12">
