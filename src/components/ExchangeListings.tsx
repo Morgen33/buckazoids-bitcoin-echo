@@ -52,11 +52,11 @@ const ExchangeListings = () => {
           rel="noopener noreferrer"
           className="group"
         >
-          <Card className="p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white/10 border-none">
+          <Card className="p-6 h-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white/10 border-none">
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
-              className="w-full h-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+              className="w-full max-h-24 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
             />
           </Card>
         </a>
@@ -66,4 +66,3 @@ const ExchangeListings = () => {
 };
 
 export default ExchangeListings;
-
