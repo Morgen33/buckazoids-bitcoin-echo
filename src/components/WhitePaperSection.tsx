@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,7 +63,7 @@ const WhitePaperSection = () => {
                 <div className="flex justify-between items-center mb-6">
                   <div className="flex items-center">
                     <img 
-                      src="/lovable-uploads/buckazoid-token.png" 
+                      src="/lovable-uploads/78a6f5a0-7fe9-4a6a-85ad-6fd1ba0d2adc.png" 
                       alt="Buckazoid Token" 
                       className="h-10 w-10 mr-3 rounded-full" 
                     />
