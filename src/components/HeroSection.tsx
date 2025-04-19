@@ -49,12 +49,14 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-            <Button 
-              className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6 w-full sm:w-auto mb-4"
-              onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")}
-            >
-              View on DEXScreener <ExternalLink className="ml-2" />
-            </Button>
+            <div className="mt-6 mb-4">
+              <Button 
+                className="bg-buckazoids-orange hover:bg-buckazoids-yellow text-white text-lg px-8 py-6 w-full sm:w-auto"
+                onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")}
+              >
+                View on DEXScreener <ExternalLink className="ml-2" />
+              </Button>
+            </div>
           </div>
           
           <div className="md:w-1/2 flex justify-center">
