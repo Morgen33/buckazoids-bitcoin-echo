@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import NewsPage from "./pages/News";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
+import Auth from "./pages/Auth";
+import AdminGuard from "./components/AdminGuard";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +24,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route
+            path="/admin"
+            element={
+              <AdminGuard>
+                <Admin />
+              </AdminGuard>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

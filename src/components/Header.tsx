@@ -51,6 +51,13 @@ const Header = () => {
         { name: "Support", href: "/contact" },
       ],
     },
+    {
+      name: "Admin",
+      submenu: [
+        { name: "Login", href: "/auth" },
+        { name: "Dashboard", href: "/admin" },
+      ],
+    },
   ];
 
   return (
