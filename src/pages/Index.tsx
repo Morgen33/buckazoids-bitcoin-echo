@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WhitePaperSection from "@/components/WhitePaperSection";
 import CommunitySection from "@/components/CommunitySection";
-import TokenomicsSection from "@/components/TokenomicsSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import OverviewSection from "@/components/OverviewSection";
 
@@ -18,7 +17,6 @@ const Index = () => {
         <OverviewSection />
         <AboutSection />
         <WhitePaperSection />
-        <TokenomicsSection />
         <CommunitySection />
         <CallToActionSection />
       </main>
