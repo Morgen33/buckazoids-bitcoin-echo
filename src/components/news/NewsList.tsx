@@ -1,11 +1,12 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Newspaper } from "lucide-react";
 
 const newsItems = [
   {
     id: 1,
-    title: "Analysis: Buckazoids & Early Digital Currency",
-    date: "2024-01-22",
+    title: "The Greatest Discovery in Crypto History Has Just Been Uncovered",
+    date: "2025-04-15",
     summary: "A fascinating analysis of Buckazoids' role in early digital currency history.",
     content: "Check out this detailed analysis of Buckazoids and its historical significance in digital currency evolution.",
     link: "https://x.com/frequencycheck/status/1912231457332031925"
