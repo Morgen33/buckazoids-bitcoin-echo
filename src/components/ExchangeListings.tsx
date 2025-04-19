@@ -48,6 +48,11 @@ const exchanges: Exchange[] = [
     logo: "/lovable-uploads/8fb9a61f-2190-49d2-86a3-8ede72b837ff.png",
     url: "https://www.xt.com/en/trade/buckazoids_usdt?channel=XTENX",
   },
+  {
+    name: "MaxBid",
+    logo: "/lovable-uploads/a946ddf3-ca0a-455d-abb7-20dc29fa43ce.png",
+    url: "https://maxbid.pro/trade/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump",
+  },
 ];
 
 const ExchangeListings = () => {
