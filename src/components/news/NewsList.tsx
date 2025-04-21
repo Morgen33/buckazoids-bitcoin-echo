@@ -29,7 +29,7 @@ export const NewsList = () => {
       {newsItems.map((item) => (
         <Card 
           key={item.id}
-          className="w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-buckazoid-navy/5 to-buckazoid-blue/10 border border-buckazoid-blue/20"
+          className="w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-[#FFF5E6] to-[#FFF0D9] border border-orange-100/30"
         >
           <CardHeader className="space-y-2 pb-2">
             <div className="flex items-center gap-3 text-buckazoids-orange">
