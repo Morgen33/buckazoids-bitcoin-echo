@@ -50,7 +50,7 @@ const WhitePaperSection = () => {
             </div>
           </div>
 
-          <div className="space-y-6 bg-gray-50 p-8 rounded-lg">
+          <div className="space-y-6 bg-[#FFF5E6] p-8 rounded-lg">
             <h4 className="text-xl font-semibold text-buckazoid-blue">White Paper Excerpt:</h4>
             <p className="text-gray-700 leading-relaxed">
               "Buckazoids were introduced in Star Control (1990) as a universal currency used for trade throughout the galaxy... The circular gold coin with the distinctive 'B' symbol bears a striking resemblance to what would later become the Bitcoin logo..."
