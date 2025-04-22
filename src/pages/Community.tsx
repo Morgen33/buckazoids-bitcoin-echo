@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,7 +14,7 @@ const CommunityPage = () => {
         <section className="py-24 bg-[#FFF5E6]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold text-buckazoid-blue mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#02314d] mb-4">
                 Join Our Community
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -24,14 +25,14 @@ const CommunityPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Twitter className="text-buckazoid-blue w-8 h-8" />
+                  <Twitter className="text-[#02314d] w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Twitter</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">Twitter</h3>
                 <p className="text-gray-600 mb-6">
                   Follow us for the latest updates, community events, and discussions about Buckazoids and crypto history.
                 </p>
                 <Button 
-                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
                   onClick={() => window.open('https://x.com/BuckazoidsSOL', '_blank')}
                 >
                   Follow @Buckazoids
@@ -56,14 +57,14 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Github className="text-buckazoid-blue w-8 h-8" />
+                  <Github className="text-[#02314d] w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">White Paper</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">White Paper</h3>
                 <p className="text-gray-600 mb-6">
                   Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
                 </p>
                 <Button 
-                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
                   onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
                 >
                   View White Paper
@@ -88,14 +89,14 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <MessageCircle className="text-buckazoid-blue w-8 h-8" />
+                  <MessageCircle className="text-[#02314d] w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Reddit</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">Reddit</h3>
                 <p className="text-gray-600 mb-6">
                   Join our Reddit community to discuss Buckazoids, share insights, and stay updated with the latest developments.
                 </p>
                 <Button 
-                  className="bg-buckazoid-blue hover:bg-buckazoid-navy text-white"
+                  className="bg-[#02314d] hover:bg-buckazoid-navy text-white"
                   onClick={() => window.open('https://www.reddit.com/r/Buckazoids/', '_blank')}
                 >
                   Join r/Buckazoids
@@ -120,14 +121,14 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Pill className="text-buckazoid-blue w-8 h-8" />
+                  <Pill className="text-[#02314d] w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Pump.fun</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">Pump.fun</h3>
                 <p className="text-gray-600 mb-6">
                   Visit the birthplace of Buckazoids on the Solana blockchain and explore where it all began.
                 </p>
                 <Button 
-                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
                   onClick={() => window.open('https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump', '_blank')}
                 >
                   View on Pump.fun
@@ -152,14 +153,14 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Instagram className="text-buckazoid-blue w-8 h-8" />
+                  <Instagram className="text-[#02314d] w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Instagram Greece</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">Instagram Greece</h3>
                 <p className="text-gray-600 mb-6">
                   Follow our Greek community for local updates, events, and connect with Buckazoid enthusiasts in Greece.
                 </p>
                 <Button 
-                  className="bg-buckazoid-blue hover:bg-buckazoid-navy text-white"
+                  className="bg-[#02314d] hover:bg-buckazoid-navy text-white"
                   onClick={() => window.open('https://www.instagram.com/buckazoidsgr?igsh=MXZ5Zm81d3kzNXdnYQ%3D%3D&utm_source=qr', '_blank')}
                 >
                   Follow on Instagram
@@ -175,3 +176,4 @@ const CommunityPage = () => {
 };
 
 export default CommunityPage;
+
