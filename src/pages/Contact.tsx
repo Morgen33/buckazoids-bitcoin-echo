@@ -1,4 +1,3 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -18,7 +17,6 @@ import { Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
-import CountdownTimer from "@/components/CountdownTimer";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -64,12 +62,6 @@ export default function Contact() {
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h2 className="text-2xl font-bold text-buckazoid-navy mb-4">
-                Days Left until Bitcoin 2025 Las Vegas
-              </h2>
-              <CountdownTimer />
-            </div>
             <h1 className="text-4xl font-bold text-buckazoid-navy mb-4">Contact Us</h1>
             <p className="text-gray-600">Have questions? We'd love to hear from you.</p>
           </div>
