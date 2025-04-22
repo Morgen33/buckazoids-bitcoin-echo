@@ -1,8 +1,16 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
 const newsItems = [
+  {
+    id: 3,
+    title: "The Mystery Surrounding Bitcoin's Creator May Soon Be Solved — Buckazoids",
+    date: "2025-03-29",
+    summary: "The writer's path: An intriguing exploration into the connection between Buckazoids and the mysterious origins of Bitcoin's creator.",
+    content: "A fascinating article examining the potential links between Buckazoids and the identity of Bitcoin's creator, Satoshi Nakamoto.",
+    link: "https://medium.com/@viam_/the-mystery-surrounding-bitcoins-creator-may-soon-be-solved-c7e110ed31d4",
+    image: "/lovable-uploads/8c044af7-a957-4d2d-beea-81f3afaffcf3.png"
+  },
   {
     id: 1,
     title: "Support Buckazoids to be the Next Rising Star on MEXC",
