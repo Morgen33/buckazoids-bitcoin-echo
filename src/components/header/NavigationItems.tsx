@@ -1,4 +1,10 @@
 
+export interface NavigationItem {
+  name: string;
+  href?: string;
+  submenu?: { name: string; href: string }[];
+}
+
 export const navigationItems: NavigationItem[] = [
   {
     name: "Introduction",
@@ -14,7 +20,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     name: "Community",
-    href: "/community", // Updated to point to the new page
+    href: "/community",
   },
   {
     name: "Contact",
