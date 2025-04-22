@@ -41,14 +41,14 @@ export const NewsList = () => {
           className="w-full overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
         >
           {item.image && (
-            <div className="w-full h-48 relative flex bg-[#feb73f]">
-              <div className="flex-grow"></div>
+            <div className="w-full h-48 relative flex bg-black">
+              <div className="flex-grow bg-black"></div>
               <img 
                 src={item.image} 
                 alt={item.title}
                 className="h-full max-w-[70%] object-contain"
               />
-              <div className="flex-grow"></div>
+              <div className="flex-grow bg-black"></div>
             </div>
           )}
           <CardHeader className="space-y-2">
