@@ -41,7 +41,7 @@ const CountdownTimer = ({ variant = 'large', className = '' }: CountdownTimerPro
   if (variant === 'small') {
     return (
       <div className={`flex items-center space-x-2 text-sm ${className}`}>
-        <Timer className="h-4 w-4 text-buckazoids-orange" />
+        <Timer className="h-4 w-4 text-buckazoids-yellow" />
         <span>{timeLeft.days}d {timeLeft.hours}h until Bitcoin 2025</span>
       </div>
     );
@@ -51,23 +51,23 @@ const CountdownTimer = ({ variant = 'large', className = '' }: CountdownTimerPro
     <div className={`text-center ${className}`}>
       <div className="flex justify-center space-x-4 mb-6">
         <div className="flex flex-col items-center">
-          <div className="text-4xl font-bold text-buckazoids-orange">{timeLeft.days}</div>
-          <div className="text-sm text-gray-600">Days</div>
+          <div className="text-5xl font-bold text-white bg-black/70 px-4 py-2 rounded-lg">{timeLeft.days}</div>
+          <div className="text-sm text-white font-medium mt-2">Days</div>
         </div>
-        <div className="text-4xl font-bold text-buckazoids-orange">:</div>
+        <div className="text-5xl font-bold text-white">:</div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl font-bold text-buckazoids-orange">{timeLeft.hours}</div>
-          <div className="text-sm text-gray-600">Hours</div>
+          <div className="text-5xl font-bold text-white bg-black/70 px-4 py-2 rounded-lg">{timeLeft.hours}</div>
+          <div className="text-sm text-white font-medium mt-2">Hours</div>
         </div>
-        <div className="text-4xl font-bold text-buckazoids-orange">:</div>
+        <div className="text-5xl font-bold text-white">:</div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl font-bold text-buckazoids-orange">{timeLeft.minutes}</div>
-          <div className="text-sm text-gray-600">Minutes</div>
+          <div className="text-5xl font-bold text-white bg-black/70 px-4 py-2 rounded-lg">{timeLeft.minutes}</div>
+          <div className="text-sm text-white font-medium mt-2">Minutes</div>
         </div>
-        <div className="text-4xl font-bold text-buckazoids-orange">:</div>
+        <div className="text-5xl font-bold text-white">:</div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl font-bold text-buckazoids-orange">{timeLeft.seconds}</div>
-          <div className="text-sm text-gray-600">Seconds</div>
+          <div className="text-5xl font-bold text-white bg-black/70 px-4 py-2 rounded-lg">{timeLeft.seconds}</div>
+          <div className="text-sm text-white font-medium mt-2">Seconds</div>
         </div>
       </div>
     </div>

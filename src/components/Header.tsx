@@ -19,7 +19,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="bg-buckazoids-orange text-white text-sm py-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CountdownTimer variant="small" className="justify-center text-white" />
+          <CountdownTimer variant="small" className="justify-center text-white font-medium" />
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
