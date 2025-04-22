@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
@@ -15,7 +16,7 @@ const newsItems = [
     id: 5,
     title: "A Field Trip into the Future",
     date: "2025-04-21",
-    summary: "Another Mic drop from @frequencycheck",
+    summary: "Another Mic drop from @frequencycheck. If this one doesn't make you a believer we dont know what will",
     content: "Explore this fascinating journey into the future of digital currency with @frequencycheck's latest insights.",
     link: "https://x.com/frequencycheck/status/1913670288598073398",
     image: "/lovable-uploads/e6e06d2d-cca2-4094-9501-426eae197aad.png"
@@ -95,3 +96,4 @@ export const NewsList = () => {
     </div>
   );
 };
+
