@@ -1,8 +1,16 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
 const newsItems = [
+  {
+    id: 4,
+    title: "Buckazoids Now Listed on MoonerHive Exchange",
+    date: "2025-04-22",
+    summary: "Buckazoids ($BUCKAZOIDS) has been successfully listed on the MoonerHive exchange platform, expanding its accessibility to traders.",
+    content: "Exciting news for the Buckazoids community as the token makes its debut on MoonerHive exchange. This listing marks another milestone in Buckazoids' journey to wider adoption.",
+    link: "https://x.com/MoonerHive/status/1914539912910561695",
+    image: "/lovable-uploads/74b49e05-e18e-46a3-a3bc-7cef6d60da6a.png"
+  },
   {
     id: 1,
     title: "Support Buckazoids to be the Next Rising Star on MEXC",
