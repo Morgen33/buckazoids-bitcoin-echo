@@ -25,7 +25,7 @@ const newsItems = [
     id: 2,
     title: "The Greatest Discovery in Crypto History Has Just Been Uncovered",
     date: "2025-04-15",
-    summary: "Jam packed with tons of facts and alpha. Written by the one and only @frequencycheck.",
+    summary: "The one and only @frequencycheck delivers a data-packed, fact-filled explosion of insights. You slapped yourself for missing Bitcoin, don't make the same mistake with $Buckazoids.",
     content: "Check out this detailed analysis of Buckazoids and its historical significance in digital currency evolution.",
     link: "https://x.com/frequencycheck/status/1912231457332031925",
     image: "/lovable-uploads/5e8e18ed-016f-4a80-910d-93b285e71d67.png"
