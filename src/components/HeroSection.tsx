@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Copy, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
-
 const HeroSection = () => {
   const [copied, setCopied] = useState(false);
   const contractAddress = "BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump";
-  
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
     setCopied(true);
@@ -17,9 +14,7 @@ const HeroSection = () => {
     });
     setTimeout(() => setCopied(false), 2000);
   };
-
-  return (
-    <div className="relative bg-white py-12 md:py-24">
+  return <div className="relative bg-white py-12 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
@@ -56,18 +51,11 @@ const HeroSection = () => {
           {/* Image Column */}
           <div className="md:w-1/2 flex justify-center items-center">
             <div className="relative w-full max-w-lg">
-              <img
-                src="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png"
-                alt="Buckazoids Hero"
-                className="w-full h-auto rounded-lg shadow-xl animate-fade-in"
-                loading="lazy"
-              />
+              
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;

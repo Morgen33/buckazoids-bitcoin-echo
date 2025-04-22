@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, History, TrendingUp } from "lucide-react";
-
 const AboutSection = () => {
-  return (
-    <section className="bg-[#FFF5E6] py-24" id="intro">
+  return <section className="bg-[#FFF5E6] py-24" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -19,7 +17,7 @@ const AboutSection = () => {
             <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6">
               <History className="text-buckazoid-orange w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">A Digital Currency From 1989</h3>
+            <h3 className="text-2xl font-bold mb-4">A Digital Currency From 1986</h3>
             <p className="text-gray-600 mb-6">
               Not everyone is aware that Buckazoids were featured in Star Control, showcasing a digital currency years before Bitcoin was conceived. This rediscovery could lead to more clues on Who is Satoshi Nakamoto.
             </p>
@@ -42,8 +40,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
