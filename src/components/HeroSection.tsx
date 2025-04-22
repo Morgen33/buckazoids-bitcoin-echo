@@ -1,25 +1,20 @@
-
 import { Button } from "@/components/ui/button";
 import { Copy, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
-
 const HeroSection = () => {
   const [copied, setCopied] = useState(false);
   const contractAddress = "BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump";
-
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);
     setCopied(true);
     toast({
       title: "Contract Address Copied!",
-      description: "The contract address has been copied to your clipboard.",
+      description: "The contract address has been copied to your clipboard."
     });
     setTimeout(() => setCopied(false), 2000);
   };
-
-  return (
-    <div className="relative bg-white py-12 md:py-24">
+  return <div className="relative bg-white py-12 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
@@ -38,12 +33,7 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row gap-2 items-center">
                   <span className="text-sm text-gray-600 font-medium">Contract Address:</span>
                   <code className="bg-gray-100 px-3 py-1 rounded flex-1 text-sm">{contractAddress}</code>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={copyToClipboard}
-                    className="min-w-[100px]"
-                  >
+                  <Button variant="outline" size="sm" onClick={copyToClipboard} className="min-w-[100px]">
                     {copied ? "Copied!" : "Copy"} <Copy className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -52,31 +42,15 @@ const HeroSection = () => {
             
             {/* Fixed DEXScreener button - added explicit colors and increased visibility */}
             <div className="mt-6 mb-4">
-              <Button 
-                onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")}
-                className="bg-[#F77F00] hover:bg-[#FFBB1C] text-white font-medium text-lg py-6 px-8 rounded-md inline-flex items-center justify-center w-full sm:w-auto"
-              >
+              <Button onClick={() => window.open("https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku", "_blank")} className="bg-[#F77F00] hover:bg-[#FFBB1C] text-white font-medium text-lg py-6 px-8 rounded-md inline-flex items-center justify-center w-full sm:w-auto">
                 View on DEXScreener <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
           
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <iframe
-                src="https://www.youtube.com/embed/Tc0b4JKThUc?autoplay=1&loop=1&playlist=Tc0b4JKThUc&controls=0&mute=1&rel=0&modestbranding=1"
-                title="Buckazoids Spinning Coin"
-                className="absolute inset-0 w-full h-full rounded-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ border: 'none' }}
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
