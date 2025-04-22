@@ -8,10 +8,10 @@ const CountdownSection = () => {
     <section className="bg-gradient-to-r from-buckazoids-blue to-buckazoids-navy py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white" style={{ color: '#045c94' }}>
             Bitcoin 2025 - Las Vegas
           </h2>
-          <div className="bg-black/50 rounded-xl p-8 shadow-lg backdrop-blur-sm">
+          <div className="bg-[#fff3e2] rounded-xl p-8 shadow-lg backdrop-blur-sm">
             <CountdownTimer />
             <div className="mt-8 space-y-6">
               <h3 className="text-3xl font-semibold text-buckazoids-yellow">
@@ -21,11 +21,11 @@ const CountdownSection = () => {
                 All Buckazoids can now attend Bitcoin Conference 2025 at a 21% discount.
               </p>
               <div className="space-y-4">
-                <p className="text-white text-lg">
+                <p className="text-black text-lg">
                   🎟️ Link: <a href="https://bm.b.tc/buckazoids" className="text-buckazoids-yellow hover:underline font-medium">bm.b.tc/buckazoids</a>
                 </p>
-                <p className="text-white text-lg">
-                  💬 Code: <span className="font-mono bg-buckazoids-yellow/30 px-3 py-1 rounded text-white font-bold">buckazoids</span>
+                <p className="text-black text-lg">
+                  💬 Code: <span className="font-mono bg-buckazoids-yellow/30 px-3 py-1 rounded text-black font-bold">buckazoids</span>
                 </p>
               </div>
               <Button 
