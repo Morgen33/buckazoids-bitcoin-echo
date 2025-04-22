@@ -9,7 +9,7 @@ const newsItems = [
     summary: "Buckazoids ($BUCKAZOIDS) has been successfully listed on the MoonerHive exchange platform, expanding its accessibility to traders.",
     content: "Exciting news for the Buckazoids community as the token makes its debut on MoonerHive exchange. This listing marks another milestone in Buckazoids' journey to wider adoption.",
     link: "https://x.com/MoonerHive/status/1914539912910561695",
-    image: "/lovable-uploads/74b49e05-e18e-46a3-a3bc-a7cef6d60da6a.png"
+    image: "/lovable-uploads/de079870-5764-42d2-9bbb-d5d6c2634a6b.png"
   },
   {
     id: 5,
