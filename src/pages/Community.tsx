@@ -29,7 +29,10 @@ const CommunityPage = () => {
                 <p className="text-gray-600 mb-6">
                   Follow us for the latest updates, community events, and discussions about Buckazoids and crypto history.
                 </p>
-                <Button className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white">
+                <Button 
+                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  onClick={() => window.open('https://x.com/BuckazoidsSOL', '_blank')}
+                >
                   Follow @Buckazoids
                 </Button>
               </div>
@@ -42,7 +45,10 @@ const CommunityPage = () => {
                 <p className="text-gray-600 mb-6">
                   Join our vibrant Discord community to discuss theories, share discoveries, and connect with like-minded enthusiasts.
                 </p>
-                <Button className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white">
+                <Button 
+                  className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                  onClick={() => window.open('https://discord.gg/HqdBVYa4qq', '_blank')}
+                >
                   Join Discord
                 </Button>
               </div>
@@ -51,12 +57,15 @@ const CommunityPage = () => {
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <Github className="text-buckazoid-blue w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">GitHub</h3>
+                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">White Paper</h3>
                 <p className="text-gray-600 mb-6">
-                  Contribute to our open-source projects, documentation, and help preserve this unique piece of cryptocurrency history.
+                  Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
                 </p>
-                <Button className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white">
-                  View Repository
+                <Button 
+                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
+                >
+                  View White Paper
                 </Button>
               </div>
             </div>
