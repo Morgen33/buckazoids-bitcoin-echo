@@ -1,31 +1,31 @@
-
 import { Link } from "react-router-dom";
 import { ExternalLink, Twitter } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client"; 
+import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
-
 const Footer = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Check authentication status when component mounts
   useEffect(() => {
     const checkAuth = async () => {
-      const { data } = await supabase.auth.getSession();
+      const {
+        data
+      } = await supabase.auth.getSession();
       setIsAuthenticated(!!data.session);
     };
-    
     checkAuth();
 
     // Subscribe to auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const {
+      data: {
+        subscription
+      }
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session);
     });
-
     return () => subscription.unsubscribe();
   }, []);
-
-  return (
-    <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
+  return <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
@@ -35,21 +35,14 @@ const Footer = () => {
                 BUCKAZOIDS
               </span>
             </div>
-            <p className="text-sm text-gray-500">
-              A Digital Currency from 1989... Rediscovered in 2025
-            </p>
+            <p className="text-sm text-gray-500">A Digital Currency from 1986... Rediscovered in 2025</p>
           </div>
           
           <div>
             <h3 className="text-buckazoids-blue font-medium mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
-                >
+                <a href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
                   <span>White Paper</span>
                   <ExternalLink size={14} className="ml-1" />
                 </a>
@@ -66,12 +59,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://x.com/BuckazoidsSOL" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
-                >
+                <a href="https://x.com/BuckazoidsSOL" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
                   <span>Twitter</span>
                   <Twitter size={14} className="ml-1" />
                 </a>
@@ -92,13 +80,13 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              {isAuthenticated && ( // Only show admin link if user is logged in
-                <li>
+              {isAuthenticated &&
+            // Only show admin link if user is logged in
+            <li>
                   <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
                     Admin
                   </Link>
-                </li>
-              )}
+                </li>}
             </ul>
           </div>
         </div>
@@ -118,18 +106,13 @@ const Footer = () => {
               © 2025 Buckazoids. All rights reserved. Not affiliated with the original creators of Star Control.
             </p>
             <div className="flex space-x-6">
-              <a 
-                href="https://x.com/BuckazoidsSOL" 
-                className="text-gray-500 hover:text-buckazoids-orange"
-              >
+              <a href="https://x.com/BuckazoidsSOL" className="text-gray-500 hover:text-buckazoids-orange">
                 <Twitter size={20} />
               </a>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
