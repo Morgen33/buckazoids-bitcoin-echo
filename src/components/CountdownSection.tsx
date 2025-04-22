@@ -17,7 +17,7 @@ const CountdownSection = () => {
               <h3 className="text-3xl font-semibold text-buckazoids-yellow">
                 Exclusive Community Discount 🔥
               </h3>
-              <p className="text-xl text-white max-w-2xl mx-auto font-medium">
+              <p className="text-xl text-white max-w-2xl mx-auto font-medium" style={{ color: '#02314d' }}>
                 All Buckazoids can now attend Bitcoin Conference 2025 at a 21% discount.
               </p>
               <div className="space-y-4">
