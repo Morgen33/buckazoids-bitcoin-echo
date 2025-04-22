@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ExternalLink, History, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +27,7 @@ const AboutSection = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4">A Digital Currency From 1986</h3>
             <p className="text-gray-600 mb-6">
-              Not everyone is aware that Buckazoids were featured in Star Control, showcasing a digital currency years before Bitcoin was conceived. This rediscovery could lead to more clues on Who is Satoshi Nakamoto.
+              Not everyone is aware that Buckazoids were featured in Space Quest, showcasing a digital currency years before Bitcoin was conceived. This rediscovery could lead to more clues on Who is Satoshi Nakamoto.
             </p>
             <Button 
               variant="outline" 
@@ -56,4 +55,3 @@ const AboutSection = () => {
     </section>;
 };
 export default AboutSection;
-
