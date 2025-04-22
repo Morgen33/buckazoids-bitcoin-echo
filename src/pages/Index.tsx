@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WhitePaperSection from "@/components/WhitePaperSection";
-import CommunitySection from "@/components/CommunitySection";
 import CallToActionSection from "@/components/CallToActionSection";
 import OverviewSection from "@/components/OverviewSection";
 
@@ -17,7 +16,6 @@ const Index = () => {
         <OverviewSection />
         <AboutSection />
         <WhitePaperSection />
-        <CommunitySection />
         <CallToActionSection />
       </main>
       <Footer />

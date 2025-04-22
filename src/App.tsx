@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 import Auth from "./pages/Auth";
 import AdminGuard from "./components/AdminGuard";
+import CommunityPage from "./pages/Community";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/community" element={<CommunityPage />} />
           <Route path="/auth" element={<Auth />} />
           <Route
             path="/admin"

@@ -1,12 +1,4 @@
 
-import { Link } from "react-router-dom";
-
-export type NavigationItem = {
-  name: string;
-  href?: string;
-  submenu?: { name: string; href: string }[];
-};
-
 export const navigationItems: NavigationItem[] = [
   {
     name: "Introduction",
@@ -22,14 +14,10 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     name: "Community",
-    submenu: [
-      { name: "Join Us", href: "#community" },
-      { name: "Discord", href: "#discord" },
-      { name: "Twitter", href: "https://x.com/BuckazoidsSOL" },
-    ],
+    href: "/community", // Updated to point to the new page
   },
   {
     name: "Contact",
-    href: "/contact", // Direct link instead of submenu
+    href: "/contact",
   },
 ];
