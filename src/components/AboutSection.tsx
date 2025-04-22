@@ -3,7 +3,7 @@ import { ExternalLink, History, TrendingUp } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="bg-[#FDE1D3] py-24" id="intro">
+    <section className="bg-[#FFF5E6] py-24" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
