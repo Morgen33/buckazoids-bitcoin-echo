@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Twitter, Github, MessageCircle } from "lucide-react";
+import { Pill } from "lucide-react";
 
 const CommunityPage = () => {
   return (
@@ -87,7 +87,7 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <MessageCircle className="text-buckazoid-blue w-8 h-8" />
+                  <Pill className="text-buckazoid-blue w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Pump.fun</h3>
                 <p className="text-gray-600 mb-6">
