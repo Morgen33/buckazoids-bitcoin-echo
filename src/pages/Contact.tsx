@@ -59,7 +59,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#fff3e2' }}>
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
