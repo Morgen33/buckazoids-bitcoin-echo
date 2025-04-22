@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Copy, ExternalLink } from "lucide-react";
 import { useState } from "react";
@@ -61,11 +62,16 @@ const HeroSection = () => {
           </div>
           
           <div className="md:w-1/2 flex justify-center">
-            <img 
-              src="/lovable-uploads/d019d532-2885-4063-8b9a-3311c707a3bf.png" 
-              alt="Buckazoids Coin" 
-              className="w-64 h-64 md:w-80 md:h-80 animate-float object-contain"
-            />
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <iframe
+                src="https://www.youtube.com/embed/Tc0b4JKThUc?autoplay=1&loop=1&playlist=Tc0b4JKThUc&controls=0&mute=1&rel=0&modestbranding=1"
+                title="Buckazoids Spinning Coin"
+                className="absolute inset-0 w-full h-full rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ border: 'none' }}
+              />
+            </div>
           </div>
         </div>
       </div>
