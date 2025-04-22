@@ -30,10 +30,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <div className="flex items-center mb-4">
-              <img src="/logo.svg" alt="Buckazoids Logo" className="h-8 w-8" />
-              <span className="ml-2 text-lg font-bold text-buckazoids-blue">
-                BUCKAZOIDS
-              </span>
+              <img src="/lovable-uploads/3b9a9f9c-6eca-49a5-9221-91a3212aa3e5.png" alt="Buckazoids Logo" className="h-12 object-contain" style={{ maxWidth: 210 }} />
             </div>
             <p className="text-sm text-gray-500">A Digital Currency from 1986... Rediscovered in 2025</p>
           </div>
