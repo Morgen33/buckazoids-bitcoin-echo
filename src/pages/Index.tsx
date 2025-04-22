@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import WhitePaperSection from "@/components/WhitePaperSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import OverviewSection from "@/components/OverviewSection";
+import VideoSection from "@/components/VideoSection";
 
 const Index = () => {
   return (
@@ -14,8 +14,8 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <OverviewSection />
+        <VideoSection />
         <AboutSection />
-        <WhitePaperSection />
         <CallToActionSection />
       </main>
       <Footer />
