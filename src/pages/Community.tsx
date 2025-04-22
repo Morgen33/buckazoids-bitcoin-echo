@@ -20,8 +20,8 @@ const CommunityPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <Twitter className="text-buckazoid-blue w-8 h-8" />
                 </div>
@@ -37,7 +37,23 @@ const CommunityPage = () => {
                 </Button>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <Twitter className="text-buckazoid-orange w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Documenting Buckazoids</h3>
+                <p className="text-gray-600 mb-6">
+                  Explore the rich lore and history of Buckazoids through our dedicated documentation channel.
+                </p>
+                <Button 
+                  className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                  onClick={() => window.open('https://x.com/@59Buckazoids', '_blank')}
+                >
+                  Follow @59Buckazoids
+                </Button>
+              </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <MessageCircle className="text-buckazoid-orange w-8 h-8" />
                 </div>
@@ -53,7 +69,7 @@ const CommunityPage = () => {
                 </Button>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+              <div className="md:col-span-9 lg:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <Github className="text-buckazoid-blue w-8 h-8" />
                 </div>
