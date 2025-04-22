@@ -18,7 +18,7 @@ const WhitePaperSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+      <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div className="space-y-8">
             <div className="flex items-start">
               <div className="bg-gray-100 p-2 rounded-full mr-4 mt-1">
@@ -51,16 +51,16 @@ const WhitePaperSection = () => {
             </div>
           </div>
 
-          <div className="space-y-6 bg-[#FFF0D9] p-8 rounded-lg">
-            <h4 className="text-xl font-semibold text-buckazoid-blue">White Paper Excerpt:</h4>
-            <p className="text-gray-700 leading-relaxed">
-              "Buckazoids were introduced in Star Control (1990) as a universal currency used for trade throughout the galaxy... The circular gold coin with the distinctive 'B' symbol bears a striking resemblance to what would later become the Bitcoin logo..."
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              "This remarkable coincidence raises questions about whether the creators of Bitcoin were inspired by this early digital currency concept, or if there are deeper connections yet to be discovered..."
-            </p>
-          </div>
+        <div className="space-y-6 bg-[#FFF8ED] p-8 rounded-lg">
+          <h4 className="text-xl font-semibold text-buckazoid-blue">White Paper Excerpt:</h4>
+          <p className="text-gray-700 leading-relaxed">
+            "Buckazoids were introduced in Star Control (1990) as a universal currency used for trade throughout the galaxy... The circular gold coin with the distinctive 'B' symbol bears a striking resemblance to what would later become the Bitcoin logo..."
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            "This remarkable coincidence raises questions about whether the creators of Bitcoin were inspired by this early digital currency concept, or if there are deeper connections yet to be discovered..."
+          </p>
         </div>
+      </div>
 
         <div className="flex justify-center mt-12">
           <Button 
