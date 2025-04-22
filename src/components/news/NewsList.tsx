@@ -41,7 +41,7 @@ export const NewsList = () => {
           className="w-full overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
         >
           {item.image && (
-            <div className="w-full h-48 relative flex bg-buckazoid-navy">
+            <div className="w-full h-48 relative flex bg-[#feb73f]">
               <div className="flex-grow"></div>
               <img 
                 src={item.image} 
