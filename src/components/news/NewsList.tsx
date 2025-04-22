@@ -1,8 +1,16 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
 const newsItems = [
+  {
+    id: 5,
+    title: "A Field Trip into the Future",
+    date: "2025-04-21",
+    summary: "Another Mic drop from @frequencycheck",
+    content: "Explore this fascinating journey into the future of digital currency with @frequencycheck's latest insights.",
+    link: "https://x.com/frequencycheck/status/1913670288598073398",
+    image: "/lovable-uploads/e6e06d2d-cca2-4094-9501-426eae197aad.png"
+  },
   {
     id: 4,
     title: "Buckazoids Now Listed on MoonerHive Exchange",
@@ -10,7 +18,7 @@ const newsItems = [
     summary: "Buckazoids ($BUCKAZOIDS) has been successfully listed on the MoonerHive exchange platform, expanding its accessibility to traders.",
     content: "Exciting news for the Buckazoids community as the token makes its debut on MoonerHive exchange. This listing marks another milestone in Buckazoids' journey to wider adoption.",
     link: "https://x.com/MoonerHive/status/1914539912910561695",
-    image: "/lovable-uploads/74b49e05-e18e-46a3-a3bc-7cef6d60da6a.png"
+    image: "/lovable-uploads/74b49e05-e18e-46a3-a3bc-a7cef6d60da6a.png"
   },
   {
     id: 1,
