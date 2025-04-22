@@ -14,8 +14,8 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <OverviewSection />
-        <VideoSection />
         <AboutSection />
+        <VideoSection />
         <CallToActionSection />
       </main>
       <Footer />
