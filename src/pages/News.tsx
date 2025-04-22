@@ -6,10 +6,10 @@ import Footer from "@/components/Footer";
 
 const NewsPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#fff3e2]">
       <Header />
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <Card className="mb-8">
+        <Card className="mb-8 bg-white">
           <CardHeader>
             <CardTitle className="text-4xl font-bold text-buckazoids-blue">
               Buckazoids News

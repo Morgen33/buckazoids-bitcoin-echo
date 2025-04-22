@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
@@ -34,13 +33,22 @@ const newsItems = [
 
 export const NewsList = () => {
   return (
-    <div className="grid gap-4 md:grid-cols-2 max-w-6xl mx-auto">
+    <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto">
       {newsItems.map((item) => (
         <Card 
           key={item.id}
-          className="w-full hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-[#FFF5E6] to-[#FFF0D9] border border-orange-100/30"
+          className="w-full overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
         >
-          <CardHeader className="space-y-2 pb-2">
+          {item.image && (
+            <div className="w-full h-48 relative">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          <CardHeader className="space-y-2">
             <div className="flex items-center gap-3 text-buckazoids-orange">
               <Star className="h-5 w-5" />
               <time className="text-xs font-medium">{item.date}</time>
@@ -50,15 +58,6 @@ export const NewsList = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {item.image && (
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            )}
             <p className="text-sm text-gray-600 leading-relaxed">
               {item.summary}
             </p>
@@ -76,4 +75,3 @@ export const NewsList = () => {
     </div>
   );
 };
-
