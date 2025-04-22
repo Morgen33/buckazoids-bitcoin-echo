@@ -1,16 +1,8 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
 const newsItems = [
-  {
-    id: 3,
-    title: "The Mystery Surrounding Bitcoin's Creator May Soon Be Solved — Buckazoids",
-    date: "2025-03-29",
-    summary: "The writer's path: An intriguing exploration into the connection between Buckazoids and the mysterious origins of Bitcoin's creator.",
-    content: "A fascinating article examining the potential links between Buckazoids and the identity of Bitcoin's creator, Satoshi Nakamoto.",
-    link: "https://medium.com/@viam_/the-mystery-surrounding-bitcoins-creator-may-soon-be-solved-c7e110ed31d4",
-    image: "/lovable-uploads/8c044af7-a957-4d2d-beea-81f3afaffcf3.png"
-  },
   {
     id: 1,
     title: "Support Buckazoids to be the Next Rising Star on MEXC",
@@ -28,6 +20,15 @@ const newsItems = [
     content: "Check out this detailed analysis of Buckazoids and its historical significance in digital currency evolution.",
     link: "https://x.com/frequencycheck/status/1912231457332031925",
     image: "/lovable-uploads/5e8e18ed-016f-4a80-910d-93b285e71d67.png"
+  },
+  {
+    id: 3,
+    title: "The Mystery Surrounding Bitcoin's Creator May Soon Be Solved — Buckazoids",
+    date: "2025-03-29",
+    summary: "The writer's path: An intriguing exploration into the connection between Buckazoids and the mysterious origins of Bitcoin's creator.",
+    content: "A fascinating article examining the potential links between Buckazoids and the identity of Bitcoin's creator, Satoshi Nakamoto.",
+    link: "https://medium.com/@viam_/the-mystery-surrounding-bitcoins-creator-may-soon-be-solved-c7e110ed31d4",
+    image: "/lovable-uploads/8c044af7-a957-4d2d-beea-81f3afaffcf3.png"
   }
 ];
 
@@ -75,3 +76,4 @@ export const NewsList = () => {
     </div>
   );
 };
+
