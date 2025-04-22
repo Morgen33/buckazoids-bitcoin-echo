@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star } from "lucide-react";
 
@@ -40,12 +41,14 @@ export const NewsList = () => {
           className="w-full overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
         >
           {item.image && (
-            <div className="w-full h-48 relative">
+            <div className="w-full h-48 relative flex bg-buckazoid-navy">
+              <div className="flex-grow"></div>
               <img 
                 src={item.image} 
                 alt={item.title}
-                className="w-full h-full object-cover"
+                className="h-full max-w-[70%] object-contain"
               />
+              <div className="flex-grow"></div>
             </div>
           )}
           <CardHeader className="space-y-2">
