@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { DesktopNav } from "./header/DesktopNav";
 import { MobileNav } from "./header/MobileNav";
 import { navigationItems } from "./header/NavigationItems";
+import CountdownTimer from "./CountdownTimer";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,11 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
+      <div className="bg-buckazoids-orange text-white text-sm py-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CountdownTimer variant="small" className="justify-center text-white" />
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">

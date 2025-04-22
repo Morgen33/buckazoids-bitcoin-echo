@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import OverviewSection from "@/components/OverviewSection";
 import VideoSection from "@/components/VideoSection";
+import CountdownSection from "@/components/CountdownSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <OverviewSection />
         <AboutSection />
         <VideoSection />
+        <CountdownSection />
         <CallToActionSection />
       </main>
       <Footer />
