@@ -11,7 +11,7 @@ const CountdownSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white" style={{ color: '#045c94' }}>
             Bitcoin 2025 - Las Vegas
           </h2>
-          <div className="bg-[#fff3e2] rounded-xl p-8 shadow-lg backdrop-blur-sm">
+          <div className="rounded-xl p-8 shadow-lg backdrop-blur-sm">
             <CountdownTimer />
             <div className="mt-8 space-y-6">
               <h3 className="text-3xl font-semibold text-buckazoids-yellow">
