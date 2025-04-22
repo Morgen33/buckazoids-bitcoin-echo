@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Copy, ExternalLink } from "lucide-react";
 import { useState } from "react";
@@ -30,7 +29,7 @@ const HeroSection = () => {
             </h1>
             <div className="space-y-4 mb-8">
               <p className="text-xl text-gray-600">
-                A Digital Currency from 1989... Rediscovered in 2025.
+                A Digital Currency from 1986... Rediscovered in 2025.
                 The meme that preceded Bitcoin.
               </p>
               <div className="flex flex-col gap-2 bg-gray-50 p-4 rounded-lg border border-gray-200">

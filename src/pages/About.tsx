@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { History, Rocket, Star, Calendar } from "lucide-react";
@@ -52,7 +52,7 @@ const About = () => {
             <div className="mb-8">
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                 <li>Released in 1986, Space Quest quickly became a cult classic</li>
-                <li>In 1989, Buckazoids appeared as a transactional currency in the game</li>
+                <li>In 1986, Buckazoids appeared as a transactional currency in the game</li>
                 <li>By 1991, in Space Quest IV, it evolved into a tradeable digital token</li>
                 <li>The design of the Buckazoids token mirrors what we now recognize as the Bitcoin logo (₿)</li>
               </ul>
