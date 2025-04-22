@@ -55,6 +55,22 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <Github className="text-buckazoid-blue w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">White Paper</h3>
+                <p className="text-gray-600 mb-6">
+                  Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
+                </p>
+                <Button 
+                  className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
+                  onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
+                >
+                  View White Paper
+                </Button>
+              </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <MessageCircle className="text-buckazoid-orange w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Discord</h3>
@@ -69,19 +85,19 @@ const CommunityPage = () => {
                 </Button>
               </div>
 
-              <div className="md:col-span-9 lg:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Github className="text-buckazoid-blue w-8 h-8" />
+                  <MessageCircle className="text-buckazoid-blue w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">White Paper</h3>
+                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Pump.fun</h3>
                 <p className="text-gray-600 mb-6">
-                  Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
+                  Visit the birthplace of Buckazoids on the Solana blockchain and explore where it all began.
                 </p>
                 <Button 
                   className="bg-buckazoid-blue hover:bg-buckazoid-orange text-white"
-                  onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
+                  onClick={() => window.open('https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump', '_blank')}
                 >
-                  View White Paper
+                  View on Pump.fun
                 </Button>
               </div>
             </div>
