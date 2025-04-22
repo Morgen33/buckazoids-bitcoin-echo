@@ -1,8 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Twitter, Github, MessageCircle } from "lucide-react";
-import { Pill } from "lucide-react";
+import { Twitter, Github, MessageCircle, Pill } from "lucide-react";
 
 const CommunityPage = () => {
   return (
@@ -66,6 +65,22 @@ const CommunityPage = () => {
                   onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
                 >
                   View White Paper
+                </Button>
+              </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <MessageCircle className="text-buckazoid-orange w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Reddit</h3>
+                <p className="text-gray-600 mb-6">
+                  Join our Reddit community to discuss Buckazoids, share insights, and stay updated with the latest developments.
+                </p>
+                <Button 
+                  className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                  onClick={() => window.open('https://www.reddit.com/r/Buckazoids/', '_blank')}
+                >
+                  Join r/Buckazoids
                 </Button>
               </div>
 
