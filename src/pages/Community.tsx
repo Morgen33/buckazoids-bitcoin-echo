@@ -1,7 +1,8 @@
+import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Twitter, Github, MessageCircle, Pill, Youtube } from "lucide-react";
+import { Twitter, Github, MessageCircle, Pill, Youtube, TikTok } from "lucide-react";
 
 const CommunityPage = () => {
   return (
@@ -129,6 +130,22 @@ const CommunityPage = () => {
                   onClick={() => window.open('https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump', '_blank')}
                 >
                   View on Pump.fun
+                </Button>
+              </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <TikTok className="text-buckazoid-orange w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">TikTok</h3>
+                <p className="text-gray-600 mb-6">
+                  Follow our TikTok for short-form content, behind-the-scenes, and exciting Buckazoids updates.
+                </p>
+                <Button 
+                  className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                  onClick={() => window.open('https://www.tiktok.com/@buckazoids1991?_t=ZT-8v8v4WBLwmU&_r=1', '_blank')}
+                >
+                  Follow @Buckazoids
                 </Button>
               </div>
             </div>
