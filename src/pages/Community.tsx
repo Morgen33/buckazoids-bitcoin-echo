@@ -149,6 +149,22 @@ const CommunityPage = () => {
                   Follow @Buckazoids
                 </Button>
               </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <Instagram className="text-buckazoid-blue w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Instagram Greece</h3>
+                <p className="text-gray-600 mb-6">
+                  Follow our Greek community for local updates, events, and connect with Buckazoid enthusiasts in Greece.
+                </p>
+                <Button 
+                  className="bg-buckazoid-blue hover:bg-buckazoid-navy text-white"
+                  onClick={() => window.open('https://www.instagram.com/buckazoidsgr?igsh=MXZ5Zm81d3kzNXdnYQ%3D%3D&utm_source=qr', '_blank')}
+                >
+                  Follow on Instagram
+                </Button>
+              </div>
             </div>
           </div>
         </section>
