@@ -7,12 +7,14 @@ import { Badge } from "./ui/badge";
 
 const OverviewSection = () => {
   return (
-    <section className="relative bg-buckazoid-dark overflow-hidden">
-      {/* Network background */}
-      <NetworkGraphic />
+    <section className="relative bg-buckazoid-dark overflow-hidden mt-16">
+      {/* Network background with mountains */}
+      <div className="h-40 relative w-full">
+        <NetworkGraphic />
+      </div>
       
       {/* Content section */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32">
         <div className="text-center mb-16">
           <Badge className="bg-[#f7931a]/20 text-[#f7931a] mb-4">FEATURED ON</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
