@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { DesktopNav } from "./header/DesktopNav";
 import { MobileNav } from "./header/MobileNav";
@@ -9,6 +9,7 @@ import { navigationItems } from "./header/NavigationItems";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
@@ -16,12 +17,13 @@ const Header = () => {
 
   return (
     <header className="w-full">
-      {/* Announcement Bar */}
-      <div className="bg-[#f7931a] text-white py-6 text-center text-sm font-medium">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          Buckazoids.org needs your support!
+      {location.pathname === "/" && (
+        <div className="bg-[#f7931a] text-white py-6 text-center text-sm font-medium">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            Buckazoids.org needs your support!
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
