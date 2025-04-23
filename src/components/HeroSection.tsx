@@ -4,7 +4,7 @@ import { PlayCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-20 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-12">
           <video 
