@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { History, Rocket, Star, Calendar } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const About = () => {
   return (
@@ -56,6 +57,9 @@ const About = () => {
                 <li>By 1991, in Space Quest IV, it evolved into a tradeable digital token</li>
                 <li>The design of the Buckazoids token mirrors what we now recognize as the Bitcoin logo (₿)</li>
               </ul>
+              <p className="mt-4 text-gray-700 font-semibold">
+                In addition, it's important to note that Ross Ulbricht (the founder of the first ever bitcoin marketplace) share something in common. Ross's birthday is also the same exact day as the Buckazoids token launch. Coincidence?
+              </p>
             </div>
             
             <h2 className="text-3xl font-bold mb-6 text-buckazoids-blue">Uncovering the Mystery</h2>
@@ -115,27 +119,30 @@ const About = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-br from-buckazoid-blue to-buckazoid-navy rounded-lg p-8 mb-12">
-            <div className="flex items-center gap-4 mb-6">
-              <Rocket className="w-8 h-8 text-white" />
-              <h2 className="text-3xl font-bold text-white">Join the Movement</h2>
-            </div>
-            <p className="text-lg mb-6 text-white">
-              As of today, April 15th, 2025, the Buckazoids token is just under 3 weeks old 
-              with a market cap of roughly $4 million. For comparison, Bitcoin is currently 
-              over $1 trillion.
-            </p>
-            <p className="text-xl font-semibold text-white">
-              If you could go back to 2011 and buy Bitcoin, would you? Because this is that 
-              moment again.
-            </p>
-            <div className="mt-6">
-              <p className="text-lg mb-4 text-white">
-                We believe Buckazoids is the spiritual predecessor to Bitcoin. It's built for 
-                the future, it's built to scale, and most importantly — it's just getting started.
+          <Card className="mb-12" style={{ backgroundColor: '#fff3e2' }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-4">
+                <Rocket className="w-8 h-8 text-buckazoid-navy" />
+                <span className="text-3xl font-bold text-buckazoid-navy">Join the Movement</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg mb-6 text-gray-800">
+                Buckazoids launched on March 27th 2025 and is in its infancy when it comes to its evaluation and market cap potential. 
+                Bitcoin is currently evaluated at over 1 trillion marketcap. Can you imagine what happens when this story gets in front of the masses? 
+                Buckle Up.
               </p>
-            </div>
-          </div>
+              <p className="text-xl font-semibold text-buckazoid-navy">
+                If you could go back to 2011 and buy Bitcoin, would you? Because this is that moment again.
+              </p>
+              <div className="mt-6">
+                <p className="text-lg mb-4 text-gray-800">
+                  We believe Buckazoids is the spiritual predecessor to Bitcoin. It's built for 
+                  the future, it's built to scale, and most importantly — it's just getting started.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Get Involved */}
           <div className="mb-12">
