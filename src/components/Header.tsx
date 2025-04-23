@@ -28,17 +28,6 @@ const Header = () => {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0 flex items-center">
-                <img
-                  className="h-12 w-auto object-contain"
-                  src="/lovable-uploads/3b9a9f9c-6eca-49a5-9221-91a3212aa3e5.png"
-                  alt="Buckazoids Logo"
-                  style={{ maxWidth: 210 }}
-                />
-              </Link>
-            </div>
-
             <DesktopNav 
               navigation={navigationItems}
               activeDropdown={activeDropdown}
