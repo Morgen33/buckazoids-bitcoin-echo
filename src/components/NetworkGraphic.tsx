@@ -27,9 +27,8 @@ const NetworkGraphic = () => {
             fill="#181E20"
           />
           
-          {/* Nodes and connecting lines will be added dynamically via the animation hook */}
+          {/* Nodes will be added dynamically via the animation hook */}
           <g className="network-nodes"></g>
-          <g className="network-lines"></g>
         </svg>
       </div>
     </div>
@@ -37,3 +36,4 @@ const NetworkGraphic = () => {
 };
 
 export default NetworkGraphic;
+

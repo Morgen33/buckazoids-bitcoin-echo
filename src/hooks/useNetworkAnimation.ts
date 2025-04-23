@@ -16,16 +16,14 @@ export const useNetworkAnimation = () => {
     const container = containerRef.current;
     if (!container) return;
     
-    // Create nodes and lines container elements
+    // Create nodes container element
     const nodesGroup = container.querySelector('.network-nodes');
-    const linesGroup = container.querySelector('.network-lines');
-    if (!nodesGroup || !linesGroup) return;
+    if (!nodesGroup) return;
     
     // Parameters
     const nodeCount = 12;
     const viewBoxWidth = 1200;
     const viewBoxHeight = 200;
-    const maxDistance = 150;
     
     // Create nodes
     const nodes: Node[] = [];
@@ -75,33 +73,6 @@ export const useNetworkAnimation = () => {
           circle.setAttribute('cy', node.y.toString());
         }
       });
-      
-      // Clear existing lines
-      while (linesGroup.firstChild) {
-        linesGroup.removeChild(linesGroup.firstChild);
-      }
-      
-      // Draw lines between nodes that are close to each other
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < maxDistance) {
-            const opacity = (1 - distance / maxDistance) * 0.5;
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line.setAttribute('x1', nodes[i].x.toString());
-            line.setAttribute('y1', nodes[i].y.toString());
-            line.setAttribute('x2', nodes[j].x.toString());
-            line.setAttribute('y2', nodes[j].y.toString());
-            line.setAttribute('stroke', '#ffffff');
-            line.setAttribute('stroke-width', '0.5');
-            line.setAttribute('opacity', opacity.toString());
-            linesGroup.appendChild(line);
-          }
-        }
-      }
       
       animationFrameId = requestAnimationFrame(animate);
     };
