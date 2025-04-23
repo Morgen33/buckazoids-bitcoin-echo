@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ExternalLink, Twitter } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
+
 const Footer = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -25,6 +26,7 @@ const Footer = () => {
     });
     return () => subscription.unsubscribe();
   }, []);
+
   return <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -57,8 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://x.com/BuckazoidsSOL" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
-                  <span>Twitter</span>
-                  <Twitter size={14} className="ml-1" />
+                  <span>X</span>
                 </a>
               </li>
             </ul>
@@ -100,11 +101,11 @@ const Footer = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-gray-500 mb-4 md:mb-0">
-              © 2025 Buckazoids. All rights reserved. Not affiliated with the original creators of Star Control.
+              © 2025 Buckazoids. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="https://x.com/BuckazoidsSOL" className="text-gray-500 hover:text-buckazoids-orange">
-                <Twitter size={20} />
+                X
               </a>
             </div>
           </div>
