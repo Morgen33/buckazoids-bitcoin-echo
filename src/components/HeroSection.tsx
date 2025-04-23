@@ -19,7 +19,7 @@ const HeroSection = () => {
           </video>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-12">
+        <h1 className="text-3xl sm:text-4xl font-medium text-gray-800 mb-12">
           Buckazoids is an innovative payment network and a new kind of money.
         </h1>
         
@@ -33,7 +33,7 @@ const HeroSection = () => {
             variant="outline"
             className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10"
           >
-            Choose your wallet
+            BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump
           </Button>
           <Button 
             variant="outline"
