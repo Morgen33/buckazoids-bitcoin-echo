@@ -1,14 +1,10 @@
 
 import React from "react";
-import { useNetworkAnimation } from "@/hooks/useNetworkAnimation";
 
 const NetworkGraphic = () => {
-  const canvasRef = useNetworkAnimation();
-  
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
+    <div 
+      className="absolute inset-0 w-full h-full bg-buckazoid-dark" 
       style={{ opacity: 0.8 }}
     />
   );
