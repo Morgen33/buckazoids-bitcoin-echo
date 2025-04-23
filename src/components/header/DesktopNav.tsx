@@ -12,7 +12,7 @@ interface DesktopNavProps {
 
 export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex space-x-4 items-center">
+    <nav className="hidden md:flex space-x-4 items-center justify-end w-full">
       {navigation.map((item) => (
         <div key={item.name} className="relative group">
           {item.href ? (
@@ -32,7 +32,7 @@ export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: Deskt
             </button>
           )}
           {!item.href && activeDropdown === item.name && (
-            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
               <div className="py-1">
                 {item.submenu?.map((subItem) => (
                   <a
