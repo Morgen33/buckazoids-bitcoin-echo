@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Announcement Bar */}
-      <div className="bg-[#f7931a] text-white py-1 text-center text-sm font-medium">
+      <div className="bg-[#f7931a] text-white py-6 text-center text-sm font-medium">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           Buckazoids.org needs your support!
         </div>
