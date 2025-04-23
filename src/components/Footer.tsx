@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { ExternalLink, Twitter } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
 
@@ -41,7 +42,12 @@ const Footer = () => {
             <h3 className="text-buckazoids-blue font-medium mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
+                <a 
+                  href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
                   <span>White Paper</span>
                   <ExternalLink size={14} className="ml-1" />
                 </a>
