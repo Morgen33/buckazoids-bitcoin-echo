@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNetworkAnimation } from "../hooks/useNetworkAnimation";
 
 const NetworkGraphic = () => {
@@ -14,7 +14,7 @@ const NetworkGraphic = () => {
       />
       
       {/* Mountain silhouette with nodes */}
-      <div className="absolute top-0 left-0 w-full transform -translate-y-full">
+      <div className="absolute inset-x-0 top-0 w-full">
         <svg
           ref={containerRef}
           viewBox="0 0 1200 200"

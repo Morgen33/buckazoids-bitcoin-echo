@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 
 interface Node {
@@ -31,10 +30,10 @@ export const useNetworkAnimation = () => {
     // Create nodes
     const nodes: Node[] = [];
     for (let i = 0; i < nodeCount; i++) {
-      // Distribute nodes along the mountain silhouette
+      // Distribute nodes along the mountain silhouette, staying within peaks
       const x = Math.random() * viewBoxWidth;
-      // Position nodes near the mountain peaks (y between 40-140)
-      const y = 40 + Math.random() * 80;
+      // Position nodes near the mountain peaks (y between 50-120 to stay visible)
+      const y = 50 + Math.random() * 70;
       const size = 3 + Math.random() * 3;
       const speedX = (Math.random() - 0.5) * 0.5;
       const speedY = (Math.random() - 0.5) * 0.5;
@@ -64,7 +63,8 @@ export const useNetworkAnimation = () => {
         if (node.x <= 0 || node.x >= viewBoxWidth) {
           node.speedX *= -1;
         }
-        if (node.y <= 40 || node.y >= 140) {
+        // Keep nodes within the mountain peaks area
+        if (node.y <= 50 || node.y >= 120) {
           node.speedY *= -1;
         }
         
