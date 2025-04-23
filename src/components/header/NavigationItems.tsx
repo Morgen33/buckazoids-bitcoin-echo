@@ -11,6 +11,7 @@ export const navigationItems: NavigationItem[] = [
     submenu: [
       { name: "Getting Started", href: "/getting-started" },
       { name: "How it Works", href: "/how-it-works" },
+      { name: "About", href: "/about" },
       { name: "White Paper", href: "https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" },
     ],
   },
@@ -39,3 +40,4 @@ export const navigationItems: NavigationItem[] = [
     href: "/faq",
   },
 ];
+
