@@ -6,6 +6,19 @@ const HeroSection = () => {
   return (
     <div className="bg-white py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mb-12">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full rounded-lg shadow-xl"
+          >
+            <source src="/path-to-your-video.webp" type="video/webp" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-12">
           Buckazoids is an innovative payment network and a new kind of money.
         </h1>
