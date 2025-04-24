@@ -1,35 +1,13 @@
 
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Check authentication status when component mounts
-  useEffect(() => {
-    const checkAuth = async () => {
-      const { data } = await supabase.auth.getSession();
-      setIsAuthenticated(!!data.session);
-    };
-    checkAuth();
-
-    // Subscribe to auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAuthenticated(!!session);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
-
   return (
     <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-[1230px] mx-auto px-[30px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1">
-            <div className="mb-2.5">
-              <img src="https://i.imgur.com/6Xv0m5H.png" alt="Buckazoids Logo" className="h-10 object-contain" />
-            </div>
             <p className="text-sm text-gray-500">A Digital Currency from 1986... Rediscovered in 2025</p>
           </div>
           
@@ -79,13 +57,6 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              {isAuthenticated && (
-                <li>
-                  <Link to="/admin" className="text-[#444] hover:text-[#f7931a] text-sm">
-                    Admin
-                  </Link>
-                </li>
-              )}
             </ul>
           </div>
         </div>
@@ -93,10 +64,10 @@ const Footer = () => {
         <div className="mt-[60px] pt-[30px] border-t border-gray-200">
           <div className="text-xs text-gray-500 space-y-6 mb-8">
             <p className="leading-relaxed">
-              Buckazoids is not affiliated with, endorsed by, or in any way connected to Sierra On-Line...
+              Buckazoids is not affiliated with, endorsed by, or in any way connected to Sierra On-Line, Universe, or any other gaming entities. All trademarks, logos, and intellectual property related to Sierra On-Line, Universe, or other gaming entities are the property of their respective owners. Our products and services are independently developed and are not associated with or sponsored by any gaming companies or entities.
             </p>
             <p className="leading-relaxed">
-              Buckazoids is a memecoin created for entertainment and community purposes only...
+              Buckazoids is a memecoin created for entertainment and community purposes only. It is not a financial instrument, security, or investment product. Buckazoids has no intrinsic value, is not backed by any assets, and should not be considered a means of financial gain or a substitute for traditional currencies. Any participation in Buckazoids is at your own risk, and we make no representations or warranties regarding its value, stability, or future performance. Always conduct your own research and consult with a qualified financial advisor before engaging with any cryptocurrency or digital asset.
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center">

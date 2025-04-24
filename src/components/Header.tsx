@@ -20,22 +20,14 @@ const Header = () => {
       {location.pathname === "/" && (
         <div className="bg-[#F7931A] text-white py-0 text-center text-base font-semibold h-[55px] flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-extrabold">Buckazoids.org needs your support!</span>
+            Buckazoids.org needs your support!
           </div>
         </div>
       )}
 
       <div className="bg-white border-b border-[#eee]">
-        <div className="max-w-[1230px] mx-auto px-[30px]">
-          <div className="flex items-center h-[60px] justify-between">
-            <div className="flex items-center">
-              <img 
-                src="https://i.imgur.com/6Xv0m5H.png" 
-                alt="Buckazoids Logo" 
-                className="h-[30px] mr-5"
-              />
-            </div>
-            
+        <div className="max-w-[1230px] mx-auto px-[30px] py-[15px]">
+          <div className="flex items-center justify-between md:justify-start">
             <DesktopNav 
               navigation={navigationItems} 
               activeDropdown={activeDropdown} 

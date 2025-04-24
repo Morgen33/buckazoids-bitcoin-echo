@@ -41,7 +41,7 @@ const ExchangeListings = () => {
           rel="noopener noreferrer"
           className="group"
         >
-          <div className="bg-[#1a1a1a] p-10 rounded-lg flex items-center justify-center h-full transition-all duration-300 hover:scale-105">
+          <div className="bg-[#1a1a1a] p-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105">
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
