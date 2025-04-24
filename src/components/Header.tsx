@@ -18,16 +18,22 @@ const Header = () => {
   return (
     <header className="w-full">
       {location.pathname === "/" && (
-        <div className="bg-[#f7931a] text-white py-6 text-center text-sm">
+        <div className="bg-[#f7931a] text-white py-[17px] text-center text-base">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <span className="font-extrabold">Buckazoids.world needs your support!</span>
           </div>
         </div>
       )}
 
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end h-16">
+      <div className="bg-white border-b border-[#eee]">
+        <div className="max-w-[1230px] mx-auto px-[30px]">
+          <div className="flex items-center h-[60px] justify-between">
+            <img 
+              src="https://bitcoin.org/img/icons/logotop.svg?1743181677" 
+              alt="Buckazoids" 
+              className="h-[29px]"
+            />
+            
             <DesktopNav 
               navigation={navigationItems} 
               activeDropdown={activeDropdown} 
@@ -37,7 +43,7 @@ const Header = () => {
             <div className="flex items-center md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
-                className="text-gray-700" 
+                className="text-[#13161F]"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
