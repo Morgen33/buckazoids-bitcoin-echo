@@ -16,7 +16,7 @@ export const DesktopNav = ({
   toggleDropdown
 }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex gap-[30px] items-center">
+    <nav className="hidden md:flex gap-5 items-center">
       {navigation.map(item => (
         <div key={item.name} className="relative group">
           {item.href ? (
