@@ -1,6 +1,5 @@
 
 import React from "react";
-import NetworkGraphic from "./NetworkGraphic";
 import ExchangeListings from "./ExchangeListings";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -8,9 +7,14 @@ import { Badge } from "./ui/badge";
 const OverviewSection = () => {
   return (
     <section className="relative bg-buckazoid-dark overflow-hidden mt-16">
-      {/* Network background with mountains */}
-      <div className="h-40 relative w-full">
-        <NetworkGraphic />
+      {/* Background image section */}
+      <div className="absolute inset-x-0 top-0 h-[300px] w-full">
+        <img
+          src="/lovable-uploads/buckazoid-token.png"
+          alt="Network Background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-buckazoid-dark/80" />
       </div>
       
       {/* Content section */}
