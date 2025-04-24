@@ -10,7 +10,7 @@ const OverviewSection = () => {
       {/* Background image section */}
       <div className="absolute inset-x-0 top-0 h-[300px] w-full">
         <img
-          src="/lovable-uploads/a9d20e14-4018-4b09-916b-9515f0b78adc.png"
+          src="/lovable-uploads/buckazoid-token.png"
           alt="Network Background"
           className="w-full h-full object-cover opacity-20"
         />
