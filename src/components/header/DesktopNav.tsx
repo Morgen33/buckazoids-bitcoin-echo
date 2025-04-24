@@ -1,3 +1,4 @@
+
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ interface DesktopNavProps {
 
 export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex space-x-4 items-center justify-end w-full pr-8">
+    <nav className="hidden md:flex space-x-8 items-center justify-end w-full pr-16">
       {navigation.map((item) => (
         <div key={item.name} className="relative group">
           {item.href ? (
