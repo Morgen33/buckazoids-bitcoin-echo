@@ -1,5 +1,6 @@
 import React from "react";
 import ExchangeListings from "./ExchangeListings";
+import NetworkMountains from "./NetworkMountains";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 
@@ -7,17 +8,19 @@ const OverviewSection = () => {
   return (
     <section className="bg-white py-[130px] px-8 text-gray-800">
       <div className="max-w-[1230px] mx-auto">
-        <div className="bg-[#0b0e11] py-[130px] px-8 text-white -mx-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-              Listed On Major Exchanges
-            </h2>
-            <p className="text-[#ccc] max-w-2xl mx-auto text-lg">
-              Buckazoids is available on top cryptocurrency exchanges worldwide, making it easy for anyone to buy, sell, and trade.
-            </p>
+        <div className="bg-[#0b0e11] -mx-8 overflow-hidden">
+          <NetworkMountains />
+          <div className="py-[130px] px-8 text-white">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+                Listed On Major Exchanges
+              </h2>
+              <p className="text-[#ccc] max-w-2xl mx-auto text-lg">
+                Buckazoids is available on top cryptocurrency exchanges worldwide, making it easy for anyone to buy, sell, and trade.
+              </p>
+            </div>
+            <ExchangeListings />
           </div>
-          
-          <ExchangeListings />
         </div>
 
         <div className="mt-32">
