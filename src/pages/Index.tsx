@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import OverviewSection from "@/components/OverviewSection";
-import MountainDivider from "@/components/MountainDivider";
 
 const Index = () => {
   return (
@@ -11,7 +10,6 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <MountainDivider />
         <OverviewSection />
       </main>
       <Footer />

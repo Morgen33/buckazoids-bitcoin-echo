@@ -1,6 +1,6 @@
-
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { type NavigationItem } from "./NavigationItems";
 
 interface DesktopNavProps {
@@ -9,40 +9,35 @@ interface DesktopNavProps {
   toggleDropdown: (name: string) => void;
 }
 
-export const DesktopNav = ({
-  navigation,
-  activeDropdown,
-  toggleDropdown
-}: DesktopNavProps) => {
+export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: DesktopNavProps) => {
   return (
-    <nav className="flex gap-[30px] items-center">
-      {navigation.map(item => (
+    <nav className="hidden md:flex space-x-4 items-center justify-end w-full pr-8">
+      {navigation.map((item) => (
         <div key={item.name} className="relative group">
           {item.href ? (
-            <Link 
-              to={item.href} 
-              className="text-[#13161F] hover:text-[#f7931a] text-[15px] font-medium"
+            <Link
+              to={item.href}
+              className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange"
             >
               {item.name}
             </Link>
           ) : (
-            <button 
-              onClick={() => toggleDropdown(item.name)} 
-              className="text-[#13161F] hover:text-[#f7931a] text-[15px] font-medium flex items-center"
+            <button
+              onClick={() => toggleDropdown(item.name)}
+              className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center"
             >
               {item.name}
               <ChevronDown size={16} className="ml-1" />
             </button>
           )}
-          
           {!item.href && activeDropdown === item.name && (
             <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
               <div className="py-1">
-                {item.submenu?.map(subItem => (
+                {item.submenu?.map((subItem) => (
                   <a
                     key={subItem.name}
                     href={subItem.href}
-                    className="block px-4 py-2 text-sm text-[#13161F] hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={() => toggleDropdown(item.name)}
                   >
                     {subItem.name}
@@ -53,6 +48,9 @@ export const DesktopNav = ({
           )}
         </div>
       ))}
+      <Button className="ml-4 bg-buckazoids-orange hover:bg-buckazoids-yellow text-white">
+        Get Started
+      </Button>
     </nav>
   );
 };

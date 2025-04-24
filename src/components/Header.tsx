@@ -18,16 +18,16 @@ const Header = () => {
   return (
     <header className="w-full">
       {location.pathname === "/" && (
-        <div className="bg-[#F7931A] text-white py-0 text-center text-base font-semibold h-[55px] flex items-center justify-center">
+        <div className="bg-[#f7931a] text-white py-6 text-center text-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            Buckazoids.org needs your support!
+            <span className="font-extrabold">Buckazoids.world needs your support!</span>
           </div>
         </div>
       )}
 
-      <div className="bg-white border-b border-[#eee]">
-        <div className="max-w-[1230px] mx-auto px-[30px] py-[15px]">
-          <div className="flex items-center justify-between md:justify-start">
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-end h-16">
             <DesktopNav 
               navigation={navigationItems} 
               activeDropdown={activeDropdown} 
@@ -37,7 +37,7 @@ const Header = () => {
             <div className="flex items-center md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
-                className="text-[#13161F]"
+                className="text-gray-700" 
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}

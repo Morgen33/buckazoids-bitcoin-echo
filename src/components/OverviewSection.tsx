@@ -1,71 +1,78 @@
+
 import React from "react";
 import ExchangeListings from "./ExchangeListings";
-import NetworkMountains from "./NetworkMountains";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const OverviewSection = () => {
   return (
-    <section className="bg-white py-[130px] px-8 text-gray-800">
-      <div className="max-w-[1230px] mx-auto">
-        <div className="bg-[#0b0e11] -mx-8 overflow-hidden">
-          <NetworkMountains />
-          <div className="py-[130px] px-8 text-white">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-                Listed On Major Exchanges
-              </h2>
-              <p className="text-[#ccc] max-w-2xl mx-auto text-lg">
-                Buckazoids is available on top cryptocurrency exchanges worldwide, making it easy for anyone to buy, sell, and trade.
-              </p>
-            </div>
-            <ExchangeListings />
-          </div>
-        </div>
-
-        <div className="mt-32">
-          <h2 className="text-center text-2xl font-normal text-[#FF7E00] mb-12">
-            Get started with Buckazoids
+    <section className="relative bg-buckazoid-dark overflow-hidden mt-16">
+      {/* Background image section */}
+      <div className="absolute inset-x-0 top-0 h-[300px] w-full">
+        <img
+          src="/lovable-uploads/buckazoid-token.png"
+          alt="Network Background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-buckazoid-dark/80" />
+      </div>
+      
+      {/* Content section */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32">
+        <div className="text-center mb-16">
+          <Badge className="bg-[#f7931a]/20 text-[#f7931a] mb-4">FEATURED ON</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Listed On Major Exchanges
           </h2>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="md:max-w-[65%]">
-              <p className="text-xl text-[#4D5060] leading-[30px] mb-10">
-                Buckazoids uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of Buckazoids is carried out collectively by the network.
-                <strong> Buckazoids is open-source; its design is public, nobody owns or controls Buckazoids and <a href="#" className="text-[#3490E6] underline">everyone can take part</a></strong>.
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Buckazoids is available on top cryptocurrency exchanges worldwide, making it easy for anyone to buy, sell, and trade.
+          </p>
+        </div>
+        
+        <ExchangeListings />
+        
+        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="bg-white/10 border-none text-white">
+            <CardHeader>
+              <CardTitle className="text-[#f7931a]">For Individuals</CardTitle>
+              <CardDescription className="text-gray-300">
+                Fast, secure payments anywhere in the world
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Send and receive Buckazoids instantly with minimal fees. Control your own money without central authority interference.
               </p>
-              
-              <ul className="list-none p-0 m-0">
-                <li className="flex items-center mb-4">
-                  <img src="https://bitcoin.org/img/icons/main_ico_instant.svg?1743181677" alt="Instant" className="w-[30px] h-[30px] mr-6" />
-                  <span className="font-semibold text-[17px] text-[#13161F]">Fast peer-to-peer transactions</span>
-                </li>
-                <li className="flex items-center mb-4">
-                  <img src="https://bitcoin.org/img/icons/main_ico_worldwide.svg?1743181677" alt="Worldwide" className="w-[30px] h-[30px] mr-6" />
-                  <span className="font-semibold text-[17px] text-[#13161F]">Worldwide payments</span>
-                </li>
-                <li className="flex items-center mb-4">
-                  <img src="https://bitcoin.org/img/icons/main_ico_lowfee.svg?1743181677" alt="Low Fee" className="w-[30px] h-[30px] mr-6" />
-                  <span className="font-semibold text-[17px] text-[#13161F]">Low processing fees</span>
-                </li>
-              </ul>
-            </div>
-            
-            <img 
-              src="https://bitcoin.org/img/home/bitcoin-img.svg?1743181677" 
-              alt="Buckazoids" 
-              className="max-w-full md:max-w-[30%] h-auto"
-            />
-          </div>
+            </CardContent>
+          </Card>
           
-          <div className="text-center mt-16">
-            <a 
-              href="#" 
-              className="inline-block bg-[#13161F] text-white px-6 py-4 font-semibold text-base rounded w-[290px] h-[55px]"
-            >
-              Get started with Buckazoids
-            </a>
-          </div>
+          <Card className="bg-white/10 border-none text-white">
+            <CardHeader>
+              <CardTitle className="text-[#f7931a]">For Businesses</CardTitle>
+              <CardDescription className="text-gray-300">
+                Accept payments with zero chargebacks
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Implement Buckazoids to reduce transaction costs and eliminate fraud. Reach customers globally without currency barriers.
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white/10 border-none text-white">
+            <CardHeader>
+              <CardTitle className="text-[#f7931a]">For Developers</CardTitle>
+              <CardDescription className="text-gray-300">
+                Robust API and developer tools
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Build the next generation of financial applications with our comprehensive toolkit and documentation.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
