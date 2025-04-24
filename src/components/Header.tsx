@@ -18,9 +18,9 @@ const Header = () => {
   return (
     <header className="w-full">
       {location.pathname === "/" && (
-        <div className="bg-[#f7931a] text-white py-6 text-center text-sm font-medium">
+        <div className="bg-[#f7931a] text-white py-6 text-center text-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            Buckazoids.world needs your support!
+            <span className="font-extrabold">Buckazoids.world needs your support!</span>
           </div>
         </div>
       )}

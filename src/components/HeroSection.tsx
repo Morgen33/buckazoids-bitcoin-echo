@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { PlayCircle } from "lucide-react";
 
@@ -30,7 +29,7 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <button className="inline-flex items-center gap-2 text-[#f7931a] hover:text-[#f7931a]/90 font-medium">
+        <button className="inline-flex items-center gap-2 text-[#f7931a] hover:text-[#f7931a]/90 font-medium mt-8">
           <PlayCircle size={24} />
           What is Buckazoids?
         </button>
