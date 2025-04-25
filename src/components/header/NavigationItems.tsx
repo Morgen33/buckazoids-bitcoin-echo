@@ -1,4 +1,3 @@
-
 export interface NavigationItem {
   name: string;
   href?: string;
@@ -23,6 +22,7 @@ export const navigationItems: NavigationItem[] = [
     submenu: [
       { name: "Documentation", href: "/docs" },
       { name: "Vocabulary", href: "/vocabulary" },
+      { name: "News", href: "/news" },
     ],
   },
   {
