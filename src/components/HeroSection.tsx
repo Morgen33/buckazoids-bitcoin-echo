@@ -1,11 +1,11 @@
+
 import { Button } from "@/components/ui/button";
-import { PlayCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <div className="bg-white py-20 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-medium text-gray-800 mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
           Buckazoids is an innovative payment network and a new kind of money.
         </h1>
         
@@ -28,11 +28,6 @@ const HeroSection = () => {
             Buy Buckazoids
           </Button>
         </div>
-
-        <button className="inline-flex items-center gap-2 text-[#f7931a] hover:text-[#f7931a]/90 font-medium mt-8">
-          <PlayCircle size={24} />
-          What is Buckazoids?
-        </button>
       </div>
     </div>
   );

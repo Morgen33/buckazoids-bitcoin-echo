@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -28,7 +27,8 @@ const Footer = () => {
     return () => subscription.unsubscribe();
   }, []);
 
-  return <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
+  return (
+    <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
@@ -52,6 +52,39 @@ const Footer = () => {
                   <ExternalLink size={14} className="ml-1" />
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
+                  <span>Pump.fun</span>
+                  <ExternalLink size={14} className="ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://reddit.com/r/buckazoids" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
+                  <span>Reddit</span>
+                  <ExternalLink size={14} className="ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://medium.com/@viam_/the-mystery-surrounding-bitcoins-creator-may-soon-be-solved-c7e110ed31d4" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
+                  <span>Medium</span>
+                  <ExternalLink size={14} className="ml-1" />
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -64,8 +97,36 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://x.com/BuckazoidsSOL" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center">
+                <a 
+                  href="https://x.com/BuckazoidsSOL" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
                   <span>X</span>
+                  <ExternalLink size={14} className="ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.youtube.com/@DocumentingBuckazoids" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
+                  <span>YouTube</span>
+                  <ExternalLink size={14} className="ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.tiktok.com/@buckazoids1991?_t=ZT-8v8v4WBLwmU&_r=1" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                >
+                  <span>TikTok</span>
+                  <ExternalLink size={14} className="ml-1" />
                 </a>
               </li>
             </ul>
@@ -84,13 +145,13 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              {isAuthenticated &&
-            // Only show admin link if user is logged in
-            <li>
+              {isAuthenticated && (
+                <li>
                   <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
                     Admin
                   </Link>
-                </li>}
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -117,6 +178,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
