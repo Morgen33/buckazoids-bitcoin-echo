@@ -2,8 +2,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
 import OverviewSection from "@/components/OverviewSection";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
@@ -11,8 +11,8 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <AboutSection />
         <OverviewSection />
+        <AboutSection />
       </main>
       <Footer />
     </div>
