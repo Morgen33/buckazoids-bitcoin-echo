@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
 
@@ -31,11 +30,21 @@ const Footer = () => {
     <footer className="bg-white text-gray-700 pt-16 pb-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1">
+          <div className="col-span-2">
             <div className="flex items-center mb-4">
               <img src="/lovable-uploads/3b9a9f9c-6eca-49a5-9221-91a3212aa3e5.png" alt="Buckazoids Logo" className="h-12 object-contain" style={{ maxWidth: 210 }} />
             </div>
-            <p className="text-sm text-gray-500">A Digital Currency from 1986... Rediscovered in 2025</p>
+            <div className="text-sm text-gray-600 space-y-4 max-w-2xl">
+              <p>
+                Buckazoids built on the Solana blockchain, uniquely bridges the worlds of classic gaming and cryptocurrency history. Originally featured as the fictional currency in Sierra's legendary "Space Quest" series, Buckazoids notably showcased a vertical "8" decades before Bitcoin's creation. Rediscovered through a viral Reddit post in March 2025, Buckazoids quickly captivated both gaming and crypto enthusiasts worldwide.
+              </p>
+              <p>
+                Today, Buckazoids boasts over 11,900 dedicated wallet holders and an organically grown, international community spanning China, Brazil, Greece, Southeast Asia, and Spanish-speaking regions. With no presale or venture capital backing, its growth remains authentic and community-driven.
+              </p>
+              <p>
+                As Buckazoids continues its rise, it represents not only a nostalgic nod to gaming history but also a genuine cultural artifact linking digital nostalgia to blockchain innovation.
+              </p>
+            </div>
           </div>
           
           <div>
@@ -46,10 +55,9 @@ const Footer = () => {
                   href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>White Paper</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  White Paper
                 </a>
               </li>
               <li>
@@ -57,10 +65,9 @@ const Footer = () => {
                   href="https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>Pump.fun</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  Pump.fun
                 </a>
               </li>
               <li>
@@ -68,10 +75,9 @@ const Footer = () => {
                   href="https://reddit.com/r/buckazoids" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>Reddit</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  Reddit
                 </a>
               </li>
               <li>
@@ -79,10 +85,9 @@ const Footer = () => {
                   href="https://medium.com/@viam_/the-mystery-surrounding-bitcoins-creator-may-soon-be-solved-c7e110ed31d4" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>Medium</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  Medium
                 </a>
               </li>
             </ul>
@@ -101,10 +106,9 @@ const Footer = () => {
                   href="https://x.com/BuckazoidsSOL" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>X</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  X
                 </a>
               </li>
               <li>
@@ -112,10 +116,9 @@ const Footer = () => {
                   href="https://www.youtube.com/@DocumentingBuckazoids" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>YouTube</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  YouTube
                 </a>
               </li>
               <li>
@@ -123,35 +126,11 @@ const Footer = () => {
                   href="https://www.tiktok.com/@buckazoids1991?_t=ZT-8v8v4WBLwmU&_r=1" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 hover:text-buckazoids-orange text-sm flex items-center"
+                  className="text-gray-600 hover:text-buckazoids-orange text-sm"
                 >
-                  <span>TikTok</span>
-                  <ExternalLink size={14} className="ml-1" />
+                  TikTok
                 </a>
               </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-buckazoids-blue font-medium mb-4">About</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="#about" className="text-gray-600 hover:text-buckazoids-orange text-sm">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-600 hover:text-buckazoids-orange text-sm">
-                  Contact
-                </Link>
-              </li>
-              {isAuthenticated && (
-                <li>
-                  <Link to="/admin" className="text-gray-600 hover:text-buckazoids-orange text-sm">
-                    Admin
-                  </Link>
-                </li>
-              )}
             </ul>
           </div>
         </div>

@@ -34,7 +34,7 @@ const Header = () => {
               toggleDropdown={toggleDropdown} 
             />
 
-            <div className="flex items-center md:hidden">
+            <div className="flex items-center md:hidden ml-auto">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
                 className="text-gray-700" 
