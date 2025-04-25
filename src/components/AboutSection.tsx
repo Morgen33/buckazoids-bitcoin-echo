@@ -10,14 +10,15 @@ const AboutSection = () => {
     navigate('/about');
   };
 
-  return <section className="bg-[#FFF5E6] py-24" id="intro">
+  return (
+    <section className="bg-[#FFF5E6] py-24" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The Rediscovery of Buckazoids
+            About Buckazoids
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The world needs to know that Buckazoids was the first digital currency that showcased the Bitcoin logo before the creation of Bitcoin.
+            Buckazoids built on the Solana blockchain, uniquely bridges the worlds of classic gaming and cryptocurrency history. Originally featured as the fictional currency in Sierra's legendary "Space Quest" series, Buckazoids notably showcased a vertical "8" decades before Bitcoin's creation. Rediscovered through a viral Reddit post in March 2025, Buckazoids quickly captivated both gaming and crypto enthusiasts worldwide.
           </p>
         </div>
 
@@ -26,16 +27,16 @@ const AboutSection = () => {
             <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6">
               <History className="text-buckazoid-orange w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">A Digital Currency From 1986</h3>
+            <h3 className="text-2xl font-bold mb-4">Community & Growth</h3>
             <p className="text-gray-600 mb-6">
-              Not everyone is aware that Buckazoids were featured in Space Quest, showcasing a digital currency years before Bitcoin was conceived. This rediscovery could lead to more clues on Who is Satoshi Nakamoto.
+              Today, Buckazoids boasts over 11,900 dedicated wallet holders and an organically grown, international community spanning China, Brazil, Greece, Southeast Asia, and Spanish-speaking regions. With no presale or venture capital backing, its growth remains authentic and community-driven.
             </p>
             <Button 
               variant="outline" 
               className="border-buckazoid-blue text-buckazoid-blue hover:bg-buckazoid-blue/10"
               onClick={handleLearnHistoryClick}
             >
-              Learn History <ExternalLink className="ml-2" size={16} />
+              Learn More <ExternalLink className="ml-2" size={16} />
             </Button>
           </div>
 
@@ -43,16 +44,22 @@ const AboutSection = () => {
             <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-6">
               <TrendingUp className="text-buckazoid-orange w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Easter Eggs & Connections</h3>
+            <h3 className="text-2xl font-bold text-buckazoid-blue mb-4">Cultural Significance</h3>
             <p className="text-gray-600 mb-6">
-              The similarities between Buckazoids and Bitcoin go beyond coincidence. Explore the connections, easter eggs, and potential clues that might reveal more about cryptocurrency's mysterious origins.
+              As Buckazoids continues its rise, it represents not only a nostalgic nod to gaming history but also a genuine cultural artifact linking digital nostalgia to blockchain innovation.
             </p>
-            <Button variant="outline" className="border-buckazoid-orange text-buckazoid-orange hover:bg-buckazoid-orange/10">
-              Discover Connections <ExternalLink className="ml-2" size={16} />
+            <Button 
+              variant="outline" 
+              className="border-buckazoid-orange text-buckazoid-orange hover:bg-buckazoid-orange/10"
+              onClick={handleLearnHistoryClick}
+            >
+              Discover More <ExternalLink className="ml-2" size={16} />
             </Button>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
