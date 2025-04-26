@@ -7,6 +7,10 @@ export interface NavigationItem {
 
 export const navigationItems: NavigationItem[] = [
   {
+    name: "Home",
+    href: "/",
+  },
+  {
     name: "Introduction",
     submenu: [
       { name: "About", href: "/about" },

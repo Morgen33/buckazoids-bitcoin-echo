@@ -1,9 +1,11 @@
+
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { History, Rocket, Star, Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 const About = () => {
   return (
@@ -11,9 +13,9 @@ const About = () => {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          {/* Hero Section with gradient background */}
-          <div className="text-center mb-16 p-12 rounded-2xl" style={{ background: `linear-gradient(135deg, #02314d 0%, #045c94 100%)` }}>
-            <h1 className="text-5xl font-bold text-white mb-6">
+          {/* Hero Section with themed background */}
+          <div className="text-center mb-16 p-12 rounded-2xl bg-gradient-to-r from-buckazoid-dark to-buckazoid-navy">
+            <h1 className="text-5xl font-bold text-buckazoid-yellow mb-6">
               The Greatest Discovery in Crypto History
             </h1>
             <p className="text-xl text-white/90">
@@ -24,7 +26,7 @@ const About = () => {
             </p>
             <div className="mt-8">
               <Button
-                className="bg-[#fff3e2] text-[#02314d] hover:bg-[#fff3e2]/90 px-8 py-6 text-lg font-semibold"
+                className="bg-buckazoid-yellow text-buckazoid-navy hover:bg-buckazoid-orange px-8 py-6 text-lg font-semibold"
                 onClick={() => window.open('https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku', '_blank')}
               >
                 Buy Buckazoids <ExternalLink className="ml-2" />
