@@ -9,7 +9,7 @@ const OverviewSection = () => {
       {/* Background image section */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="/lovable-uploads/1012c35a-56db-475f-8e55-9de28dbe455c.png"
+          src="/lovable-uploads/c1f2bb0a-af8e-4fce-9290-17c09220f4c3.png"
           alt="Network Background"
           className="w-full h-full object-cover"
         />
