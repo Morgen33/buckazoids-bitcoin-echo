@@ -1,7 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, Star, Youtube } from "lucide-react";
 
 const newsItems = [
+  {
+    id: 7,
+    title: "Understanding Buckazoids: A Deep Dive",
+    date: "2025-04-24",
+    summary: "Take a deep dive into the world of Buckazoids in this comprehensive video analysis.",
+    content: "Watch this detailed exploration of Buckazoids and its potential impact on the future of digital currency.",
+    link: "https://www.youtube.com/watch?v=df-4_z4-LEs",
+    isVideo: true,
+    image: null
+  },
   {
     id: 6,
     title: "The Road to Las Vegas",
@@ -66,7 +76,7 @@ export const NewsList = () => {
           key={item.id}
           className="w-full overflow-hidden hover:shadow-xl transition-all duration-300 bg-white"
         >
-          {item.image && (
+          {item.image ? (
             <div className="w-full h-48 relative flex bg-black">
               <div className="flex-grow bg-black"></div>
               <img 
@@ -75,6 +85,10 @@ export const NewsList = () => {
                 className="h-full max-w-[70%] object-contain"
               />
               <div className="flex-grow bg-black"></div>
+            </div>
+          ) : item.isVideo && (
+            <div className="w-full h-48 relative flex items-center justify-center bg-gray-900">
+              <Youtube className="w-12 h-12 text-red-600" />
             </div>
           )}
           <CardHeader className="space-y-2">
@@ -96,7 +110,7 @@ export const NewsList = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-buckazoids-orange hover:text-buckazoids-yellow transition-colors text-sm font-medium"
             >
-              Read Full Article <ExternalLink className="h-4 w-4" />
+              {item.isVideo ? "Watch Video" : "Read Full Article"} <ExternalLink className="h-4 w-4" />
             </a>
           </CardContent>
         </Card>
