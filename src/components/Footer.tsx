@@ -8,19 +8,13 @@ const Footer = () => {
   // Check authentication status when component mounts
   useEffect(() => {
     const checkAuth = async () => {
-      const {
-        data
-      } = await supabase.auth.getSession();
+      const { data } = await supabase.auth.getSession();
       setIsAuthenticated(!!data.session);
     };
     checkAuth();
 
     // Subscribe to auth changes
-    const {
-      data: {
-        subscription
-      }
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session);
     });
     return () => subscription.unsubscribe();
