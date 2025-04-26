@@ -7,12 +7,18 @@ import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white relative">
       <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <OverviewSection />
-        <AboutSection />
+      <main className="flex-grow relative">
+        <div className="relative z-10">
+          <HeroSection />
+        </div>
+        <div className="relative z-20">
+          <OverviewSection />
+        </div>
+        <div className="relative z-10">
+          <AboutSection />
+        </div>
       </main>
       <Footer />
     </div>
