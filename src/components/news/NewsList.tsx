@@ -3,6 +3,15 @@ import { ExternalLink, Star } from "lucide-react";
 
 const newsItems = [
   {
+    id: 6,
+    title: "The Road to Las Vegas",
+    date: "2025-04-25",
+    summary: "Another groundbreaking insight from @frequencycheck as we explore the journey towards Las Vegas.",
+    content: "Discover the latest developments and future plans as Buckazoids continues its journey towards Las Vegas.",
+    link: "https://x.com/frequencycheck/status/1915845379817673001",
+    image: "/lovable-uploads/7b525e14-60d7-451c-8c1c-06536d930655.png"
+  },
+  {
     id: 4,
     title: "Buckazoids Now Listed on MoonerHive Exchange",
     date: "2025-04-22",
