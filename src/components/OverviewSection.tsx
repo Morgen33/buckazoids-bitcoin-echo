@@ -1,20 +1,18 @@
 
 import React from "react";
 import ExchangeListings from "./ExchangeListings";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const OverviewSection = () => {
   return (
-    <section className="relative bg-buckazoid-dark overflow-hidden mt-16">
+    <section className="relative overflow-hidden">
       {/* Background image section */}
-      <div className="absolute inset-x-0 top-0 h-[300px] w-full">
+      <div className="absolute inset-0 w-full h-full">
         <img
-          src="/lovable-uploads/buckazoid-token.png"
+          src="/lovable-uploads/1012c35a-56db-475f-8e55-9de28dbe455c.png"
           alt="Network Background"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-buckazoid-dark/80" />
       </div>
       
       {/* Content section */}
@@ -30,50 +28,6 @@ const OverviewSection = () => {
         </div>
         
         <ExchangeListings />
-        
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-white/10 border-none text-white">
-            <CardHeader>
-              <CardTitle className="text-[#f7931a]">For Individuals</CardTitle>
-              <CardDescription className="text-gray-300">
-                Fast, secure payments anywhere in the world
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Send and receive Buckazoids instantly with minimal fees. Control your own money without central authority interference.
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white/10 border-none text-white">
-            <CardHeader>
-              <CardTitle className="text-[#f7931a]">For Businesses</CardTitle>
-              <CardDescription className="text-gray-300">
-                Accept payments with zero chargebacks
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Implement Buckazoids to reduce transaction costs and eliminate fraud. Reach customers globally without currency barriers.
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white/10 border-none text-white">
-            <CardHeader>
-              <CardTitle className="text-[#f7931a]">For Developers</CardTitle>
-              <CardDescription className="text-gray-300">
-                Robust API and developer tools
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Build the next generation of financial applications with our comprehensive toolkit and documentation.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
