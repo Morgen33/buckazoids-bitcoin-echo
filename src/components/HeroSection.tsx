@@ -11,7 +11,7 @@ const HeroSection = () => {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
-          Buckazoids is an innovative payment network and a new kind of money.
+          Buckazoids is the digital currency found in 1991 space quest 4 with the logo that resembles Bitcoins. Notable Developers for the game were named SATOSHI Eusaka and Rod NAKAMOTO.
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
