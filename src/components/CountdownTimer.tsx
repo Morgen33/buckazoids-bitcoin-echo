@@ -40,16 +40,24 @@ const CountdownTimer = ({ variant = 'large', className = '' }: CountdownTimerPro
   if (variant === 'small') {
     return (
       <div className={`flex items-center space-x-2 text-sm ${className}`}>
-        <div className="flex items-center space-x-1 bg-gradient-to-r from-buckazoids-orange/10 to-buckazoids-yellow/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-          <div className="font-mono font-medium text-buckazoids-orange">
-            {timeLeft.days.toString().padStart(2, '0')}
-            <span className="text-buckazoids-orange/70 mx-0.5">d</span>
+        <div className="flex items-center gap-2 bg-gradient-to-r from-buckazoids-orange to-buckazoids-yellow p-[1px] rounded-lg">
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-lg">
+            <div className="flex items-center space-x-1">
+              <span className="font-mono font-bold text-buckazoids-orange">
+                {timeLeft.days.toString().padStart(2, '0')}
+              </span>
+              <span className="text-xs text-buckazoids-orange/70">d</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <span className="font-mono font-bold text-buckazoids-orange">
+                {timeLeft.hours.toString().padStart(2, '0')}
+              </span>
+              <span className="text-xs text-buckazoids-orange/70">h</span>
+            </div>
+            <span className="text-sm font-medium text-buckazoids-orange">
+              until Bitcoin 2025
+            </span>
           </div>
-          <div className="font-mono font-medium text-buckazoids-orange">
-            {timeLeft.hours.toString().padStart(2, '0')}
-            <span className="text-buckazoids-orange/70 mx-0.5">h</span>
-          </div>
-          <span className="text-buckazoids-orange/90 font-medium ml-1">until Bitcoin 2025</span>
         </div>
       </div>
     );
@@ -57,27 +65,27 @@ const CountdownTimer = ({ variant = 'large', className = '' }: CountdownTimerPro
 
   return (
     <div className={`text-center ${className}`}>
-      <div className="inline-flex justify-center space-x-3 p-4 bg-black/10 backdrop-blur-sm rounded-lg">
-        <div className="flex items-center">
-          <div className="text-3xl font-mono font-bold text-white bg-black/70 px-3 py-1.5 rounded">
-            {timeLeft.days.toString().padStart(2, '0')}
-          </div>
-          <div className="text-2xl font-bold text-white mx-1">:</div>
-          <div className="text-3xl font-mono font-bold text-white bg-black/70 px-3 py-1.5 rounded">
-            {timeLeft.hours.toString().padStart(2, '0')}
-          </div>
-          <div className="text-2xl font-bold text-white mx-1">:</div>
-          <div className="text-3xl font-mono font-bold text-white bg-black/70 px-3 py-1.5 rounded">
-            {timeLeft.minutes.toString().padStart(2, '0')}
-          </div>
-          <div className="text-2xl font-bold text-white mx-1">:</div>
-          <div className="text-3xl font-mono font-bold text-white bg-black/70 px-3 py-1.5 rounded">
-            {timeLeft.seconds.toString().padStart(2, '0')}
-          </div>
+      <div className="inline-flex justify-center items-center space-x-4 p-6 bg-gradient-to-r from-buckazoids-orange to-buckazoids-yellow rounded-xl">
+        <div className="flex items-center gap-4">
+          <TimeBox value={timeLeft.days} label="DAYS" />
+          <TimeBox value={timeLeft.hours} label="HOURS" />
+          <TimeBox value={timeLeft.minutes} label="MIN" />
+          <TimeBox value={timeLeft.seconds} label="SEC" />
         </div>
       </div>
     </div>
   );
 };
+
+const TimeBox = ({ value, label }: { value: number; label: string }) => (
+  <div className="flex flex-col items-center">
+    <div className="bg-white px-4 py-2 rounded-lg shadow-lg">
+      <span className="font-mono font-bold text-2xl text-buckazoids-orange">
+        {value.toString().padStart(2, '0')}
+      </span>
+    </div>
+    <span className="mt-2 text-xs font-medium text-white">{label}</span>
+  </div>
+);
 
 export default CountdownTimer;
