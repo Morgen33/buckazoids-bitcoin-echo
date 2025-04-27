@@ -7,8 +7,8 @@ const OverviewSection = () => {
       {/* Background image section */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src="/lovable-uploads/d5182a22-a86c-4b6b-a66e-e4003d9da4ad.png" 
-          alt="Hexagon Background" 
+          src="/lovable-uploads/d24c11b1-5f1c-41de-b3f5-1cc12cfd1e89.png" 
+          alt="Hexagon Pattern Background" 
           className="w-full h-full object-cover"
         />
       </div>
@@ -21,3 +21,4 @@ const OverviewSection = () => {
 };
 
 export default OverviewSection;
+
