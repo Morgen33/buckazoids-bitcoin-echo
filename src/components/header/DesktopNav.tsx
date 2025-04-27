@@ -11,7 +11,7 @@ interface DesktopNavProps {
 
 export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex space-x-4 items-center justify-center w-full">
+    <nav className="hidden md:flex space-x-4 items-center">
       {navigation.map((item) => (
         <div key={item.name} className="relative group">
           {item.href ? (

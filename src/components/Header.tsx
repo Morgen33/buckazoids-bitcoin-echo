@@ -34,10 +34,13 @@ const Header = () => {
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo or other left-side content can go here */}
-            <div className="flex-shrink-0">
-              {/* Add logo or site name here if needed */}
+          <div className="flex justify-end items-center h-16 gap-4">
+            <div className="mr-auto">
+              <img 
+                src="/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png" 
+                alt="Buckazoids Logo" 
+                className="h-12 w-auto"
+              />
             </div>
 
             <DesktopNav 
