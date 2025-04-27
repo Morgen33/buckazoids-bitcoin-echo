@@ -9,7 +9,7 @@ const OverviewSection = () => {
       {/* Background image section with higher z-index */}
       <div className="absolute inset-0 w-full h-screen z-0">
         <img 
-          src="/lovable-uploads/2e6d53ef-8c82-4455-a981-e5b779afd6a8.png" 
+          src="/lovable-uploads/d5182a22-a86c-4b6b-a66e-e4003d9da4ad.png" 
           alt="Hexagon Background" 
           className="w-full h-screen object-cover"
         />
