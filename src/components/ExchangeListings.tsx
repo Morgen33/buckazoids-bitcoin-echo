@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Exchange = {
   name: string;
@@ -52,8 +53,10 @@ const exchanges: Exchange[] = [
 ];
 
 const ExchangeListings = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 md:grid-cols-4 gap-8"}`}>
       {exchanges.map((exchange) => (
         <a
           key={exchange.name}
@@ -62,14 +65,14 @@ const ExchangeListings = () => {
           rel="noopener noreferrer"
           className="group"
         >
-          <Card className="p-6 h-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white/10 border-none">
+          <Card className="p-4 sm:p-6 h-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white/10 border-none">
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
               className={`w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
                 exchange.name === 'Bitget' || exchange.name === 'LBank' 
-                  ? 'max-h-48' 
-                  : 'max-h-24'
+                  ? 'max-h-24 sm:max-h-48' 
+                  : 'max-h-16 sm:max-h-24'
               }`}
             />
           </Card>
