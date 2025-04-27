@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Spinning Coin GIF */}
         <div className="mb-12 py-0 my-[50px]">
-          <img src="/lovable-uploads/buckspin.gif" alt="Spinning Buckazoids Coin" className="mx-auto w-32 h-32 sm:w-40 sm:h-40 animate-float" />
+          <img src="/lovable-uploads/buckspin.gif" alt="Spinning Buckazoids Coin" className="mx-auto w-32 h-32 sm:w-40 sm:h-40" />
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
