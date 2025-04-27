@@ -1,6 +1,9 @@
+
 import { Button } from "@/components/ui/button";
+
 const HeroSection = () => {
-  return <div className="bg-white relative z-10 py-[16px]">
+  return (
+    <div className="bg-white relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Spinning Coin GIF */}
         <div className="mb-12 py-0 my-[50px]">
@@ -11,7 +14,7 @@ const HeroSection = () => {
           Buckazoids is an innovative payment network and a new kind of money.
         </h1>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8">
             Get started with Buckazoids
           </Button>
@@ -23,6 +26,8 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default HeroSection;
