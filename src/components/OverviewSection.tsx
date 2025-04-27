@@ -3,7 +3,7 @@ import React from "react";
 
 const OverviewSection = () => {
   return (
-    <div className="relative overflow-hidden h-[400px]">
+    <div className="relative overflow-hidden h-[600px] pt-32">
       {/* Background image section */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
@@ -21,4 +21,3 @@ const OverviewSection = () => {
 };
 
 export default OverviewSection;
-
