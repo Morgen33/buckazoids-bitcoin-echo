@@ -40,7 +40,17 @@ const CountdownTimer = ({ variant = 'large', className = '' }: CountdownTimerPro
   if (variant === 'small') {
     return (
       <div className={`flex items-center space-x-2 text-sm ${className}`}>
-        <span>{timeLeft.days}d {timeLeft.hours}h until Bitcoin 2025</span>
+        <div className="flex items-center space-x-1 bg-gradient-to-r from-buckazoids-orange/10 to-buckazoids-yellow/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+          <div className="font-mono font-medium text-buckazoids-orange">
+            {timeLeft.days.toString().padStart(2, '0')}
+            <span className="text-buckazoids-orange/70 mx-0.5">d</span>
+          </div>
+          <div className="font-mono font-medium text-buckazoids-orange">
+            {timeLeft.hours.toString().padStart(2, '0')}
+            <span className="text-buckazoids-orange/70 mx-0.5">h</span>
+          </div>
+          <span className="text-buckazoids-orange/90 font-medium ml-1">until Bitcoin 2025</span>
+        </div>
       </div>
     );
   }
