@@ -3,7 +3,6 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { type NavigationItem } from "./NavigationItems";
-import CountdownTimer from "@/components/CountdownTimer";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -25,9 +24,6 @@ export const MobileNav = ({
   return (
     <div className="md:hidden bg-white border-t border-gray-200">
       <div className="px-2 pt-2 pb-3 space-y-1">
-        <div className="px-3 py-2 border-b border-gray-200 mb-2">
-          <CountdownTimer variant="small" />
-        </div>
         {navigation.map((item) => (
           <div key={item.name}>
             {item.href ? (

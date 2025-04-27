@@ -3,7 +3,6 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { type NavigationItem } from "./NavigationItems";
-import CountdownTimer from "@/components/CountdownTimer";
 
 interface DesktopNavProps {
   navigation: NavigationItem[];
@@ -14,9 +13,6 @@ interface DesktopNavProps {
 export const DesktopNav = ({ navigation, activeDropdown, toggleDropdown }: DesktopNavProps) => {
   return (
     <nav className="hidden md:flex space-x-4 items-center justify-end w-full">
-      <div className="mr-4">
-        <CountdownTimer variant="small" />
-      </div>
       {navigation.map((item) => (
         <div key={item.name} className="relative group">
           {item.href ? (
