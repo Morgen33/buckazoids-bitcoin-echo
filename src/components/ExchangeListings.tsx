@@ -53,7 +53,7 @@ const exchanges: Exchange[] = [
 
 const ExchangeListings = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
       {exchanges.map((exchange) => (
         <a
           key={exchange.name}
@@ -68,8 +68,8 @@ const ExchangeListings = () => {
               alt={`${exchange.name} logo`}
               className={`w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
                 exchange.name === 'Bitget' || exchange.name === 'LBank' 
-                  ? 'max-h-12' 
-                  : 'max-h-10'
+                  ? 'max-h-48' 
+                  : 'max-h-24'
               }`}
             />
           </Card>
