@@ -1,21 +1,22 @@
+
 import React from "react";
 import ExchangeListings from "./ExchangeListings";
 import { Badge } from "./ui/badge";
 
 const OverviewSection = () => {
   return (
-    <section className="relative overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Background image section with higher z-index */}
-      <div className="absolute inset-0 w-full h-screen z-0"> {/* Change h-full to h-screen */}
+      <div className="absolute inset-0 w-full h-screen z-0">
         <img 
           src="/lovable-uploads/2e6d53ef-8c82-4455-a981-e5b779afd6a8.png" 
           alt="Hexagon Background" 
-          className="w-full h-screen object-cover" {/* Change h-full to h-screen */}
+          className="w-full h-screen object-cover"
         />
       </div>
       
       {/* Content section with highest z-index */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-32 lg:px-[31px] pt-20"> {/* Add pt-20 for top padding */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-32 lg:px-[31px] pt-48">
         <div className="text-center mb-16">
           <Badge className="bg-[#f7931a]/20 text-[#f7931a] mb-4">FEATURED ON</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -28,7 +29,7 @@ const OverviewSection = () => {
         
         <ExchangeListings />
       </div>
-    </section>
+    </div>
   );
 };
 
