@@ -1,6 +1,9 @@
+
 import { Button } from "@/components/ui/button";
+
 const HeroSection = () => {
-  return <div className="bg-white relative z-10 py-[16px] mb-24">
+  return (
+    <div className="bg-white relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Spinning Coin GIF */}
         <div className="mb-12 py-0 my-[50px]">
@@ -12,17 +15,30 @@ const HeroSection = () => {
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8">
+          <Button 
+            className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
+            onClick={() => window.location.href = '/about'}
+          >
             Get started with Buckazoids
           </Button>
-          <Button variant="outline" className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10 text-xs">
+          <Button 
+            variant="outline" 
+            className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10"
+            onClick={() => window.open('https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku', '_blank')}
+          >
             BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump
           </Button>
-          <Button variant="outline" className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10">
+          <Button 
+            variant="outline" 
+            className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10"
+            onClick={() => window.location.href = '/buy'}
+          >
             Buy Buckazoids
           </Button>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default HeroSection;
