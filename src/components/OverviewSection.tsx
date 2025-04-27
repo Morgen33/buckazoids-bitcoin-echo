@@ -9,7 +9,7 @@ const OverviewSection = () => {
       {/* Background image section with higher z-index */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src="/lovable-uploads/d5182a22-a86c-4b6b-a66e-e4003d9da4ad.png" 
+          src="/lovable-uploads/777f297d-8076-480a-bd74-9587880b30ae.png" 
           alt="Hexagon Background" 
           className="w-full h-full object-cover"
         />
@@ -17,7 +17,7 @@ const OverviewSection = () => {
       
       {/* Content section with highest z-index */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-24 lg:px-[31px] min-h-screen flex flex-col justify-center">
-        <div className="text-center mb-16 mt-20">
+        <div className="text-center mb-16 mt-48 md:mt-64">
           <Badge className="bg-[#f7931a]/20 text-[#f7931a] mb-4">FEATURED ON</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Listed On Major Exchanges
