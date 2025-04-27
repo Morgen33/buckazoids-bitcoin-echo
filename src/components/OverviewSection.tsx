@@ -11,8 +11,12 @@ const OverviewSection = () => {
           className="w-full h-screen object-cover"
         />
       </div>
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 pb-32 lg:px-8">
+        {/* Content will be added here later */}
+      </div>
     </div>
   );
 };
 
 export default OverviewSection;
+
