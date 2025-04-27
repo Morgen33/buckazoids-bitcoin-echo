@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
@@ -32,15 +31,6 @@ const Footer = () => {
               bridging nostalgia with modern blockchain technology. Join our growing 
               community and be part of the future of digital currency.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://x.com/BuckazoidsSOL" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-buckazoids-orange transition-colors"
-              >
-                <X className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           <div className="space-y-4">
