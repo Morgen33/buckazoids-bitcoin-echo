@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { TextRotate } from "@/components/ui/text-rotate";
 
 const HeroSection = () => {
   return (
@@ -10,9 +12,26 @@ const HeroSection = () => {
           <img src="/lovable-uploads/coin.gif" alt="Spinning Buckazoids Coin" className="mx-auto w-32 h-32 sm:w-40 sm:h-40" />
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
-          Buckazoids is the digital currency found in 1991 space quest 4 with the logo that resembles Bitcoins. Notable Developers for the game were named SATOSHI Eusaka and Rod NAKAMOTO.
-        </h1>
+        <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 flex items-center justify-center gap-3">
+          <motion.span>Buckazoids is</motion.span>
+          <TextRotate
+            texts={[
+              "coded",
+              "the future",
+              "the lore",
+              "bitcoin"
+            ]}
+            mainClassName="text-white px-4 bg-[#f7931a] overflow-hidden py-2 justify-center rounded-lg"
+            staggerFrom="last"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={2000}
+          />
+        </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button 
