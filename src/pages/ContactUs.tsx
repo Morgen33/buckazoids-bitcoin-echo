@@ -79,7 +79,7 @@ const ContactUs = () => {
             <p className="text-gray-600">Have questions? We'd love to hear from you.</p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md">
+          <div className="bg-[#fff3e2] p-8 rounded-lg shadow-md">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
