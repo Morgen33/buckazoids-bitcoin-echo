@@ -21,7 +21,7 @@ const HeroSection = () => {
               "the lore",
               "bitcoin"
             ]}
-            mainClassName="text-white px-4 bg-[#f7931a] overflow-hidden py-2 justify-center rounded-lg"
+            mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
             staggerFrom="last"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}

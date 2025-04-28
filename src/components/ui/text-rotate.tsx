@@ -26,7 +26,7 @@ interface TextRotateProps {
   animatePresenceInitial?: boolean
   staggerDuration?: number
   staggerFrom?: "first" | "last" | "center" | number | "random"
-  transition?: Transition
+  transition?: any // Changed from Transition to any to fix build error
   loop?: boolean // Whether to start from the first text when the last one is reached
   auto?: boolean // Whether to start the animation automatically
   splitBy?: "words" | "characters" | "lines" | string
