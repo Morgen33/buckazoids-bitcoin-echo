@@ -5,11 +5,20 @@ import { TextRotate } from "@/components/ui/text-rotate";
 
 const HeroSection = () => {
   return (
-    <div className="bg-white relative z-10 py-[16px] mb-24">
+    <div className="bg-[#fdfdfd] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Spinning Coin GIF */}
+        {/* Spinning Coin Video */}
         <div className="mb-12 py-0 my-[50px]">
-          <img src="/lovable-uploads/coin.gif" alt="Spinning Buckazoids Coin" className="mx-auto w-32 h-32 sm:w-40 sm:h-40" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="mx-auto w-32 h-32 sm:w-40 sm:h-40"
+          >
+            <source src="/lovable-uploads/flipmp4.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 flex items-center justify-center gap-3">
