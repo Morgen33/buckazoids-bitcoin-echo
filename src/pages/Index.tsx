@@ -65,7 +65,7 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    const intervalId = setInterval(() => forceRefresh(), 30000);
+    const intervalId = setInterval(forceRefresh, 30000);
     
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
