@@ -1,11 +1,9 @@
-
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import OverviewSection from "@/components/OverviewSection";
 import AboutSection from "@/components/AboutSection";
-import VideoSection from "@/components/VideoSection";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { RefreshCw } from "lucide-react";
@@ -78,7 +76,6 @@ const Index = () => {
     }
     
     return () => {
-      // Use the same function reference to remove the event listener
       window.removeEventListener('load', handleLoad);
       clearInterval(intervalId);
     };
@@ -107,9 +104,6 @@ const Index = () => {
         </div>
         <div className="relative z-10">
           <AboutSection />
-        </div>
-        <div className="relative z-20">
-          <VideoSection />
         </div>
       </main>
       <Footer />
