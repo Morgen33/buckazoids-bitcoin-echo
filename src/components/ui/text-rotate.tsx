@@ -10,12 +10,10 @@ import {
 } from "react"
 import {
   AnimatePresence,
-  AnimatePresenceProps,
   motion,
-  MotionProps,
-  Transition,
-} from "motion/react"
-
+  type AnimatePresenceProps,
+  type MotionProps,
+} from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface TextRotateProps {
@@ -76,13 +74,8 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
   ) => {
     const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
-    // handy function to split text into characters with support for unicode and emojis
     const splitIntoCharacters = (text: string): string[] => {
-      if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
-        const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" })
-        return Array.from(segmenter.segment(text), ({ segment }) => segment)
-      }
-      // Fallback for browsers that don't support Intl.Segmenter
+      // Using a simpler but effective character splitting approach
       return Array.from(text)
     }
 

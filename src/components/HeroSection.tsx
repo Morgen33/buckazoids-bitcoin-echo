@@ -32,7 +32,7 @@ const HeroSection = () => {
             rotationInterval={2000}
           />
         </div>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button 
             className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
