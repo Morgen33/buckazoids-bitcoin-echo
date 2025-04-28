@@ -133,7 +133,7 @@ const ContactUs = () => {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-buckazoids-orange hover:bg-buckazoids-yellow"
+                  className="w-full bg-white hover:bg-gray-100 text-black"
                   disabled={isSubmitting}
                 >
                   <Mail className="mr-2 h-4 w-4" />
