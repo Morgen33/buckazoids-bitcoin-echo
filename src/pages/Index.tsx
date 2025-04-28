@@ -58,8 +58,11 @@ const Index = () => {
     // Try to refresh immediately after component mounts
     forceRefresh();
     
+    // Create a reference to the function we'll use as the event handler
+    const handleLoad = () => forceRefresh();
+    
     // Also try after everything has fully loaded
-    window.addEventListener('load', () => forceRefresh());
+    window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
     const intervalId = setInterval(() => forceRefresh(), 30000);
@@ -75,7 +78,8 @@ const Index = () => {
     }
     
     return () => {
-      window.removeEventListener('load', () => forceRefresh());
+      // Use the same function reference to remove the event listener
+      window.removeEventListener('load', handleLoad);
       clearInterval(intervalId);
     };
   }, []);
