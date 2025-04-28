@@ -23,7 +23,6 @@ export const navigationItems: NavigationItem[] = [
   {
     name: "Resources",
     submenu: [
-      { name: "Vocabulary", href: "/vocabulary" },
       { name: "News", href: "/news" },
     ],
   },
@@ -32,6 +31,7 @@ export const navigationItems: NavigationItem[] = [
     submenu: [
       { name: "Buy Buckazoids", href: "/buy" },
       { name: "Community", href: "/community" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
 ];
