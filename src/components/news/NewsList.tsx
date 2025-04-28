@@ -20,7 +20,7 @@ const newsItems = [
     content: "Watch this detailed exploration of Buckazoids and its potential impact on the future of digital currency.",
     link: "https://www.youtube.com/watch?v=df-4_z4-LEs",
     isVideo: true,
-    image: null
+    image: "/lovable-uploads/d9f0ae70-a734-4c3b-b98d-49dc6634e314.png"
   },
   {
     id: 6,
