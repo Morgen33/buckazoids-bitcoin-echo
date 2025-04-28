@@ -1,4 +1,3 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -14,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Mail, MessageSquare, Twitter, Github, Youtube, MessageCircle } from "lucide-react";
+import { Mail, Twitter, MessageSquare, Github, Youtube, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -97,40 +96,6 @@ const ContactUs = () => {
                 onClick={() => window.open('https://x.com/BuckazoidsSOL', '_blank')}
               >
                 Follow @Buckazoids
-              </Button>
-            </div>
-
-            {/* Documentation Card */}
-            <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
-              <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                <Twitter className="text-buckazoid-orange w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Documenting Buckazoids</h3>
-              <p className="text-gray-600 mb-6">
-                Explore the rich lore and history of Buckazoids through our dedicated documentation channel.
-              </p>
-              <Button 
-                className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
-                onClick={() => window.open('https://x.com/@59Buckazoids', '_blank')}
-              >
-                Follow @59Buckazoids
-              </Button>
-            </div>
-
-            {/* White Paper Card */}
-            <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
-              <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                <Github className="text-[#02314d] w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#02314d] mb-4">White Paper</h3>
-              <p className="text-gray-600 mb-6">
-                Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
-              </p>
-              <Button 
-                className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
-                onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
-              >
-                View White Paper
               </Button>
             </div>
           </div>
