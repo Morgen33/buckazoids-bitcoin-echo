@@ -15,8 +15,8 @@ const VideoSection = () => {
         </div>
         <div className="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
           <iframe 
-            className="w-full h-[600px] rounded-lg shadow-lg"  // Increased height from default to 600px
-            src="https://www.youtube.com/embed/FdvgYc4UFhQ?si=NC8Q4jSgmMN_kySJ" 
+            className="w-full h-[600px] rounded-lg shadow-lg"
+            src="https://www.youtube.com/embed/pyNpp_hzBig" 
             title="How to Buy Buckazoids"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen
@@ -29,3 +29,4 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
+
