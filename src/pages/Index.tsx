@@ -1,54 +1,81 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import OverviewSection from "@/components/OverviewSection";
 import AboutSection from "@/components/AboutSection";
 import VideoSection from "@/components/VideoSection";
+import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
+import { RefreshCw } from "lucide-react";
 
 const Index = () => {
-  // Enhanced cache refresh strategy
-  useEffect(() => {
+  const [lastRefresh, setLastRefresh] = useState<string>("");
+  
+  // Super aggressive cache refresh strategy
+  const forceRefresh = () => {
     // Clear browser cache for images by appending timestamp to URLs
-    const refreshImages = () => {
-      document.querySelectorAll('img').forEach(img => {
-        if (img.src && !img.src.includes('?v=')) {
-          img.src = `${img.src}?v=${Date.now()}`;
-        }
-      });
-      
-      // Force refresh styles
-      const styleSheets = document.styleSheets;
-      for (let i = 0; i < styleSheets.length; i++) {
-        try {
-          const sheet = styleSheets[i];
-          if (sheet.href && !sheet.href.includes('?v=')) {
-            // Create a new link element with updated URL
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = `${sheet.href}?v=${Date.now()}`;
-            document.head.appendChild(link);
-          }
-        } catch (e) {
-          console.error('Error processing stylesheet:', e);
-        }
+    document.querySelectorAll('img').forEach(img => {
+      if (img.src) {
+        const cleanSrc = img.src.split('?')[0]; // Remove any existing query params
+        img.src = `${cleanSrc}?v=${Date.now()}`;
       }
-      
-      console.log('Enhanced cache refresh attempted:', new Date().toISOString());
-    };
+    });
     
+    // Force refresh styles
+    const styleSheets = document.styleSheets;
+    for (let i = 0; i < styleSheets.length; i++) {
+      try {
+        const sheet = styleSheets[i];
+        if (sheet.href) {
+          // Create a new link element with updated URL
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          const cleanHref = sheet.href.split('?')[0]; // Remove any existing query params
+          link.href = `${cleanHref}?v=${Date.now()}`;
+          document.head.appendChild(link);
+        }
+      } catch (e) {
+        console.error('Error processing stylesheet:', e);
+      }
+    }
+    
+    // Set local storage flag to indicate this is a fresh load
+    localStorage.setItem('buckazoids_last_refresh', new Date().toISOString());
+    setLastRefresh(new Date().toISOString());
+    
+    // Show a toast notification
+    toast({
+      title: "Page refreshed",
+      description: "All cached content has been refreshed.",
+    });
+    
+    console.log('Super aggressive cache refresh attempted:', new Date().toISOString());
+  };
+  
+  useEffect(() => {
     // Try to refresh immediately after component mounts
-    refreshImages();
+    forceRefresh();
     
     // Also try after everything has fully loaded
-    window.addEventListener('load', refreshImages);
+    window.addEventListener('load', forceRefresh);
     
-    // And periodically check for updates (every 60 seconds)
-    const intervalId = setInterval(refreshImages, 60000);
+    // And periodically check for updates (every 30 seconds)
+    const intervalId = setInterval(forceRefresh, 30000);
+    
+    // Check if this is the first load after a deploy
+    const lastVersion = localStorage.getItem('buckazoids_version');
+    const currentVersion = "2025-04-28"; // Change this when you deploy
+    
+    if (lastVersion !== currentVersion) {
+      // New version detected, force hard refresh
+      localStorage.setItem('buckazoids_version', currentVersion);
+      window.location.reload(true);
+    }
     
     return () => {
-      window.removeEventListener('load', refreshImages);
+      window.removeEventListener('load', forceRefresh);
       clearInterval(intervalId);
     };
   }, []);
@@ -57,6 +84,17 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white relative">
       <Header />
       <main className="flex-grow relative">
+        <div className="fixed bottom-4 right-4 z-50">
+          <Button 
+            onClick={() => {
+              forceRefresh();
+              window.location.reload(true);
+            }}
+            className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
+          >
+            <RefreshCw className="h-4 w-4" /> Refresh Page
+          </Button>
+        </div>
         <div className="relative z-10">
           <HeroSection />
         </div>

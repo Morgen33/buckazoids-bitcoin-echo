@@ -8,10 +8,14 @@
     <meta name="description" content="Buckazoids is the meme of Bitcoin. The world needs to know that Buckazoids was the first digital currency that showcased the Bitcoin logo before the creation of Bitcoin." />
     <meta name="author" content="Buckazoids Team" />
     
-    <!-- Cache control meta tags -->
+    <!-- Aggressive cache control meta tags -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Clear-Site-Data" content="cache" />
+    
+    <!-- Add version timestamp to prevent caching -->
+    <meta name="version" content="<?php echo time(); ?>" />
 
     <meta property="og:title" content="Buckazoids - The Original Digital Currency" />
     <meta property="og:description" content="Buckazoids is the meme of Bitcoin. The world needs to know that Buckazoids was the first digital currency that showcased the Bitcoin logo before the creation of Bitcoin." />
