@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
@@ -66,6 +67,9 @@ const HeroSection = () => {
         </div>
 
         <CountdownTimer />
+        
+        {/* Version indicator - hidden but useful for verification */}
+        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.4-exchange-update</div>
       </div>
     </div>
   );
