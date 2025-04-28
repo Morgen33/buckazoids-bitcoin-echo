@@ -1,3 +1,4 @@
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -13,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Mail, MessageSquare } from "lucide-react";
+import { Mail, MessageSquare, Twitter, Github, Youtube, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -69,19 +70,73 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-[#fff9f2]">
+    <div className="min-h-screen flex flex-col bg-[#fff9f2]">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4 text-buckazoid-navy bg-clip-text">Get in Touch</h1>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Have questions about Buckazoids? We're here to help! Fill out the form below and we'll get back to you as soon as possible.
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-buckazoid-navy">Join Our Community</h1>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Connect with fellow Buckazoid enthusiasts, developers, and crypto historians to explore 
+              this rediscovered piece of digital currency history.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-8 items-start">
-            <div className="md:col-span-3 bg-[#fff3e2] p-8 rounded-2xl shadow-lg border border-buckazoids-orange/10">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Twitter Card */}
+            <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
+              <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <Twitter className="text-[#02314d] w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#02314d] mb-4">Twitter</h3>
+              <p className="text-gray-600 mb-6">
+                Follow us for the latest updates, community events, and discussions about Buckazoids and crypto history.
+              </p>
+              <Button 
+                className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
+                onClick={() => window.open('https://x.com/BuckazoidsSOL', '_blank')}
+              >
+                Follow @Buckazoids
+              </Button>
+            </div>
+
+            {/* Documentation Card */}
+            <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
+              <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <Twitter className="text-buckazoid-orange w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Documenting Buckazoids</h3>
+              <p className="text-gray-600 mb-6">
+                Explore the rich lore and history of Buckazoids through our dedicated documentation channel.
+              </p>
+              <Button 
+                className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                onClick={() => window.open('https://x.com/@59Buckazoids', '_blank')}
+              >
+                Follow @59Buckazoids
+              </Button>
+            </div>
+
+            {/* White Paper Card */}
+            <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
+              <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                <Github className="text-[#02314d] w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#02314d] mb-4">White Paper</h3>
+              <p className="text-gray-600 mb-6">
+                Read our comprehensive white paper to understand the history and vision behind the Buckazoids project.
+              </p>
+              <Button 
+                className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
+                onClick={() => window.open('https://github.com/Buckazoidscto/Buckazoids-white-paper-', '_blank')}
+              >
+                View White Paper
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="md:col-span-1 bg-[#fff3e2] p-8 rounded-2xl shadow-lg border border-buckazoids-orange/10">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
@@ -154,8 +209,8 @@ const ContactUs = () => {
               </Form>
             </div>
 
-            <div className="md:col-span-2 bg-[#f7931a] p-8 rounded-2xl text-white space-y-6">
-              <div className="space-y-2">
+            <div className="md:col-span-1 bg-[#f7931a] p-8 rounded-2xl text-white space-y-6">
+              <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">Connect With Us</h2>
                 <p className="text-white/90">
                   Join our growing community and stay updated with the latest news and developments.
@@ -174,25 +229,20 @@ const ContactUs = () => {
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <MessageSquare className="w-5 h-5 mt-1 text-buckazoids-orange" />
-                  <div>
-                    <h3 className="font-medium">Community Support</h3>
-                    <p className="text-gray-300 text-sm">
-                      Our community is here to help you 24/7. Join our Discord for real-time support.
-                    </p>
-                  </div>
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="space-y-2">
+                  <MessageSquare className="w-5 h-5 text-white" />
+                  <h3 className="font-medium">Community Support</h3>
+                  <p className="text-gray-100 text-sm">
+                    Join our Discord for real-time support.
+                  </p>
                 </div>
-                
-                <div className="flex items-start space-x-3">
-                  <Mail className="w-5 h-5 mt-1 text-buckazoids-orange" />
-                  <div>
-                    <h3 className="font-medium">Email Support</h3>
-                    <p className="text-gray-300 text-sm">
-                      For business inquiries and partnerships, we typically respond within 24 hours.
-                    </p>
-                  </div>
+                <div className="space-y-2">
+                  <Mail className="w-5 h-5 text-white" />
+                  <h3 className="font-medium">Email Support</h3>
+                  <p className="text-gray-100 text-sm">
+                    We respond within 24 hours.
+                  </p>
                 </div>
               </div>
             </div>
