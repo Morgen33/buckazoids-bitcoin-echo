@@ -75,7 +75,7 @@ const ContactUs = () => {
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-4 text-buckazoid-navy">Join Our Community</h1>
+            <h1 className="text-5xl font-bold mb-4 text-buckazoid-navy">Contact Us</h1>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
               Connect with fellow Buckazoid enthusiasts, developers, and crypto historians to explore 
               this rediscovered piece of digital currency history.
