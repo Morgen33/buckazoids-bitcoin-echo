@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ExternalLink, History, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,10 @@ const AboutSection = () => {
   const navigate = useNavigate();
 
   const handleLearnHistoryClick = () => {
+    navigate('/community');
+  };
+
+  const handleDiscoverMoreClick = () => {
     navigate('/about');
   };
 
@@ -50,7 +55,7 @@ const AboutSection = () => {
             <Button 
               variant="outline" 
               className="border-buckazoid-orange text-buckazoid-orange hover:bg-buckazoid-orange/10"
-              onClick={handleLearnHistoryClick}
+              onClick={handleDiscoverMoreClick}
             >
               Discover More <ExternalLink className="ml-2" size={16} />
             </Button>
