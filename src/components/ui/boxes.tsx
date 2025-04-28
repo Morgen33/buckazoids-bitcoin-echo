@@ -12,12 +12,12 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     "rgb(247, 147, 26)", // orange-300
     "rgb(251, 159, 45)", // orange-200
     "rgb(255, 171, 64)", // orange-100
-    "rgb(244, 143, 177)", // deep orange-300
+    "rgb(173, 216, 230)", // light blue
     "rgb(230, 126, 34)", // orange-400
     "rgb(240, 140, 52)", // orange-500
-    "rgb(245, 149, 99)", // orange-600
-    "rgb(250, 154, 112)", // orange-700
-    "rgb(255, 160, 122)", // orange-800
+    "rgb(135, 206, 235)", // sky blue
+    "rgb(176, 224, 230)", // powder blue
+    "rgb(137, 207, 240)", // summer sky
   ];
 
   const getRandomColor = () => {
