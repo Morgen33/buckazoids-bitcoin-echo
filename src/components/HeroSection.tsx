@@ -1,11 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[#fdfdfd] relative z-10 py-[16px] mb-24">
+    <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Spinning Coin Video */}
         <div className="mb-12 py-0 my-[50px]">
