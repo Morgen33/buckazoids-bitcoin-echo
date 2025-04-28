@@ -1,4 +1,3 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -145,7 +144,7 @@ const ContactUs = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-white hover:bg-gray-100 text-black shadow-md hover:shadow-lg transition-all duration-300"
+                    className="w-full bg-[#f7931a] hover:bg-[#f7931a]/90 text-white shadow-md hover:shadow-lg transition-all duration-300"
                     disabled={isSubmitting}
                   >
                     <Mail className="mr-2 h-4 w-4" />
@@ -155,11 +154,23 @@ const ContactUs = () => {
               </Form>
             </div>
 
-            <div className="md:col-span-2 bg-buckazoid-navy p-8 rounded-2xl text-white space-y-6">
+            <div className="md:col-span-2 bg-[#f7931a] p-8 rounded-2xl text-white space-y-6">
               <div className="space-y-2">
                 <h2 className="text-2xl font-semibold">Connect With Us</h2>
-                <p className="text-gray-300">
+                <p className="text-white/90">
                   Join our growing community and stay updated with the latest news and developments.
+                </p>
+                <p className="text-white/90 mt-4">
+                  Find us on X {" "}
+                  <a 
+                    href="https://x.com/BuckazoidsSOL" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-semibold hover:underline"
+                  >
+                    @BuckazoidsSOL
+                  </a>
+                  {" "} and send a DM for faster response.
                 </p>
               </div>
 
