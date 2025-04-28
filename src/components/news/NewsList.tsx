@@ -1,7 +1,18 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Star, Youtube } from "lucide-react";
 
 const newsItems = [
+  {
+    id: 8,
+    title: "On The Go Crypto Review",
+    date: "2025-04-27",
+    summary: "Check out the latest review of Buckazoids by On The Go Crypto.",
+    content: "Watch this comprehensive review of Buckazoids by On The Go Crypto, released April 27, 2025.",
+    link: "https://www.youtube.com/watch?v=pyNpp_hzBig",
+    isVideo: true,
+    image: null
+  },
   {
     id: 7,
     title: "Understanding Buckazoids: A Deep Dive",

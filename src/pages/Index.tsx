@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import OverviewSection from "@/components/OverviewSection";
 import AboutSection from "@/components/AboutSection";
+import VideoSection from "@/components/VideoSection";
 
 const Index = () => {
   // Force cache refresh strategy
@@ -40,6 +41,9 @@ const Index = () => {
         </div>
         <div className="relative z-10">
           <AboutSection />
+        </div>
+        <div className="relative z-20">
+          <VideoSection />
         </div>
       </main>
       <Footer />
