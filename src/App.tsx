@@ -12,6 +12,7 @@ import Admin from "./pages/Admin";
 import Auth from "./pages/Auth";
 import AdminGuard from "./components/AdminGuard";
 import CommunityPage from "./pages/Community";
+import Buy from "./pages/Buy";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/buy" element={<Buy />} />
           <Route
             path="/admin"
             element={

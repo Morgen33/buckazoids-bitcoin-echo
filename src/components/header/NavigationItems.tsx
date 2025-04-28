@@ -30,7 +30,7 @@ export const navigationItems: NavigationItem[] = [
   {
     name: "Participate",
     submenu: [
-      { name: "Buy Buckazoids", href: "#" },
+      { name: "Buy Buckazoids", href: "/buy" },
       { name: "Community", href: "/community" },
     ],
   },
