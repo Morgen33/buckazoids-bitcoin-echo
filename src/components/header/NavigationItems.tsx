@@ -31,7 +31,7 @@ export const navigationItems: NavigationItem[] = [
     submenu: [
       { name: "Buy Buckazoids", href: "/buy" },
       { name: "Community", href: "/community" },
-      { name: "Contact Us", href: "/contact" },
+      { name: "Contact Us", href: "/contact-us" },
     ],
   },
 ];

@@ -19,6 +19,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState, useRef } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -48,18 +49,14 @@ const ContactUs = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/send-contact-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
           ...values,
           captchaToken,
-        }),
+        },
       });
 
-      if (!response.ok) throw new Error("Failed to send message");
+      if (error) throw new Error(error.message);
 
       toast.success("Message sent successfully!");
       form.reset();
@@ -131,7 +128,7 @@ const ContactUs = () => {
                 <div className="flex justify-center my-4">
                   <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                   />
                 </div>
                 <Button 
