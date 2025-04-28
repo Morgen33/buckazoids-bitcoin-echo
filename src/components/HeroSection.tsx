@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
+import CountdownTimer from "./CountdownTimer";
 
 const HeroSection = () => {
   return (
@@ -19,6 +21,8 @@ const HeroSection = () => {
             Your browser does not support the video tag.
           </video>
         </div>
+
+        <CountdownTimer />
 
         <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 flex items-center justify-center gap-3">
           <motion.span>Buckazoids is</motion.span>
