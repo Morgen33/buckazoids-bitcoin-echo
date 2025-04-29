@@ -13,7 +13,7 @@ const OverviewSection = () => {
       className={`relative overflow-hidden ${isMobile ? "min-h-[900px]" : "h-[1000px]"} pt-16 sm:pt-32`}
     >
       {/* Background pattern section */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-buckazoid-navy overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
         <MatrixRain 
           color="#F97316" // Bright orange color
           characters="01BUCKAZOIDS" 
