@@ -1,23 +1,28 @@
 
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import OverviewSection from "@/components/OverviewSection";
-import AboutSection from "@/components/AboutSection";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
+
+// Lazy load non-critical sections
+const OverviewSection = lazy(() => import("@/components/OverviewSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
 
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
 
-  // Simple refresh function without any complex logic or dependencies
+  // Optimized refresh function that doesn't force reload of all images
   const handleRefreshClick = () => {
-    // Clear browser cache for images by appending timestamp to URLs
-    document.querySelectorAll('img').forEach(img => {
+    // Create a unique timestamp for cache-busting only critical images
+    const timestamp = Date.now();
+    
+    // Only refresh images that need to be updated (could be specific ones that change often)
+    document.querySelectorAll('img[data-refresh="true"]').forEach(img => {
       if (img.src) {
         const cleanSrc = img.src.split('?')[0]; // Remove any existing query params
-        img.src = `${cleanSrc}?v=${Date.now()}`;
+        img.src = `${cleanSrc}?v=${timestamp}`;
       }
     });
 
@@ -25,7 +30,7 @@ const Index = () => {
     localStorage.setItem('buckazoids_last_refresh', new Date().toISOString());
     setLastRefresh(new Date().toISOString());
 
-    console.log('Manual cache refresh attempted:', new Date().toISOString());
+    console.log('Selective cache refresh at:', new Date().toISOString());
   };
 
   return (
@@ -43,12 +48,26 @@ const Index = () => {
         <div className="relative z-10">
           <HeroSection />
         </div>
-        <div className="relative z-20">
-          <OverviewSection />
-        </div>
-        <div className="relative z-10">
-          <AboutSection />
-        </div>
+        
+        <Suspense fallback={
+          <div className="h-[400px] flex items-center justify-center bg-gray-100">
+            <div className="animate-pulse w-12 h-12 rounded-full bg-gray-300"></div>
+          </div>
+        }>
+          <div className="relative z-20">
+            <OverviewSection />
+          </div>
+        </Suspense>
+        
+        <Suspense fallback={
+          <div className="h-[400px] flex items-center justify-center bg-white">
+            <div className="animate-pulse w-12 h-12 rounded-full bg-gray-100"></div>
+          </div>
+        }>
+          <div className="relative z-10">
+            <AboutSection />
+          </div>
+        </Suspense>
       </main>
       <Footer />
     </div>

@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const VideoSection = () => {
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +23,15 @@ const VideoSection = () => {
               <CardDescription>Learn how to buy Buckazoids step by step</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-w-16 aspect-h-9 relative">
+                {isVideoLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                    <div className="animate-pulse flex flex-col items-center">
+                      <div className="w-16 h-16 bg-gray-300 rounded-full mb-4"></div>
+                      <div className="h-4 w-24 bg-gray-300 rounded"></div>
+                    </div>
+                  </div>
+                )}
                 <iframe 
                   className="w-full h-[500px] rounded-lg shadow-lg"
                   src="https://www.youtube.com/embed/FdvgYc4UFhQ" 
@@ -29,6 +39,8 @@ const VideoSection = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  onLoad={() => setIsVideoLoading(false)}
                 />
               </div>
             </CardContent>

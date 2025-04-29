@@ -1,8 +1,10 @@
 
-import React from "react";
-import { Boxes } from "./ui/boxes";
+import React, { lazy, Suspense } from "react";
 import ExchangeListings from "./ExchangeListings";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+// Lazy load the Boxes component since it's heavy
+const Boxes = lazy(() => import("./ui/boxes").then(module => ({ default: module.Boxes })));
 
 const OverviewSection = () => {
   const isMobile = useIsMobile();
@@ -11,7 +13,11 @@ const OverviewSection = () => {
     <div className={`relative overflow-hidden ${isMobile ? "min-h-[900px]" : "h-[800px]"} pt-16 sm:pt-32`}>
       {/* Background pattern section */}
       <div className="absolute inset-0 w-full h-full z-0 bg-black/90">
-        <Boxes />
+        <Suspense fallback={
+          <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
+        }>
+          <Boxes />
+        </Suspense>
       </div>
       
       {/* Content section */}

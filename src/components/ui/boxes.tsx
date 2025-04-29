@@ -1,12 +1,23 @@
 
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
+// Optimized version with fewer boxes and mobile optimization
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-  const rows = new Array(150).fill(1);
-  const cols = new Array(100).fill(1);
+  const isMobile = useIsMobile();
+  const [isClient, setIsClient] = useState(false);
+  
+  // Only render on client-side to avoid hydration issues
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Significantly reduce the number of elements, especially on mobile
+  const rows = new Array(isMobile ? 30 : 50).fill(1);
+  const cols = new Array(isMobile ? 20 : 40).fill(1);
 
   const colors = [
     "rgb(247, 147, 26)", // orange-300
@@ -24,6 +35,19 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
+  // Don't render anything during SSR to prevent hydration mismatch
+  if (!isClient) return null;
+
+  // Skip rendering on very small devices for better performance
+  if (isMobile && window.innerWidth < 400) {
+    return (
+      <div 
+        className={cn("absolute inset-0 bg-gradient-to-br from-black to-gray-900", className)}
+        {...rest}
+      />
+    );
+  }
+
   return (
     <div
       style={{
@@ -37,7 +61,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     >
       {rows.map((_, i) => (
         <motion.div
-          key={`row` + i}
+          key={`row${i}`}
           className="w-16 h-8 border-l border-slate-700 relative"
         >
           {cols.map((_, j) => (
@@ -49,10 +73,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
               animate={{
                 transition: { duration: 2 },
               }}
-              key={`col` + j}
+              key={`col${j}`}
               className="w-16 h-8 border-r border-t border-slate-700 relative"
             >
-              {j % 2 === 0 && i % 2 === 0 ? (
+              {j % 4 === 0 && i % 4 === 0 ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -77,4 +101,3 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
 };
 
 export const Boxes = React.memo(BoxesCore);
-

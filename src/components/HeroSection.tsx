@@ -2,20 +2,36 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
+import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
 import CountdownTimer from "./CountdownTimer";
+import { useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const isMobile = useIsMobile();
+
+  // Function to handle video loading
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Spinning Coin Video */}
-        <div className="mb-12 py-0 my-[50px]">
+        {/* Spinning Coin Video - Lazy loaded with placeholder */}
+        <div className="mb-12 py-0 my-[50px] relative">
+          {!isVideoLoaded && (
+            <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
+          )}
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="mx-auto w-32 h-32 sm:w-40 sm:h-40"
+            onLoadedData={handleVideoLoad}
+            className={`mx-auto w-32 h-32 sm:w-40 sm:h-40 ${isVideoLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
+            preload="none"
           >
             <source src="/lovable-uploads/flipmp4.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -24,23 +40,36 @@ const HeroSection = () => {
 
         <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 flex items-center justify-center gap-3">
           <motion.span>Buckazoids is</motion.span>
-          <TextRotate
-            texts={[
-              "coded",
-              "the future",
-              "the lore",
-              "bitcoin"
-            ]}
-            mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-            staggerFrom="last"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
-            staggerDuration={0.025}
-            splitLevelClassName="overflow-hidden"
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={2000}
-          />
+          {isMobile ? (
+            <OptimizedTextRotate
+              texts={[
+                "coded",
+                "the future",
+                "the lore",
+                "bitcoin"
+              ]}
+              mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+              rotationInterval={2000}
+            />
+          ) : (
+            <TextRotate
+              texts={[
+                "coded",
+                "the future",
+                "the lore",
+                "bitcoin"
+              ]}
+              mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+              staggerFrom="last"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+          )}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -69,7 +98,7 @@ const HeroSection = () => {
         <CountdownTimer />
         
         {/* Version indicator - hidden but useful for verification */}
-        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.4-exchange-update</div>
+        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.5-performance-optimized</div>
       </div>
     </div>
   );

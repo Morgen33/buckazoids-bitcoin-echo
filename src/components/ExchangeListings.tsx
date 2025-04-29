@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -54,10 +54,24 @@ const exchanges: Exchange[] = [
 
 const ExchangeListings = () => {
   const isMobile = useIsMobile();
+  const [visibleExchanges, setVisibleExchanges] = useState<Exchange[]>([]);
+  
+  // Progressive loading of exchange logos
+  useEffect(() => {
+    // First load only the first 4 exchanges (above the fold)
+    setVisibleExchanges(exchanges.slice(0, 4));
+    
+    // Then load the rest after a short delay
+    const timer = setTimeout(() => {
+      setVisibleExchanges(exchanges);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <div className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 md:grid-cols-4 gap-8"}`}>
-      {exchanges.map((exchange) => (
+      {visibleExchanges.map((exchange) => (
         <a
           key={exchange.name}
           href={exchange.url}
@@ -74,6 +88,9 @@ const ExchangeListings = () => {
                   ? 'max-h-24 sm:max-h-48' 
                   : 'max-h-16 sm:max-h-24'
               }`}
+              loading="lazy"
+              width={exchange.name === 'Bitget' || exchange.name === 'LBank' ? 120 : 80}
+              height={exchange.name === 'Bitget' || exchange.name === 'LBank' ? 96 : 64}
             />
           </Card>
         </a>
