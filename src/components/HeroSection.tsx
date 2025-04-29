@@ -19,8 +19,8 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Spinning Coin Video with optimized loading */}
-        <div className="mb-24 pt-8 relative h-[180px]">
+        {/* Spinning Coin Video with optimized loading - reduced height */}
+        <div className="mb-12 pt-8 relative h-[160px]">
           {!isVideoLoaded && (
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
           )}
@@ -39,8 +39,8 @@ const HeroSection = () => {
           </video>
         </div>
 
-        {/* Text section with more vertical space */}
-        <div className="mt-[140px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
+        {/* Text section with reduced top margin */}
+        <div className="mt-[60px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <span className="block">Buckazoids is</span>
             <div className="inline-block min-h-[3.5rem]">
