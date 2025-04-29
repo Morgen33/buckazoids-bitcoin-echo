@@ -38,38 +38,43 @@ const HeroSection = () => {
           </video>
         </div>
 
-        <div className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 flex items-center justify-center gap-3">
-          <motion.span>Buckazoids is</motion.span>
-          {isMobile ? (
-            <OptimizedTextRotate
-              texts={[
-                "coded",
-                "the future",
-                "the lore",
-                "bitcoin"
-              ]}
-              mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-              rotationInterval={2000}
-            />
-          ) : (
-            <TextRotate
-              texts={[
-                "coded",
-                "the future",
-                "the lore",
-                "bitcoin"
-              ]}
-              mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-              staggerFrom="last"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={2000}
-            />
-          )}
+        {/* Text section with improved layout */}
+        <div className="mt-[100px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <motion.span>Buckazoids is</motion.span>
+            <div className="inline-block min-h-[3rem]">
+              {isMobile ? (
+                <OptimizedTextRotate
+                  texts={[
+                    "coded",
+                    "the future",
+                    "the lore",
+                    "bitcoin"
+                  ]}
+                  mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                  rotationInterval={2000}
+                />
+              ) : (
+                <TextRotate
+                  texts={[
+                    "coded",
+                    "the future",
+                    "the lore",
+                    "bitcoin"
+                  ]}
+                  mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                  staggerFrom="last"
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -98,7 +103,7 @@ const HeroSection = () => {
         <CountdownTimer />
         
         {/* Version indicator - hidden but useful for verification */}
-        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.5-performance-optimized</div>
+        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.6-layout-fixed</div>
       </div>
     </div>
   );
