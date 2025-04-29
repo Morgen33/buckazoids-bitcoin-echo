@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactHeader from "@/components/contact/ContactHeader";
 import TwitterCard from "@/components/contact/TwitterCard";
-import ContactInfo from "@/components/contact/ContactInfo";
 
 const ContactUs = () => {
   return (
@@ -16,9 +15,8 @@ const ContactUs = () => {
             description="Connect with fellow Buckazoid enthusiasts, developers, and crypto historians to explore this rediscovered piece of digital currency history."
           />
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="max-w-xl mx-auto mb-16">
             <TwitterCard />
-            <ContactInfo />
           </div>
         </div>
       </main>
