@@ -49,9 +49,9 @@ const Header = () => {
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end items-center h-24 sm:h-36 gap-4" style={{minHeight: "6rem"}}>
-            <div className="mr-auto my-2 sm:mt-4 sm:mb-4">
-              <Link to="/" className="font-bold italic text-4xl md:text-5xl">
+          <div className="flex items-center h-16 sm:h-20">
+            <div className="mr-auto">
+              <Link to="/" className="font-bold italic text-2xl md:text-3xl">
                 Buckazoids
               </Link>
             </div>
