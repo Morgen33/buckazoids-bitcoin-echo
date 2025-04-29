@@ -20,9 +20,11 @@ const Index = () => {
     
     // Only refresh images that need to be updated (could be specific ones that change often)
     document.querySelectorAll('img[data-refresh="true"]').forEach(img => {
-      if (img.src) {
-        const cleanSrc = img.src.split('?')[0]; // Remove any existing query params
-        img.src = `${cleanSrc}?v=${timestamp}`;
+      // Cast the HTML element to HTMLImageElement to access the src property safely
+      const imgElement = img as HTMLImageElement;
+      if (imgElement.src) {
+        const cleanSrc = imgElement.src.split('?')[0]; // Remove any existing query params
+        imgElement.src = `${cleanSrc}?v=${timestamp}`;
       }
     });
 
