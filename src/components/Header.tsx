@@ -36,11 +36,14 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end items-center h-16 gap-4">
             <div className="mr-auto">
-              <img 
-                src="/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png" 
-                alt="Buckazoids Logo" 
-                className="h-12 w-auto"
-              />
+              <div className="flex items-center gap-2">
+                <img 
+                  src="/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png" 
+                  alt="Buckazoids Logo" 
+                  className="h-16 w-auto"
+                />
+                <span className="text-xl font-bold">Buckazoids</span>
+              </div>
             </div>
 
             <DesktopNav 
