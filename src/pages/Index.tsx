@@ -55,8 +55,9 @@ const Index = () => {
   };
 
   useEffect(() => {
-    // Define a function for the event handler that ignores any arguments
+    // Define a function for the event handler
     const handleLoad = () => {
+      // Call forceRefresh with no arguments explicitly
       forceRefresh();
     };
 
@@ -67,10 +68,8 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
 
     // And periodically check for updates (every 30 seconds)
-    // Use an arrow function to ensure no arguments are passed to forceRefresh
-    const intervalId = setInterval(() => {
-      forceRefresh();
-    }, 30000);
+    // Use an arrow function to ensure proper context
+    const intervalId = setInterval(forceRefresh, 30000);
 
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
@@ -94,12 +93,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={(event) => {
-              // Prevent the event from being passed to forceRefresh
-              event.preventDefault();
-              forceRefresh();
-              window.location.reload(true);
-            }}
+            onClick={forceRefresh}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
             <RefreshCw className="h-4 w-4" /> Refresh Page
