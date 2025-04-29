@@ -66,9 +66,9 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Use anonymous function to prevent timer ID from being passed to forceRefresh
-    const intervalId = setInterval(function() {
-      forceRefresh();
+    // Use void to explicitly ignore any arguments passed
+    const intervalId = setInterval(() => {
+      void forceRefresh();
     }, 30000);
     
     // Check if this is the first load after a deploy
@@ -93,7 +93,8 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={function() {
+            onClick={(e) => {
+              e.preventDefault(); // Prevent event propagation
               forceRefresh();
               window.location.reload(true);
             }}
