@@ -33,8 +33,24 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* New Logo and Tagline Section */}
+        <div className="mt-[60px] mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <img 
+              src="/lovable-uploads/d93c1ad7-d6c5-4bfc-b00e-b28a0e9c022b.png" 
+              alt="Buckazoids Logo" 
+              className="h-32 sm:h-40 object-contain"
+              data-refresh="true"
+            />
+            <div className="text-center sm:text-left">
+              <h1 className="text-4xl sm:text-5xl font-bold italic">Buckazoids</h1>
+              <p className="text-lg sm:text-xl text-gray-800 mt-2">The greatest digital discovery of all time.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Button section - Updated with better mobile handling */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 mt-[60px]">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button 
             className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
             onClick={() => window.location.href = '/about'}
