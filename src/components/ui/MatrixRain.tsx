@@ -48,7 +48,7 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
     }
 
     const draw = () => {
-      ctx.fillStyle = `rgba(0, 0, 0, ${fadeOpacity})`;
+      ctx.fillStyle = `rgba(2, 49, 77, ${fadeOpacity})`; // Changed to #02314D (dark blue)
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = color;
