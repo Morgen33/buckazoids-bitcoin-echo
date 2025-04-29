@@ -68,8 +68,8 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
 
     // And periodically check for updates (every 30 seconds)
-    // Use an arrow function to ensure proper context
-    const intervalId = setInterval(forceRefresh, 30000);
+    // Use an arrow function to ensure proper argument handling
+    const intervalId = setInterval(() => forceRefresh(), 30000);
 
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
@@ -93,7 +93,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={forceRefresh}
+            onClick={() => forceRefresh()}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
             <RefreshCw className="h-4 w-4" /> Refresh Page
