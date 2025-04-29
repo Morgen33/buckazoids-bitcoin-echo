@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -92,7 +93,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={() => {
+            onClick={(e) => {
               // Use an arrow function to ensure no event argument is passed to forceRefresh
               forceRefresh();
               window.location.reload(true);
