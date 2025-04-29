@@ -55,7 +55,9 @@ const Index = () => {
   
   useEffect(() => {
     // Define a function for the event handler
-    const handleLoad = () => forceRefresh();
+    const handleLoad = () => {
+      forceRefresh();
+    };
     
     // Try to refresh immediately after component mounts
     forceRefresh();
@@ -64,7 +66,10 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    const intervalId = setInterval(forceRefresh, 30000);
+    // Fix: Wrap the function in an arrow function to avoid timer ID being passed
+    const intervalId = setInterval(() => {
+      forceRefresh();
+    }, 30000);
     
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
