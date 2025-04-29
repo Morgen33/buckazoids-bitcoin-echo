@@ -20,7 +20,7 @@ const HeroSection = () => {
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Spinning Coin Video - Lazy loaded with placeholder */}
-        <div className="mb-12 py-0 my-[50px] relative">
+        <div className="mb-24 pt-8 relative h-[180px]">
           {!isVideoLoaded && (
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
           )}
@@ -39,7 +39,7 @@ const HeroSection = () => {
         </div>
 
         {/* Text section with improved layout */}
-        <div className="mt-[100px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
+        <div className="mt-[120px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <motion.span>Buckazoids is</motion.span>
             <div className="inline-block min-h-[3rem]">
@@ -103,7 +103,7 @@ const HeroSection = () => {
         <CountdownTimer />
         
         {/* Version indicator - hidden but useful for verification */}
-        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.6-layout-fixed</div>
+        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.7-spacing-fixed</div>
       </div>
     </div>
   );
