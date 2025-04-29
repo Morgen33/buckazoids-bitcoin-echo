@@ -67,7 +67,7 @@ const Index = () => {
     
     // And periodically check for updates (every 30 seconds)
     // Use anonymous function to prevent timer ID from being passed to forceRefresh
-    const intervalId = setInterval(() => {
+    const intervalId = setInterval(function() {
       forceRefresh();
     }, 30000);
     
@@ -93,7 +93,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={() => {
+            onClick={function() {
               forceRefresh();
               window.location.reload(true);
             }}
