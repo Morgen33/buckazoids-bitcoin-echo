@@ -36,9 +36,15 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
     const chars = characters.split('');
     const drops: number[] = [];
     const columnCount = Math.floor(canvas.width / fontSize);
+    
+    // Track which letter of "BUCKAZOIDS" each column is displaying
+    const word = "BUCKAZOIDS";
+    const letterIndices: number[] = [];
 
     for (let i = 0; i < columnCount; i++) {
       drops[i] = Math.random() * -100;
+      // Start each column at a random position in the word
+      letterIndices[i] = Math.floor(Math.random() * word.length);
     }
 
     const draw = () => {
@@ -49,7 +55,17 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
+        // Determine whether to use the next letter in "BUCKAZOIDS" or a random character
+        let char;
+        if (Math.random() > 0.3) { // 70% chance to use the word
+          char = word[letterIndices[i]];
+          // Move to the next letter in the word for this column
+          letterIndices[i] = (letterIndices[i] + 1) % word.length;
+        } else {
+          // 30% chance to use a random character from the provided characters
+          char = chars[Math.floor(Math.random() * chars.length)];
+        }
+
         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
