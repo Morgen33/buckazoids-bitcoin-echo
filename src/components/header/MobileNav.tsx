@@ -46,17 +46,33 @@ export const MobileNav = ({
                 {activeDropdown === item.name && (
                   <div className="pl-4">
                     {item.submenu?.map((subItem) => (
-                      <a
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => {
-                          toggleDropdown(item.name);
-                          setIsOpen(false);
-                        }}
-                      >
-                        {subItem.name}
-                      </a>
+                      item.submenu && subItem.href.startsWith('/') ? (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          onClick={() => {
+                            toggleDropdown(item.name);
+                            setIsOpen(false);
+                          }}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ) : (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          onClick={() => {
+                            toggleDropdown(item.name);
+                            setIsOpen(false);
+                          }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {subItem.name}
+                        </a>
+                      )
                     ))}
                   </div>
                 )}
@@ -65,7 +81,13 @@ export const MobileNav = ({
           </div>
         ))}
         <div className="pt-2">
-          <Button className="w-full bg-buckazoids-orange hover:bg-buckazoids-yellow text-white">
+          <Button 
+            className="w-full bg-buckazoids-orange hover:bg-buckazoids-yellow text-white"
+            onClick={() => {
+              setIsOpen(false);
+              window.location.href = '/buy';
+            }}
+          >
             Get Started
           </Button>
         </div>
