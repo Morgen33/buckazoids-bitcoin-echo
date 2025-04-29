@@ -13,7 +13,8 @@ const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
 
   // Super aggressive cache refresh strategy
-  const forceRefresh = () => {
+  // Modified to accept and ignore any arguments
+  const forceRefresh = (..._args: any[]) => {
     // Clear browser cache for images by appending timestamp to URLs
     document.querySelectorAll('img').forEach(img => {
       if (img.src) {
