@@ -34,12 +34,12 @@ const Header = () => {
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end items-center h-28 gap-4">
-            <div className="mr-auto mt-6">
+          <div className="flex justify-end items-center h-36 gap-4">
+            <div className="mr-auto mt-4 mb-4">
               <img 
                 src="/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png" 
                 alt="Buckazoids Logo" 
-                className="h-32 w-auto"
+                className="h-32 w-auto object-contain"
               />
             </div>
 
