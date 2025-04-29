@@ -33,51 +33,8 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Text section with reduced top margin */}
-        <div className="mt-[60px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            <span className="block">Buckazoids is</span>
-            <div className="inline-block min-h-[3.5rem]">
-              {isMobile ? (
-                <OptimizedTextRotate
-                  texts={[
-                    "coded",
-                    "the future",
-                    "the lore",
-                    "bitcoin",
-                    "Satoshi",
-                    "Nakamoto"
-                  ]}
-                  mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-                  rotationInterval={2000}
-                />
-              ) : (
-                <TextRotate
-                  texts={[
-                    "coded",
-                    "the future",
-                    "the lore",
-                    "bitcoin",
-                    "Satoshi",
-                    "Nakamoto"
-                  ]}
-                  mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-                  staggerFrom="last"
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "-120%" }}
-                  staggerDuration={0.025}
-                  splitLevelClassName="overflow-hidden"
-                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                  rotationInterval={2000}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-
         {/* Button section - Updated with better mobile handling */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 mt-[60px]">
           <Button 
             className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
             onClick={() => window.location.href = '/about'}

@@ -2,9 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, History, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { TextRotate } from "@/components/ui/text-rotate";
+import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const AboutSection = () => {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   const handleLearnHistoryClick = () => {
     navigate('/community');
@@ -17,6 +21,51 @@ const AboutSection = () => {
   return (
     <section className="bg-[#FFF5E6] py-24 mt-0" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Moved text rotation component here */}
+        <div className="text-center mb-8">
+          <div className="text-3xl sm:text-4xl font-bold text-gray-800">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <span className="block">Buckazoids is</span>
+              <div className="inline-block min-h-[3.5rem]">
+                {isMobile ? (
+                  <OptimizedTextRotate
+                    texts={[
+                      "coded",
+                      "the future",
+                      "the lore",
+                      "bitcoin",
+                      "Satoshi",
+                      "Nakamoto"
+                    ]}
+                    mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                    rotationInterval={2000}
+                  />
+                ) : (
+                  <TextRotate
+                    texts={[
+                      "coded",
+                      "the future",
+                      "the lore",
+                      "bitcoin",
+                      "Satoshi",
+                      "Nakamoto"
+                    ]}
+                    mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                    staggerFrom="last"
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={2000}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About Buckazoids
