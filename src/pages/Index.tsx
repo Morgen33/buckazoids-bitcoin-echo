@@ -5,14 +5,23 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 
 // Lazy load non-critical sections
 const OverviewSection = lazy(() => import("@/components/OverviewSection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 
+// Global type declaration for the cache buster
+declare global {
+  interface Window {
+    CACHE_BUSTER: string;
+  }
+}
+
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
   const [shouldLoadSections, setShouldLoadSections] = useState(false);
+  const [refreshCount, setRefreshCount] = useState(0);
 
   // Only load below-the-fold sections after the critical content is rendered
   useEffect(() => {
@@ -24,12 +33,15 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Optimized refresh function that doesn't force reload of all images
+  // Super aggressive refresh function that forces a complete reload
   const handleRefreshClick = () => {
-    // Create a unique timestamp for cache-busting only critical images
+    // Create a unique timestamp for cache-busting all assets
     const timestamp = Date.now();
     
-    // Only refresh images that need to be updated
+    // Update global cache buster
+    window.CACHE_BUSTER = `force-${timestamp}`;
+    
+    // Update all images with data-refresh attribute
     document.querySelectorAll('img[data-refresh="true"]').forEach(img => {
       const imgElement = img as HTMLImageElement;
       if (imgElement.src) {
@@ -38,15 +50,47 @@ const Index = () => {
       }
     });
 
+    // Force reload of CSS files by adding a new timestamp
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+      const linkElement = link as HTMLLinkElement;
+      const href = linkElement.href;
+      if (href) {
+        const newLink = document.createElement('link');
+        newLink.rel = 'stylesheet';
+        newLink.href = `${href.split('?')[0]}?v=${timestamp}`;
+        document.head.appendChild(newLink);
+        
+        // Remove the old link after the new one is loaded
+        newLink.onload = () => linkElement.remove();
+      }
+    });
+
     // Set local storage flag to indicate this is a fresh load
     localStorage.setItem('buckazoids_last_refresh', new Date().toISOString());
+    localStorage.setItem('buckazoids_cache_version', `force-${timestamp}`);
     setLastRefresh(new Date().toISOString());
 
-    // Force reload of only critical components
+    // Force reload of components
     setShouldLoadSections(false);
     setTimeout(() => setShouldLoadSections(true), 100);
     
-    console.log('Selective cache refresh at:', new Date().toISOString());
+    // Increment refresh count
+    setRefreshCount(prev => prev + 1);
+    
+    // Show toast message
+    toast({
+      title: "Cache refresh triggered",
+      description: "Content has been refreshed from server. If still seeing old content, try hard-refreshing (Ctrl+F5)",
+    });
+    
+    console.log('Aggressive cache refresh at:', new Date().toISOString());
+    
+    // If clicked multiple times, suggest hard refresh
+    if (refreshCount >= 2) {
+      if (confirm("Still seeing old content? Would you like to perform a hard refresh of the entire page?")) {
+        window.location.reload(true);
+      }
+    }
   };
 
   return (
@@ -58,13 +102,13 @@ const Index = () => {
             onClick={handleRefreshClick}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
-            <RefreshCw className="h-4 w-4" /> Refresh
+            <RefreshCw className="h-4 w-4" /> Refresh Content
           </Button>
         </div>
         
         {/* Always load the hero section immediately */}
         <div className="relative z-10">
-          <HeroSection />
+          <HeroSection key={`hero-${lastRefresh || 'initial'}`} />
         </div>
         
         {/* Only load these sections after the critical content is ready */}
@@ -76,7 +120,7 @@ const Index = () => {
               </div>
             }>
               <div className="relative z-20">
-                <OverviewSection />
+                <OverviewSection key={`overview-${lastRefresh || 'initial'}`} />
               </div>
             </Suspense>
             
@@ -86,7 +130,7 @@ const Index = () => {
               </div>
             }>
               <div className="relative z-10">
-                <AboutSection />
+                <AboutSection key={`about-${lastRefresh || 'initial'}`} />
               </div>
             </Suspense>
           </>

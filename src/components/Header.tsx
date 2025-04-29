@@ -10,13 +10,18 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
-  const [cacheBuster, setCacheBuster] = useState(`?v=${new Date().getTime()}`);
+  const [cacheBuster, setCacheBuster] = useState(`?v=${Date.now()}`);
   
-  // Refresh cacheBuster every minute to ensure fresh content
+  // Refresh cacheBuster frequently to ensure fresh content
   useEffect(() => {
+    // Initialize with any global cache buster if available
+    if (window.CACHE_BUSTER) {
+      setCacheBuster(`?v=${window.CACHE_BUSTER}`);
+    }
+    
     const interval = setInterval(() => {
-      setCacheBuster(`?v=${new Date().getTime()}`);
-    }, 60000); // Update every minute
+      setCacheBuster(`?v=${Date.now()}`);
+    }, 30000); // Update every 30 seconds
     
     return () => clearInterval(interval);
   }, []);
@@ -62,6 +67,12 @@ const Header = () => {
                   /lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${cacheBuster} 1x
                 `}
                 loading="eager"
+                onError={(e) => {
+                  // Retry with new cache buster if image fails to load
+                  const img = e.target as HTMLImageElement;
+                  const newCacheBuster = `?v=${Date.now()}`;
+                  img.src = `/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${newCacheBuster}`;
+                }}
               />
             </div>
 

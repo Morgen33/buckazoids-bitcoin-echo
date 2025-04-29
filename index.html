@@ -13,8 +13,8 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     
-    <!-- Version control for cache busting - updated with timestamp -->
-    <meta name="version" content="2.1.1-<?php echo time(); ?>" />
+    <!-- Version control for cache busting - updated with unique build ID -->
+    <meta name="version" content="2.1.2-202504291" />
 
     <!-- Open Graph tags -->
     <meta property="og:title" content="Buckazoids - The Original Digital Currency" />
@@ -29,12 +29,11 @@
     <meta name="twitter:site" content="@Buckazoids" />
     <meta name="twitter:image" content="https://lovable-bucket.s3.amazonaws.com/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png" />
     
-    <!-- Preload critical assets with aggressive cache busting -->
-    <link rel="preload" href="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png?v=<?php echo time(); ?>" as="image" fetchpriority="high" />
-    <link rel="preload" href="/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png?v=<?php echo time(); ?>" as="image" fetchpriority="high" />
-    
-    <!-- Favicon with cache busting -->
-    <link rel="icon" href="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png?v=<?php echo time(); ?>" type="image/png">
+    <!-- Add dynamic cache busting to all assets via JavaScript -->
+    <script>
+      // Global cache buster that will be applied to all assets
+      window.CACHE_BUSTER = '2.1.2-' + Date.now();
+    </script>
   </head>
 
   <body>
@@ -42,5 +41,56 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Force cache refresh for critical assets -->
+    <script>
+      // Add cache busting to preloaded assets
+      const preloadLinks = [
+        { href: '/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png', as: 'image' },
+        { href: '/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png', as: 'image' }
+      ];
+      
+      preloadLinks.forEach(link => {
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.href = `${link.href}?v=${window.CACHE_BUSTER}`;
+        preload.as = link.as;
+        preload.fetchPriority = 'high';
+        document.head.appendChild(preload);
+      });
+      
+      // Set favicon with cache busting
+      const favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      favicon.href = `/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png?v=${window.CACHE_BUSTER}`;
+      favicon.type = 'image/png';
+      document.head.appendChild(favicon);
+      
+      // Invalidate service worker if present
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (const registration of registrations) {
+            registration.unregister();
+          }
+        });
+      }
+      
+      // Clear local storage cache and browser cache when possible
+      if (localStorage) {
+        localStorage.setItem('buckazoids_cache_version', window.CACHE_BUSTER);
+      }
+      
+      // Force reload if cached version differs
+      window.addEventListener('load', function() {
+        const savedVersion = localStorage.getItem('buckazoids_cache_version');
+        const currentVersion = '2.1.2'; // static version for comparison
+        
+        if (savedVersion && !savedVersion.includes(currentVersion)) {
+          console.log('New version detected, forcing refresh');
+          localStorage.setItem('buckazoids_cache_version', window.CACHE_BUSTER);
+          window.location.reload(true);
+        }
+      });
+    </script>
   </body>
 </html>
