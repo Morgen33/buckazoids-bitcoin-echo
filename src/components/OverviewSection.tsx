@@ -39,7 +39,7 @@ const OverviewSection = () => {
       className={`relative overflow-hidden ${isMobile ? "min-h-[700px]" : "h-[800px]"} pt-16 sm:pt-32`}
     >
       {/* Background pattern section */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-black/90 overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 bg-black/90">
         {shouldLoadBoxes ? (
           <Suspense fallback={
             <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
