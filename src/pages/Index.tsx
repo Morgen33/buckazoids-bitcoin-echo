@@ -10,7 +10,7 @@ import { RefreshCw } from "lucide-react";
 
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
-  
+
   // Super aggressive cache refresh strategy
   const forceRefresh = () => {
     // Clear browser cache for images by appending timestamp to URLs
@@ -20,7 +20,7 @@ const Index = () => {
         img.src = `${cleanSrc}?v=${Date.now()}`;
       }
     });
-    
+
     // Force refresh styles
     const styleSheets = document.styleSheets;
     for (let i = 0; i < styleSheets.length; i++) {
@@ -38,48 +38,48 @@ const Index = () => {
         console.error('Error processing stylesheet:', e);
       }
     }
-    
+
     // Set local storage flag to indicate this is a fresh load
     localStorage.setItem('buckazoids_last_refresh', new Date().toISOString());
     setLastRefresh(new Date().toISOString());
-    
+
     // Show a toast notification
     toast({
       title: "Page refreshed",
       description: "All cached content has been refreshed.",
     });
-    
+
     console.log('Cache refresh attempted for images:', new Date().toISOString());
   };
-  
+
   useEffect(() => {
     // Define a function for the event handler
     const handleLoad = () => {
       forceRefresh();
     };
-    
+
     // Try to refresh immediately after component mounts
     forceRefresh();
-    
+
     // Also try after everything has fully loaded
     window.addEventListener('load', handleLoad);
-    
+
     // And periodically check for updates (every 30 seconds)
     // Use an arrow function to ensure no arguments are passed to forceRefresh
     const intervalId = setInterval(() => {
       forceRefresh();
     }, 30000);
-    
+
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
     const currentVersion = "2025-04-29"; // Updated to today's date
-    
+
     if (lastVersion !== currentVersion) {
       // New version detected, force hard refresh
       localStorage.setItem('buckazoids_version', currentVersion);
       window.location.reload(true);
     }
-    
+
     return () => {
       window.removeEventListener('load', handleLoad);
       clearInterval(intervalId);
