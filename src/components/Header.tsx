@@ -37,7 +37,7 @@ const Header = () => {
 
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-end items-center h-24 sm:h-36 gap-4" style={{minHeight: "6rem", sm: {minHeight: "9rem"}}}>
+          <div className="flex justify-end items-center h-24 sm:h-36 gap-4" style={{minHeight: "6rem"}}>
             <div className="mr-auto my-2 sm:mt-4 sm:mb-4">
               <img 
                 src={`/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${cacheBuster}`}
