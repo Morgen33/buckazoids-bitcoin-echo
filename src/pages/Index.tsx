@@ -88,7 +88,7 @@ const Index = () => {
     // If clicked multiple times, suggest hard refresh
     if (refreshCount >= 2) {
       if (confirm("Still seeing old content? Would you like to perform a hard refresh of the entire page?")) {
-        window.location.reload(true);
+        window.location.reload();
       }
     }
   };
