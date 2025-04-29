@@ -11,10 +11,10 @@ const VideoSection = () => {
             How to Buy Buckazoids
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Watch our step-by-step guides on how to purchase Buckazoids
+            Watch our step-by-step guide on how to purchase Buckazoids
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <Card>
             <CardHeader>
               <CardTitle>Official Guide</CardTitle>
@@ -23,28 +23,9 @@ const VideoSection = () => {
             <CardContent>
               <div className="aspect-w-16 aspect-h-9">
                 <iframe 
-                  className="w-full h-[300px] rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/pyNpp_hzBig" 
+                  className="w-full h-[500px] rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/FdvgYc4UFhQ" 
                   title="How to Buy Buckazoids - Official Guide"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>On The Go Crypto Review</CardTitle>
-              <CardDescription>Released April 27, 2025</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="aspect-w-16 aspect-h-9">
-                <iframe 
-                  className="w-full h-[300px] rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/pyNpp_hzBig" 
-                  title="On The Go Crypto - Buckazoids Review"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -59,4 +40,3 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-
