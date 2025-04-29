@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 type Exchange = {
   name: string;
@@ -71,32 +70,13 @@ const exchanges: Exchange[] = [
 ];
 
 const ExchangeListings = () => {
-  const isMobile = useIsMobile();
-  const [visibleExchanges, setVisibleExchanges] = useState<Exchange[]>([]);
-  
-  // Progressive loading of exchange logos - only load what's visible first
-  useEffect(() => {
-    // First load only the first 2-4 exchanges (above the fold)
-    setVisibleExchanges(exchanges.slice(0, isMobile ? 2 : 4));
-    
-    // Use IntersectionObserver to load the rest when scrolled into view
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setTimeout(() => setVisibleExchanges(exchanges), 100);
-        observer.disconnect();
-      }
-    }, { rootMargin: '200px' });
-    
-    const element = document.getElementById('exchange-listings-container');
-    if (element) observer.observe(element);
-    
-    return () => observer.disconnect();
-  }, [isMobile]);
+  // Always show all exchanges immediately
+  const [visibleExchanges] = useState<Exchange[]>(exchanges);
   
   return (
     <div 
       id="exchange-listings-container"
-      className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 md:grid-cols-4 gap-8"}`}
+      className="grid grid-cols-4 gap-8"
     >
       {visibleExchanges.map((exchange) => (
         <a
