@@ -2,36 +2,10 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ExchangeListings from "./ExchangeListings";
 import { useIsMobile } from "@/hooks/use-mobile";
-
-// Lazy load the Boxes component since it's heavy
-const Boxes = lazy(() => import("./ui/boxes").then(module => ({ default: module.Boxes })));
+import MatrixRain from "./ui/MatrixRain";
 
 const OverviewSection = () => {
   const isMobile = useIsMobile();
-  const [shouldLoadBoxes, setShouldLoadBoxes] = useState(false);
-  
-  // Only load Boxes component when this section is scrolled into view
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            setShouldLoadBoxes(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: '200px' }
-      );
-      
-      const target = document.getElementById('overview-section');
-      if (target) observer.observe(target);
-      
-      return () => observer.disconnect();
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      setShouldLoadBoxes(true);
-    }
-  }, []);
   
   return (
     <div 
@@ -40,15 +14,13 @@ const OverviewSection = () => {
     >
       {/* Background pattern section */}
       <div className="absolute inset-0 w-full h-full z-0 bg-black/90 overflow-hidden">
-        {shouldLoadBoxes ? (
-          <Suspense fallback={
-            <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
-          }>
-            <Boxes />
-          </Suspense>
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
-        )}
+        <MatrixRain 
+          color="#F97316" // Bright orange color
+          characters="01BUCKAZOIDS" 
+          fontSize={isMobile ? 14 : 18}
+          fadeOpacity={0.15}
+          speed={0.8}
+        />
       </div>
       
       {/* Content section */}
