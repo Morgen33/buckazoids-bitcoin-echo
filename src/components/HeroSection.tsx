@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { TextRotate } from "@/components/ui/text-rotate";
 import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
@@ -33,19 +32,19 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo Section - Removed text parts */}
+        {/* Logo Section - Increased size significantly */}
         <div className="mt-[60px] mb-12">
           <div className="flex justify-center">
             <img 
               src="/lovable-uploads/d93c1ad7-d6c5-4bfc-b00e-b28a0e9c022b.png" 
               alt="Buckazoids Logo" 
-              className="h-32 sm:h-40 object-contain"
+              className="h-48 sm:h-64 lg:h-80 object-contain" /* Increased from h-32/h-40 to h-48/h-64/h-80 */
               data-refresh="true"
             />
           </div>
         </div>
 
-        {/* Button section - Updated with better mobile handling */}
+        {/* Button section - kept existing code */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button 
             className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
