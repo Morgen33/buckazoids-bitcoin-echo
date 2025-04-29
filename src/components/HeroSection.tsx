@@ -65,7 +65,9 @@ const HeroSection = () => {
                     "coded",
                     "the future",
                     "the lore",
-                    "bitcoin"
+                    "bitcoin",
+                    "Satoshi",
+                    "Nakamoto"
                   ]}
                   mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
                   rotationInterval={2000}
@@ -76,7 +78,9 @@ const HeroSection = () => {
                     "coded",
                     "the future",
                     "the lore",
-                    "bitcoin"
+                    "bitcoin",
+                    "Satoshi",
+                    "Nakamoto"
                   ]}
                   mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
                   staggerFrom="last"
