@@ -66,7 +66,7 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Fix: Using a wrapper function to prevent timer ID from being passed to forceRefresh
+    // Use anonymous function to prevent timer ID from being passed to forceRefresh
     const intervalId = setInterval(() => {
       forceRefresh();
     }, 30000);
