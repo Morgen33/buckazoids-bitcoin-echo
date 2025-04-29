@@ -66,7 +66,8 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    const intervalId = setInterval(function() {
+    // Fix: Using a wrapper function to prevent timer ID from being passed to forceRefresh
+    const intervalId = setInterval(() => {
       forceRefresh();
     }, 30000);
     
@@ -92,7 +93,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={function() {
+            onClick={() => {
               forceRefresh();
               window.location.reload(true);
             }}
