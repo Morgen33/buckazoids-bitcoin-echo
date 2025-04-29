@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -66,9 +65,9 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Use void to explicitly ignore any arguments passed
+    // Use an anonymous function wrapper to prevent arguments being passed
     const intervalId = setInterval(() => {
-      void forceRefresh();
+      forceRefresh();
     }, 30000);
     
     // Check if this is the first load after a deploy
@@ -93,8 +92,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={(e) => {
-              e.preventDefault(); // Prevent event propagation
+            onClick={() => {
               forceRefresh();
               window.location.reload(true);
             }}
