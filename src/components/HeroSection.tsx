@@ -33,19 +33,15 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* New Logo and Tagline Section */}
+        {/* Logo Section - Removed text parts */}
         <div className="mt-[60px] mb-12">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex justify-center">
             <img 
               src="/lovable-uploads/d93c1ad7-d6c5-4bfc-b00e-b28a0e9c022b.png" 
               alt="Buckazoids Logo" 
               className="h-32 sm:h-40 object-contain"
               data-refresh="true"
             />
-            <div className="text-center sm:text-left">
-              <h1 className="text-4xl sm:text-5xl font-bold italic">Buckazoids</h1>
-              <p className="text-lg sm:text-xl text-gray-800 mt-2">The greatest digital discovery of all time.</p>
-            </div>
           </div>
         </div>
 
