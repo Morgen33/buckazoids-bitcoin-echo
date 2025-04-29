@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ExchangeListings from "./ExchangeListings";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -8,16 +8,47 @@ const Boxes = lazy(() => import("./ui/boxes").then(module => ({ default: module.
 
 const OverviewSection = () => {
   const isMobile = useIsMobile();
+  const [shouldLoadBoxes, setShouldLoadBoxes] = useState(false);
+  
+  // Only load Boxes component when this section is scrolled into view
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            setShouldLoadBoxes(true);
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '200px' }
+      );
+      
+      const target = document.getElementById('overview-section');
+      if (target) observer.observe(target);
+      
+      return () => observer.disconnect();
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      setShouldLoadBoxes(true);
+    }
+  }, []);
   
   return (
-    <div className={`relative overflow-hidden ${isMobile ? "min-h-[900px]" : "h-[800px]"} pt-16 sm:pt-32`}>
+    <div 
+      id="overview-section" 
+      className={`relative overflow-hidden ${isMobile ? "min-h-[700px]" : "h-[800px]"} pt-16 sm:pt-32`}
+    >
       {/* Background pattern section */}
       <div className="absolute inset-0 w-full h-full z-0 bg-black/90">
-        <Suspense fallback={
+        {shouldLoadBoxes ? (
+          <Suspense fallback={
+            <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
+          }>
+            <Boxes />
+          </Suspense>
+        ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900"></div>
-        }>
-          <Boxes />
-        </Suspense>
+        )}
       </div>
       
       {/* Content section */}

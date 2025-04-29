@@ -15,34 +15,18 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     setIsClient(true);
   }, []);
 
-  // Significantly reduce the number of elements, especially on mobile
-  const rows = new Array(isMobile ? 30 : 50).fill(1);
-  const cols = new Array(isMobile ? 20 : 40).fill(1);
-
-  const colors = [
-    "rgb(247, 147, 26)", // orange-300
-    "rgb(251, 159, 45)", // orange-200
-    "rgb(255, 171, 64)", // orange-100
-    "rgb(173, 216, 230)", // light blue
-    "rgb(230, 126, 34)", // orange-400
-    "rgb(240, 140, 52)", // orange-500
-    "rgb(135, 206, 235)", // sky blue
-    "rgb(176, 224, 230)", // powder blue
-    "rgb(137, 207, 240)", // summer sky
-  ];
-
-  const getRandomColor = () => {
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+  // Dramatically reduce number of elements on mobile
+  const rows = new Array(isMobile ? 15 : 50).fill(1);
+  const cols = new Array(isMobile ? 8 : 40).fill(1);
 
   // Don't render anything during SSR to prevent hydration mismatch
   if (!isClient) return null;
 
   // Skip rendering on very small devices for better performance
-  if (isMobile && window.innerWidth < 400) {
+  if (isMobile && window.innerWidth < 500) {
     return (
       <div 
-        className={cn("absolute inset-0 bg-gradient-to-br from-black to-gray-900", className)}
+        className={cn("absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black", className)}
         {...rest}
       />
     );
@@ -60,41 +44,19 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {...rest}
     >
       {rows.map((_, i) => (
-        <motion.div
+        <div
           key={`row${i}`}
           className="w-16 h-8 border-l border-slate-700 relative"
         >
           {cols.map((_, j) => (
-            <motion.div
-              whileHover={{
-                backgroundColor: getRandomColor(),
-                transition: { duration: 0 },
-              }}
-              animate={{
-                transition: { duration: 2 },
-              }}
+            <div
               key={`col${j}`}
-              className="w-16 h-8 border-r border-t border-slate-700 relative"
-            >
-              {j % 4 === 0 && i % 4 === 0 ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-slate-700 stroke-[1px] pointer-events-none"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v12m6-6H6"
-                  />
-                </svg>
-              ) : null}
-            </motion.div>
+              className={`w-16 h-8 border-r border-t border-slate-700 relative ${
+                j % 4 === 0 && i % 4 === 0 ? 'before:content-[""] before:absolute before:w-2 before:h-2 before:bg-slate-700 before:top-0 before:left-0' : ''
+              }`}
+            />
           ))}
-        </motion.div>
+        </div>
       ))}
     </div>
   );

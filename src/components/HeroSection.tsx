@@ -19,7 +19,7 @@ const HeroSection = () => {
   return (
     <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Spinning Coin Video - Lazy loaded with placeholder */}
+        {/* Spinning Coin Video with optimized loading */}
         <div className="mb-24 pt-8 relative h-[180px]">
           {!isVideoLoaded && (
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
@@ -31,18 +31,19 @@ const HeroSection = () => {
             playsInline
             onLoadedData={handleVideoLoad}
             className={`mx-auto w-32 h-32 sm:w-40 sm:h-40 ${isVideoLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
-            preload="none"
+            preload={isMobile ? "metadata" : "auto"}
+            poster="/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png"
           >
             <source src="/lovable-uploads/flipmp4.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
-        {/* Text section with improved layout */}
-        <div className="mt-[120px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
+        {/* Text section with more vertical space */}
+        <div className="mt-[140px] text-3xl sm:text-4xl font-bold text-gray-800 mb-12">
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <motion.span>Buckazoids is</motion.span>
-            <div className="inline-block min-h-[3rem]">
+            <span className="block">Buckazoids is</span>
+            <div className="inline-block min-h-[3.5rem]">
               {isMobile ? (
                 <OptimizedTextRotate
                   texts={[
@@ -77,6 +78,7 @@ const HeroSection = () => {
           </div>
         </div>
 
+        {/* Button section */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button 
             className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8"
@@ -102,8 +104,8 @@ const HeroSection = () => {
 
         <CountdownTimer />
         
-        {/* Version indicator - hidden but useful for verification */}
-        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.7-spacing-fixed</div>
+        {/* Version indicator */}
+        <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.0.8-perf-optimized</div>
       </div>
     </div>
   );

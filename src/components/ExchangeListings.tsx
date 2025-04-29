@@ -7,6 +7,8 @@ type Exchange = {
   name: string;
   logo: string;
   url: string;
+  width: number;
+  height: number;
 };
 
 const exchanges: Exchange[] = [
@@ -14,41 +16,57 @@ const exchanges: Exchange[] = [
     name: "MEXC",
     logo: "/lovable-uploads/1d6fc8af-36eb-4bc4-849c-d2f4f8997b9a.png",
     url: "https://www.mexc.com/exchange/BUCKAZOIDS_USDT",
+    width: 80,
+    height: 40
   },
   {
     name: "Gate.io",
     logo: "/lovable-uploads/2bcff12f-e806-46c5-b957-052d88cfec4f.png",
     url: "https://www.gate.io/pilot/solana/buckazoids-buckazoids",
+    width: 80,
+    height: 40
   },
   {
     name: "Bitget",
     logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
     url: "https://x.com/Bitget_zh/status/1906972298604638539",
+    width: 120,
+    height: 45
   },
   {
     name: "MaxBid",
     logo: "/lovable-uploads/a946ddf3-ca0a-455d-abb7-20dc29fa43ce.png",
     url: "https://maxbid.pro/trade/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump",
+    width: 80,
+    height: 40
   },
   {
     name: "LBank",
     logo: "/lovable-uploads/fb2287c5-ac6a-4372-bc30-b06337157743.png",
     url: "https://www.lbank.com/trade/buckazoids_usdt",
+    width: 120,
+    height: 45
   },
   {
     name: "XT.com",
     logo: "/lovable-uploads/8fb9a61f-2190-49d2-86a3-8ede72b837ff.png",
     url: "https://www.xt.com/en/trade/buckazoids_usdt?channel=XTENX",
+    width: 80,
+    height: 40
   },
   {
     name: "Dextools",
     logo: "/lovable-uploads/f7c1a289-7500-437c-a394-10e9f1f4344e.png",
     url: "https://www.dextools.io/app/en/solana/pair-explorer/8KhsZhgWBEfDyTqJGMgZsmqgQUhB2mHj9CnaxcLXAYdm?t=1745055142630",
+    width: 80,
+    height: 40
   },
   {
     name: "Dexscreener",
     logo: "/lovable-uploads/3b7c9b44-9e7a-4f86-96b8-b026490eea72.png",
     url: "https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku",
+    width: 80,
+    height: 40
   },
 ];
 
@@ -56,21 +74,30 @@ const ExchangeListings = () => {
   const isMobile = useIsMobile();
   const [visibleExchanges, setVisibleExchanges] = useState<Exchange[]>([]);
   
-  // Progressive loading of exchange logos
+  // Progressive loading of exchange logos - only load what's visible first
   useEffect(() => {
-    // First load only the first 4 exchanges (above the fold)
-    setVisibleExchanges(exchanges.slice(0, 4));
+    // First load only the first 2-4 exchanges (above the fold)
+    setVisibleExchanges(exchanges.slice(0, isMobile ? 2 : 4));
     
-    // Then load the rest after a short delay
-    const timer = setTimeout(() => {
-      setVisibleExchanges(exchanges);
-    }, 500);
+    // Use IntersectionObserver to load the rest when scrolled into view
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setTimeout(() => setVisibleExchanges(exchanges), 100);
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
     
-    return () => clearTimeout(timer);
-  }, []);
+    const element = document.getElementById('exchange-listings-container');
+    if (element) observer.observe(element);
+    
+    return () => observer.disconnect();
+  }, [isMobile]);
   
   return (
-    <div className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 md:grid-cols-4 gap-8"}`}>
+    <div 
+      id="exchange-listings-container"
+      className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-2 md:grid-cols-4 gap-8"}`}
+    >
       {visibleExchanges.map((exchange) => (
         <a
           key={exchange.name}
@@ -83,14 +110,11 @@ const ExchangeListings = () => {
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
-              className={`w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
-                exchange.name === 'Bitget' || exchange.name === 'LBank' 
-                  ? 'max-h-24 sm:max-h-48' 
-                  : 'max-h-16 sm:max-h-24'
-              }`}
-              loading="lazy"
-              width={exchange.name === 'Bitget' || exchange.name === 'LBank' ? 120 : 80}
-              height={exchange.name === 'Bitget' || exchange.name === 'LBank' ? 96 : 64}
+              className="w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+              loading={exchange.name === "MEXC" || exchange.name === "Gate.io" ? "eager" : "lazy"}
+              width={exchange.width}
+              height={exchange.height}
+              decoding={exchange.name === "MEXC" || exchange.name === "Gate.io" ? "sync" : "async"}
             />
           </Card>
         </a>
