@@ -65,7 +65,7 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Use an anonymous function wrapper to prevent arguments being passed
+    // Use an arrow function to ensure no arguments are passed to forceRefresh
     const intervalId = setInterval(() => {
       forceRefresh();
     }, 30000);
@@ -93,6 +93,7 @@ const Index = () => {
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
             onClick={() => {
+              // Use an arrow function to ensure no event argument is passed to forceRefresh
               forceRefresh();
               window.location.reload(true);
             }}
