@@ -5,7 +5,7 @@ const TwitterCard = () => {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
       <div className="mb-6 w-24 h-24 bg-[#f7f9f9] rounded-full flex items-center justify-center mx-auto">
-        {/* Custom X icon that matches the reference image */}
+        {/* X logo (Twitter) */}
         <svg 
           width="48" 
           height="48" 
@@ -15,7 +15,7 @@ const TwitterCard = () => {
           className="text-[#0f1419]"
         >
           <path 
-            d="M17.1755 4.5H19.9405L13.8655 11.3925L21 19.5H15.4725L11.0482 14.5913L6.0075 19.5H3.2415L9.6893 12.1373L2.8125 4.5H8.4675L12.4605 9.0045L17.1755 4.5ZM16.249 17.85H17.6738L7.8292 6.0795H6.2842L16.249 17.85Z" 
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
             fill="currentColor"
           />
         </svg>

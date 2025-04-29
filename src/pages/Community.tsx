@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Twitter, Github, MessageCircle, Pill, Youtube, Instagram } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPage = () => {
@@ -25,9 +24,22 @@ const CommunityPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Twitter className="text-[#02314d] w-8 h-8" />
+                  {/* X logo (Twitter) */}
+                  <svg 
+                    width="28" 
+                    height="28" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-[#02314d]"
+                  >
+                    <path 
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
+                      fill="currentColor"
+                    />
+                  </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#02314d] mb-4">Twitter</h3>
+                <h3 className="text-2xl font-bold text-[#02314d] mb-4">X (Twitter)</h3>
                 <p className="text-gray-600 mb-6">
                   Follow us for the latest updates, community events, and discussions about Buckazoids and crypto history.
                 </p>
@@ -41,7 +53,20 @@ const CommunityPage = () => {
 
               <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
                 <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-                  <Twitter className="text-buckazoid-orange w-8 h-8" />
+                  {/* X logo (Twitter) for documenting Buckazoids */}
+                  <svg 
+                    width="28" 
+                    height="28" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-buckazoid-orange"
+                  >
+                    <path 
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
+                      fill="currentColor"
+                    />
+                  </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Documenting Buckazoids</h3>
                 <p className="text-gray-600 mb-6">
@@ -176,4 +201,3 @@ const CommunityPage = () => {
 };
 
 export default CommunityPage;
-
