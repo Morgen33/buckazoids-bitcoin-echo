@@ -64,7 +64,6 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Fix: Remove the parameter from setInterval call
     const intervalId = setInterval(forceRefresh, 30000);
     
     // Check if this is the first load after a deploy
@@ -90,7 +89,6 @@ const Index = () => {
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
             onClick={() => {
-              // Fix: Use arrow function to call forceRefresh without passing the event
               forceRefresh();
               window.location.reload(true);
             }}
