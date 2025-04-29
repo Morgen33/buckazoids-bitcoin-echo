@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -12,9 +12,9 @@ import { RefreshCw } from "lucide-react";
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
 
-  // Super aggressive cache refresh strategy
-  // Modified to accept and ignore any arguments
-  const forceRefresh = (..._args: any[]) => {
+  // Define forceRefresh as a useCallback to prevent recreation on each render
+  // And clearly specify that it accepts no parameters
+  const forceRefresh = useCallback(() => {
     // Clear browser cache for images by appending timestamp to URLs
     document.querySelectorAll('img').forEach(img => {
       if (img.src) {
@@ -52,24 +52,24 @@ const Index = () => {
     });
 
     console.log('Cache refresh attempted for images:', new Date().toISOString());
-  };
+  }, []);
 
   useEffect(() => {
-    // Define a function for the event handler
-    const handleLoad = () => {
-      // Call forceRefresh with no arguments explicitly
-      forceRefresh();
-    };
-
     // Try to refresh immediately after component mounts
     forceRefresh();
 
-    // Also try after everything has fully loaded
+    // Define a function for the event handler
+    const handleLoad = () => {
+      forceRefresh();
+    };
+
+    // Add event listener
     window.addEventListener('load', handleLoad);
 
-    // And periodically check for updates (every 30 seconds)
-    // Use an arrow function to ensure proper argument handling
-    const intervalId = setInterval(() => forceRefresh(), 30000);
+    // Periodically check for updates (every 30 seconds)
+    const intervalId = setInterval(() => {
+      forceRefresh();
+    }, 30000);
 
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
@@ -78,14 +78,20 @@ const Index = () => {
     if (lastVersion !== currentVersion) {
       // New version detected, force hard refresh
       localStorage.setItem('buckazoids_version', currentVersion);
-      window.location.reload(true); // This line is correct
+      window.location.reload(true);
     }
 
+    // Cleanup function
     return () => {
       window.removeEventListener('load', handleLoad);
       clearInterval(intervalId);
     };
-  }, []);
+  }, [forceRefresh]);
+
+  // Properly typed handler for button click
+  const handleRefreshClick = () => {
+    forceRefresh();
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white relative">
@@ -93,7 +99,7 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={() => forceRefresh()}
+            onClick={handleRefreshClick}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
             <RefreshCw className="h-4 w-4" /> Refresh Page
