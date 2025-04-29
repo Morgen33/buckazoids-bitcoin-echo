@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,9 +11,8 @@ import { RefreshCw } from "lucide-react";
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
 
-  // Modified to accept and ignore any parameters
-  const forceRefresh = (..._args: any[]) => {
-    // Super aggressive cache refresh strategy
+  // Super aggressive cache refresh strategy
+  const forceRefresh = () => {
     // Clear browser cache for images by appending timestamp to URLs
     document.querySelectorAll('img').forEach(img => {
       if (img.src) {
@@ -67,8 +65,10 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
 
     // And periodically check for updates (every 30 seconds)
-    // The function will now properly handle any arguments passed to it
-    const intervalId = setInterval(forceRefresh, 30000);
+    // Use an arrow function to ensure no arguments are passed to forceRefresh
+    const intervalId = setInterval(() => {
+      forceRefresh();
+    }, 30000);
 
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
@@ -77,7 +77,7 @@ const Index = () => {
     if (lastVersion !== currentVersion) {
       // New version detected, force hard refresh
       localStorage.setItem('buckazoids_version', currentVersion);
-      window.location.reload(true);
+      window.location.reload(true); // This line is correct
     }
 
     return () => {
@@ -92,7 +92,11 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={forceRefresh}
+            onClick={() => {
+              // Use an arrow function to ensure no event argument is passed to forceRefresh
+              forceRefresh();
+              window.location.reload(true); // This line is correct
+            }}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
             <RefreshCw className="h-4 w-4" /> Refresh Page
