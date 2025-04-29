@@ -21,12 +21,13 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable filename hashing for better cache control
+    // Disable caching for faster updates
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        // Use unique timestamp-based hashing to prevent caching
+        entryFileNames: `assets/[name]-[hash]-${Date.now()}.js`,
+        chunkFileNames: `assets/[name]-[hash]-${Date.now()}.js`,
+        assetFileNames: `assets/[name]-[hash]-${Date.now()}.[ext]`
       }
     },
     // Improve chunk size optimization

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { DesktopNav } from "./header/DesktopNav";
@@ -10,13 +10,20 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const [cacheBuster, setCacheBuster] = useState(`?v=${new Date().getTime()}`);
+  
+  // Refresh cacheBuster every minute to ensure fresh content
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCacheBuster(`?v=${new Date().getTime()}`);
+    }, 60000); // Update every minute
+    
+    return () => clearInterval(interval);
+  }, []);
   
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
-  
-  // Generate a cache-busting timestamp for images
-  const cacheBuster = `?v=${new Date().getTime()}`;
   
   return (
     <header className="w-full">
