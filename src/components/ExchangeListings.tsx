@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Exchange = {
   name: string;
@@ -70,13 +71,14 @@ const exchanges: Exchange[] = [
 ];
 
 const ExchangeListings = () => {
+  const isMobile = useIsMobile();
   // Always show all exchanges immediately
   const [visibleExchanges] = useState<Exchange[]>(exchanges);
   
   return (
     <div 
       id="exchange-listings-container"
-      className="grid grid-cols-4 gap-8"
+      className={`grid ${isMobile ? "grid-cols-2 gap-4" : "grid-cols-4 gap-8"}`}
     >
       {visibleExchanges.map((exchange) => (
         <a
@@ -86,7 +88,7 @@ const ExchangeListings = () => {
           rel="noopener noreferrer"
           className="group"
         >
-          <Card className="p-4 sm:p-6 h-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg bg-white/10 border-none">
+          <Card className="p-4 sm:p-6 h-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg bg-black/60 backdrop-blur-sm border-gray-800">
             <img
               src={exchange.logo}
               alt={`${exchange.name} logo`}
