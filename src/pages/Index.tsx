@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -53,7 +54,7 @@ const Index = () => {
   };
 
   useEffect(() => {
-    // Define a function for the event handler
+    // Define a function for the event handler that ignores any arguments
     const handleLoad = () => {
       forceRefresh();
     };
@@ -92,10 +93,11 @@ const Index = () => {
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
-            onClick={() => {
-              // Use an arrow function to ensure no event argument is passed to forceRefresh
+            onClick={(event) => {
+              // Prevent the event from being passed to forceRefresh
+              event.preventDefault();
               forceRefresh();
-              window.location.reload(true); // This line is correct
+              window.location.reload(true);
             }}
             className="bg-buckazoids-orange hover:bg-buckazoids-yellow flex items-center gap-2"
           >
