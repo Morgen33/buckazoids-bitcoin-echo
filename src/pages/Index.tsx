@@ -64,8 +64,7 @@ const Index = () => {
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
-    // Fix: Use a wrapper function to avoid passing timer ID as an argument
-    const intervalId = setInterval(() => forceRefresh(), 30000);
+    const intervalId = setInterval(forceRefresh, 30000);
     
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
@@ -90,7 +89,6 @@ const Index = () => {
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
             onClick={() => {
-              // Fix: Use separate function calls to avoid event passing
               forceRefresh();
               window.location.reload(true);
             }}
