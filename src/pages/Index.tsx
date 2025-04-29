@@ -1,20 +1,18 @@
 
-import { useEffect, useState, useCallback } from "react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import OverviewSection from "@/components/OverviewSection";
 import AboutSection from "@/components/AboutSection";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/components/ui/use-toast";
 import { RefreshCw } from "lucide-react";
 
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
 
-  // Define forceRefresh as a useCallback to prevent recreation on each render
-  // And clearly specify that it accepts no parameters
-  const forceRefresh = useCallback(() => {
+  // Simple refresh function without any complex logic or dependencies
+  const handleRefreshClick = () => {
     // Clear browser cache for images by appending timestamp to URLs
     document.querySelectorAll('img').forEach(img => {
       if (img.src) {
@@ -23,74 +21,11 @@ const Index = () => {
       }
     });
 
-    // Force refresh styles
-    const styleSheets = document.styleSheets;
-    for (let i = 0; i < styleSheets.length; i++) {
-      try {
-        const sheet = styleSheets[i];
-        if (sheet.href) {
-          // Create a new link element with updated URL
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          const cleanHref = sheet.href.split('?')[0]; // Remove any existing query params
-          link.href = `${cleanHref}?v=${Date.now()}`;
-          document.head.appendChild(link);
-        }
-      } catch (e) {
-        console.error('Error processing stylesheet:', e);
-      }
-    }
-
     // Set local storage flag to indicate this is a fresh load
     localStorage.setItem('buckazoids_last_refresh', new Date().toISOString());
     setLastRefresh(new Date().toISOString());
 
-    // Show a toast notification
-    toast({
-      title: "Page refreshed",
-      description: "All cached content has been refreshed.",
-    });
-
-    console.log('Cache refresh attempted for images:', new Date().toISOString());
-  }, []);
-
-  useEffect(() => {
-    // Try to refresh immediately after component mounts
-    forceRefresh();
-
-    // Define a function for the event handler
-    const handleLoad = () => {
-      forceRefresh();
-    };
-
-    // Add event listener
-    window.addEventListener('load', handleLoad);
-
-    // Periodically check for updates (every 30 seconds)
-    const intervalId = setInterval(() => {
-      forceRefresh();
-    }, 30000);
-
-    // Check if this is the first load after a deploy
-    const lastVersion = localStorage.getItem('buckazoids_version');
-    const currentVersion = "2025-04-29"; // Updated to today's date
-
-    if (lastVersion !== currentVersion) {
-      // New version detected, force hard refresh
-      localStorage.setItem('buckazoids_version', currentVersion);
-      window.location.reload(true);
-    }
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener('load', handleLoad);
-      clearInterval(intervalId);
-    };
-  }, [forceRefresh]);
-
-  // Properly typed handler for button click
-  const handleRefreshClick = () => {
-    forceRefresh();
+    console.log('Manual cache refresh attempted:', new Date().toISOString());
   };
 
   return (
