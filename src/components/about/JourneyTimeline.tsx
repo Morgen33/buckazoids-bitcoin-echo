@@ -17,7 +17,7 @@ const JourneyTimeline = () => {
               and witness the global mass adoption of digital currencies.
             </p>
             <p className="text-[#02314d] font-semibold text-lg">
-              However, everything changed over the past 20 days.
+              However, everything changed since March 27th.
             </p>
           </div>
         </div>
