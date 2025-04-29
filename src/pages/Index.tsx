@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -49,25 +50,26 @@ const Index = () => {
       description: "All cached content has been refreshed.",
     });
     
-    console.log('Super aggressive cache refresh attempted:', new Date().toISOString());
+    console.log('Cache refresh attempted for images:', new Date().toISOString());
   };
   
   useEffect(() => {
+    // Define a function for the event handler
+    const handleLoad = () => forceRefresh();
+    
     // Try to refresh immediately after component mounts
     forceRefresh();
-    
-    // Create a reference to the function we'll use as the event handler
-    const handleLoad = () => forceRefresh();
     
     // Also try after everything has fully loaded
     window.addEventListener('load', handleLoad);
     
     // And periodically check for updates (every 30 seconds)
+    // Remove the arrow function to fix the TypeScript error
     const intervalId = setInterval(forceRefresh, 30000);
     
     // Check if this is the first load after a deploy
     const lastVersion = localStorage.getItem('buckazoids_version');
-    const currentVersion = "2025-04-28"; // Change this when you deploy
+    const currentVersion = "2025-04-29"; // Updated to today's date
     
     if (lastVersion !== currentVersion) {
       // New version detected, force hard refresh
@@ -88,6 +90,7 @@ const Index = () => {
         <div className="fixed bottom-4 right-4 z-50">
           <Button 
             onClick={() => {
+              // Use arrow function to fix the TypeScript error
               forceRefresh();
               window.location.reload(true);
             }}
