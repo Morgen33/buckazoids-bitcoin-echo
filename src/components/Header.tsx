@@ -51,29 +51,9 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end items-center h-24 sm:h-36 gap-4" style={{minHeight: "6rem"}}>
             <div className="mr-auto my-2 sm:mt-4 sm:mb-4">
-              <img 
-                src={`/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${cacheBuster}`}
-                alt="Buckazoids Logo" 
-                className="h-20 sm:h-32 w-auto"
-                data-refresh="true"
-                style={{
-                  height: "5rem",
-                  maxHeight: "5rem",
-                  objectFit: "contain",
-                  display: "block"
-                }}
-                srcSet={`
-                  /lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${cacheBuster} 2x,
-                  /lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${cacheBuster} 1x
-                `}
-                loading="eager"
-                onError={(e) => {
-                  // Retry with new cache buster if image fails to load
-                  const img = e.target as HTMLImageElement;
-                  const newCacheBuster = `?v=${Date.now()}`;
-                  img.src = `/lovable-uploads/be75368e-69e2-4230-89af-142d8bd0dd33.png${newCacheBuster}`;
-                }}
-              />
+              <Link to="/" className="font-bold italic text-4xl md:text-5xl">
+                Buckazoids
+              </Link>
             </div>
 
             <DesktopNav 
