@@ -7,8 +7,8 @@ const TwitterCard = () => {
       <div className="mb-6 w-24 h-24 bg-[#f7f9f9] rounded-full flex items-center justify-center mx-auto">
         {/* Custom X icon that matches the reference image */}
         <svg 
-          width="36" 
-          height="36" 
+          width="48" 
+          height="48" 
           viewBox="0 0 24 24" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
