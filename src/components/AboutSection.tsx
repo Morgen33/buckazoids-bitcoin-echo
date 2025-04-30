@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ExternalLink, History, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +28,7 @@ const AboutSection = () => {
           
           {/* Now placing the text rotation component between header and description */}
           <div className="mb-8">
-            <div className="text-3xl sm:text-4xl font-bold text-gray-800">
+            <div className="text-3xl sm:text-4xl font-bold">
               <div className="flex items-center justify-center gap-3 flex-wrap">
                 <span className="block">Buckazoids is</span>
                 <div className="inline-block min-h-[3.5rem]">
