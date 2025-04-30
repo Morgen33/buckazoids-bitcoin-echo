@@ -120,7 +120,7 @@ const Index = () => {
               </div>
             }>
               <div className="relative z-20">
-                <OverviewSection key={`overview-${lastRefresh || 'initial'}`} />
+                <AboutSection key={`about-${lastRefresh || 'initial'}`} />
               </div>
             </Suspense>
             
@@ -130,7 +130,7 @@ const Index = () => {
               </div>
             }>
               <div className="relative z-10">
-                <AboutSection key={`about-${lastRefresh || 'initial'}`} />
+                <OverviewSection key={`overview-${lastRefresh || 'initial'}`} />
               </div>
             </Suspense>
           </>
