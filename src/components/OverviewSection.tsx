@@ -10,7 +10,7 @@ const OverviewSection = () => {
   return (
     <div 
       id="overview-section" 
-      className={`relative overflow-hidden ${isMobile ? "min-h-[900px]" : "h-[1000px]"} pt-16 sm:pt-32`}
+      className={`relative overflow-hidden ${isMobile ? "min-h-[900px]" : "h-[1000px]"} pt-8 sm:pt-16`}
     >
       {/* Background pattern section */}
       <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
