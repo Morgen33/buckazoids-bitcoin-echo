@@ -29,7 +29,7 @@ const AboutSection = () => {
           
           {/* Now placing the text rotation component between header and description */}
           <div className="mb-8">
-            <div className="text-3xl sm:text-4xl font-bold">
+            <div className="text-3xl sm:text-4xl font-bold text-gray-800">
               <div className="flex items-center justify-center gap-3 flex-wrap">
                 <span className="block">Buckazoids is</span>
                 <div className="inline-block min-h-[3.5rem]">
@@ -43,7 +43,7 @@ const AboutSection = () => {
                         "Satoshi",
                         "Nakamoto"
                       ]}
-                      mainClassName="overflow-hidden py-2 justify-center"
+                      mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
                       rotationInterval={2000}
                     />
                   ) : (
@@ -56,7 +56,7 @@ const AboutSection = () => {
                         "Satoshi",
                         "Nakamoto"
                       ]}
-                      mainClassName="overflow-hidden py-2 justify-center"
+                      mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
                       staggerFrom="last"
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
