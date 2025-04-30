@@ -21,9 +21,9 @@ const AboutSection = () => {
   return (
     <section className="bg-[#FFF5E6] py-24 mt-0" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* About Buckazoids header positioned first */}
+        {/* About Buckazoids header positioned first with larger text size */}
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About Buckazoids
           </h2>
           
