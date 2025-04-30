@@ -26,7 +26,7 @@ const OverviewSection = () => {
       {/* Content section */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 h-full pb-32">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 sm:mb-4">Available on Major Exchanges</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 sm:mb-4">Available on Major Exchanges</h2>
           <p className="text-gray-300 text-base sm:text-lg">Trade Buckazoids on these trusted platforms</p>
         </div>
         <ExchangeListings />
