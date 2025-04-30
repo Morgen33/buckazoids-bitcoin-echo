@@ -21,59 +21,61 @@ const AboutSection = () => {
   return (
     <section className="bg-[#FFF5E6] py-24 mt-0" id="intro">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* About Buckazoids header and text now positioned first */}
-        <div className="text-center mb-16">
+        {/* About Buckazoids header positioned first */}
+        <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About Buckazoids
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Buckazoids built on the Solana blockchain, uniquely bridges the worlds of classic gaming and cryptocurrency history. Originally featured as the fictional currency in Sierra's legendary "Space Quest" series, Buckazoids notably showcased a ₿ decades before Bitcoin's creation. Rediscovered through a viral Reddit post in March 2025, Buckazoids quickly captivated both gaming and crypto enthusiasts worldwide.
-          </p>
-        </div>
-        
-        {/* Moved text rotation component below the About Buckazoids section */}
-        <div className="text-center mb-8">
-          <div className="text-3xl sm:text-4xl font-bold text-gray-800">
-            <div className="flex items-center justify-center gap-3 flex-wrap">
-              <span className="block">Buckazoids is</span>
-              <div className="inline-block min-h-[3.5rem]">
-                {isMobile ? (
-                  <OptimizedTextRotate
-                    texts={[
-                      "coded",
-                      "the future",
-                      "the lore",
-                      "bitcoin",
-                      "Satoshi",
-                      "Nakamoto"
-                    ]}
-                    mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-                    rotationInterval={2000}
-                  />
-                ) : (
-                  <TextRotate
-                    texts={[
-                      "coded",
-                      "the future",
-                      "the lore",
-                      "bitcoin",
-                      "Satoshi",
-                      "Nakamoto"
-                    ]}
-                    mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
-                    staggerFrom="last"
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
-                  />
-                )}
+          
+          {/* Now placing the text rotation component between header and description */}
+          <div className="mb-8">
+            <div className="text-3xl sm:text-4xl font-bold text-gray-800">
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <span className="block">Buckazoids is</span>
+                <div className="inline-block min-h-[3.5rem]">
+                  {isMobile ? (
+                    <OptimizedTextRotate
+                      texts={[
+                        "coded",
+                        "the future",
+                        "the lore",
+                        "bitcoin",
+                        "Satoshi",
+                        "Nakamoto"
+                      ]}
+                      mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                      rotationInterval={2000}
+                    />
+                  ) : (
+                    <TextRotate
+                      texts={[
+                        "coded",
+                        "the future",
+                        "the lore",
+                        "bitcoin",
+                        "Satoshi",
+                        "Nakamoto"
+                      ]}
+                      mainClassName="text-[#f7931a] overflow-hidden py-2 justify-center"
+                      staggerFrom="last"
+                      initial={{ y: "100%" }}
+                      animate={{ y: 0 }}
+                      exit={{ y: "-120%" }}
+                      staggerDuration={0.025}
+                      splitLevelClassName="overflow-hidden"
+                      transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                      rotationInterval={2000}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
+          
+          {/* Description text after the rotation component */}
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
+            Buckazoids built on the Solana blockchain, uniquely bridges the worlds of classic gaming and cryptocurrency history. Originally featured as the fictional currency in Sierra's legendary "Space Quest" series, Buckazoids notably showcased a ₿ decades before Bitcoin's creation. Rediscovered through a viral Reddit post in March 2025, Buckazoids quickly captivated both gaming and crypto enthusiasts worldwide.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
