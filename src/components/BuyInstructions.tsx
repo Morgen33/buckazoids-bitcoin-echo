@@ -1,9 +1,23 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Wallet, Download, CircleCheck } from "lucide-react";
+import { ArrowRight, Wallet, Download, CircleCheck, Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const BuyInstructions = () => {
+  const contractAddress = "BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress)
+      .then(() => {
+        toast.success("Contract address copied to clipboard");
+      })
+      .catch(() => {
+        toast.error("Failed to copy contract address");
+      });
+  };
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +99,18 @@ const BuyInstructions = () => {
                   <span className="font-bold text-buckazoid-blue">G.</span>
                   <div>
                     <p className="text-gray-700">Go to search bar Enter contract address:</p>
-                    <code className="bg-gray-100 px-2 py-1 rounded text-sm">BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump</code>
+                    <div className="flex items-center mt-2 gap-2">
+                      <code className="bg-gray-100 px-2 py-1 rounded text-sm flex-grow">{contractAddress}</code>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex items-center gap-1 border-buckazoid-blue/30 hover:bg-buckazoid-blue/10" 
+                        onClick={copyToClipboard}
+                      >
+                        <Copy className="w-4 h-4" />
+                        Copy
+                      </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
