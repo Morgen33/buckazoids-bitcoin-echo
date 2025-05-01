@@ -6,7 +6,7 @@ const DiscoverySection = () => {
       <p className="text-gray-700 leading-relaxed mb-6">
         While browsing X.com, we stumbled upon a random Reddit post dated March 26th, 2025. 
         This post introduced something truly astonishing — an old-school adventure computer game 
-        called Space Quest, developed by Sierra On-Line (now Sierra Entertainment).
+        called Space Quest, developed by Sierra Entertainment, Inc. formerly known as Sierra On-Line.
       </p>
       <div className="mb-8">
         <ul className="list-none space-y-4 text-gray-700">
