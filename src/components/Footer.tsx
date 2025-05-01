@@ -1,24 +1,8 @@
+
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { useEffect, useState } from "react";
 import { X, ExternalLink } from "lucide-react";
 
 const Footer = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const { data } = await supabase.auth.getSession();
-      setIsAuthenticated(!!data.session);
-    };
-    checkAuth();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAuthenticated(!!session);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
-
   return (
     <footer className="bg-gradient-to-b from-white to-gray-100 text-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
