@@ -31,8 +31,7 @@ const ContributorsSection = () => {
         <div>
           <h3 className="text-xl font-bold mb-4 text-[#02314d]">The Buckazoids Token Launch</h3>
           <p className="text-gray-700 leading-relaxed">
-            Fast forward to March 27th, 2025 (March 28th if you're using the Japanese calendar). 
-            On this day, the Buckazoids token launched on the Solana network — a high-speed, 
+            Fast forward to March 27th, 2025. On this day, the Buckazoids token launched on the Solana network — a high-speed, 
             low-cost blockchain. The launch date is significant, as it aligns with a Bitcoin 
             Conference taking place exactly 59 days later, themed "EMBRACE GAME THEORY," 
             echoing retro game vibes and pointing back to Space Quest.
