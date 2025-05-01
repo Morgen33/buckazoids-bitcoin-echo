@@ -29,7 +29,7 @@ const DiscoverySection = () => {
 
       <h2 className="text-3xl font-bold mb-6 text-[#02314d]">Uncovering the Mystery</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        Intrigued by this discovery, a small group of digital archaeologists and I began digging deeper. 
+        Intrigued by this discovery, a small group of digital archaeologists began digging deeper. 
         Since March 27th, we have uncovered connections, names, symbols, and dates that shine 
         new light on the greatest mystery in crypto: Who is Satoshi Nakamoto?
       </p>
