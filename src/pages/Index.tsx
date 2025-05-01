@@ -6,6 +6,8 @@ import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { SEO } from "@/components/seo/SEO";
+import { pageSeoData } from "@/config/seo-metadata";
 
 // Lazy load non-critical sections
 const OverviewSection = lazy(() => import("@/components/OverviewSection"));
@@ -95,6 +97,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white relative">
+      <SEO {...pageSeoData.home} />
       <Header />
       <main className="flex-grow relative">
         <div className="fixed bottom-4 right-4 z-50">

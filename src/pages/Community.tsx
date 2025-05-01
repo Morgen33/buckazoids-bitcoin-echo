@@ -1,13 +1,17 @@
+
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Github, MessageCircle, Pill, Youtube, Instagram } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import { SEO } from "@/components/seo/SEO";
+import { pageSeoData } from "@/config/seo-metadata";
 
 const CommunityPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <SEO {...pageSeoData.community} pageName="Community" />
       <Header />
       <main className="flex-grow">
         <section className="py-24 bg-[#FFF5E6]">

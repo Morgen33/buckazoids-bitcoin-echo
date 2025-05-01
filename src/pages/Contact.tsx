@@ -1,3 +1,4 @@
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -17,6 +18,8 @@ import { Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
+import { SEO } from "@/components/seo/SEO";
+import { pageSeoData } from "@/config/seo-metadata";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -58,6 +61,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#fff3e2' }}>
+      <SEO {...pageSeoData.contact} pageName="Contact" />
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
@@ -124,4 +128,4 @@ export default function Contact() {
       <Footer />
     </div>
   );
-}
+};

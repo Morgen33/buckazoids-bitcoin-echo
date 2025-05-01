@@ -3,10 +3,13 @@ import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { NewsList } from "@/components/news/NewsList";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/seo/SEO";
+import { pageSeoData } from "@/config/seo-metadata";
 
 const NewsPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#fff3e2]">
+      <SEO {...pageSeoData.news} pageName="News" />
       <Header />
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         <Card className="mb-8 bg-white">
