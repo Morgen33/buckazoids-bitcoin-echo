@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { TextRotate } from "@/components/ui/text-rotate";
 import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
@@ -7,13 +8,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import MatrixRain from "./ui/MatrixRain";
 
 const HeroSection = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const isMobile = useIsMobile();
   const [cacheBuster, setCacheBuster] = useState(`?v=${Date.now()}`);
 
-  // Function to handle video loading
-  const handleVideoLoad = () => {
-    setIsVideoLoaded(true);
+  // Function to handle image loading
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
   };
   
   // Refresh cache buster every 30 seconds
@@ -80,25 +81,19 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Spinning Coin Video */}
+        {/* Spinning Coin GIF - replaced video with gif */}
         <div className="mb-12 relative h-[160px]">
-          {!isVideoLoaded && (
+          {!isImageLoaded && (
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
           )}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            onLoadedData={handleVideoLoad}
-            className={`mx-auto w-32 h-32 sm:w-40 sm:h-40 ${isVideoLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
-            preload={isMobile ? "metadata" : "auto"}
-            poster={`/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png${cacheBuster}`}
-            key={`video-${cacheBuster}`} // Key forces React to recreate the element
-          >
-            <source src={`/lovable-uploads/flipmp4.mp4${cacheBuster}`} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <img
+            src={`/lovable-uploads/finalcointrans.gif${cacheBuster}`}
+            alt="Spinning Buckazoid Coin"
+            className={`mx-auto w-32 h-32 sm:w-40 sm:h-40 ${isImageLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
+            onLoad={handleImageLoad}
+            data-refresh="true"
+            key={`coin-${cacheBuster}`} // Key forces React to recreate the element
+          />
         </div>
 
         <CountdownTimer />
