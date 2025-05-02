@@ -59,7 +59,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://x.com/BuckazoidsSOL"
+                <a href="https://x.com/BuckazoidsWorld"
                    className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
                    target="_blank" 
                    rel="noopener noreferrer">

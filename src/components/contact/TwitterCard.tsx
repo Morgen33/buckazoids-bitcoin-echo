@@ -26,7 +26,7 @@ const TwitterCard = () => {
       </p>
       <Button 
         className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
-        onClick={() => window.open('https://x.com/messages/compose?recipient_id=BuckazoidsSOL', '_blank')}
+        onClick={() => window.open('https://x.com/BuckazoidsWorld', '_blank')}
       >
         Message @Buckazoids
       </Button>

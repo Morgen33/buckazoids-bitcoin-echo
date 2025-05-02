@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -49,7 +48,7 @@ const CommunityPage = () => {
                 </p>
                 <Button 
                   className="bg-[#02314d] hover:bg-buckazoid-orange text-white"
-                  onClick={() => window.open('https://x.com/BuckazoidsSOL', '_blank')}
+                  onClick={() => window.open('https://x.com/BuckazoidsWorld', '_blank')}
                 >
                   Follow @Buckazoids
                 </Button>
@@ -78,9 +77,9 @@ const CommunityPage = () => {
                 </p>
                 <Button 
                   className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
-                  onClick={() => window.open('https://x.com/@59Buckazoids', '_blank')}
+                  onClick={() => window.open('https://x.com/BuckazoidsWorld', '_blank')}
                 >
-                  Follow @59Buckazoids
+                  Follow @Buckazoids
                 </Button>
               </div>
 

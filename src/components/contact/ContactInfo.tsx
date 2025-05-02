@@ -12,12 +12,12 @@ const ContactInfo = () => {
         <p className="text-white/90 mt-4">
           Find us on X {" "}
           <a 
-            href="https://x.com/BuckazoidsSOL" 
+            href="https://x.com/BuckazoidsWorld" 
             target="_blank" 
             rel="noopener noreferrer"
             className="font-semibold hover:underline"
           >
-            @BuckazoidsSOL
+            @BuckazoidsWorld
           </a>
           {" "} and send a DM for faster response.
         </p>
