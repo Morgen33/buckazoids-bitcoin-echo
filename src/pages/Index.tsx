@@ -1,17 +1,15 @@
 
-import { useState, lazy, Suspense, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection"; // Direct import instead of lazy loading
+import OverviewSection from "@/components/OverviewSection"; // Direct import instead of lazy loading
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { SEO } from "@/components/seo/SEO";
 import { pageSeoData } from "@/config/seo-metadata";
-
-// Lazy load non-critical sections
-const OverviewSection = lazy(() => import("@/components/OverviewSection"));
-const AboutSection = lazy(() => import("@/components/AboutSection"));
 
 // Global type declaration for the cache buster
 declare global {
@@ -22,14 +20,13 @@ declare global {
 
 const Index = () => {
   const [lastRefresh, setLastRefresh] = useState<string>("");
-  const [shouldLoadSections, setShouldLoadSections] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [refreshCount, setRefreshCount] = useState(0);
 
-  // Only load below-the-fold sections after the critical content is rendered
+  // Set loading state
   useEffect(() => {
-    // Set a small timeout to prioritize above-the-fold content
     const timer = setTimeout(() => {
-      setShouldLoadSections(true);
+      setIsLoading(false);
     }, 1000);
     
     return () => clearTimeout(timer);
@@ -72,9 +69,9 @@ const Index = () => {
     localStorage.setItem('buckazoids_cache_version', `force-${timestamp}`);
     setLastRefresh(new Date().toISOString());
 
-    // Force reload of components
-    setShouldLoadSections(false);
-    setTimeout(() => setShouldLoadSections(true), 100);
+    // Reset loading state to force re-render components
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 100);
     
     // Increment refresh count
     setRefreshCount(prev => prev + 1);
@@ -114,36 +111,22 @@ const Index = () => {
           <HeroSection key={`hero-${lastRefresh || 'initial'}`} />
         </div>
         
-        {/* Only load these sections after the critical content is ready */}
-        {shouldLoadSections ? (
-          <>
-            <Suspense fallback={
-              <div className="h-[400px] flex items-center justify-center bg-gray-100">
-                <div className="animate-pulse w-12 h-12 rounded-full bg-gray-300"></div>
-              </div>
-            }>
-              <div className="relative z-20">
-                <OverviewSection key={`overview-${lastRefresh || 'initial'}`} />
-              </div>
-            </Suspense>
-            
-            <Suspense fallback={
-              <div className="h-[400px] flex items-center justify-center bg-white">
-                <div className="animate-pulse w-12 h-12 rounded-full bg-gray-100"></div>
-              </div>
-            }>
-              <div className="relative z-10">
-                <AboutSection key={`about-${lastRefresh || 'initial'}`} />
-              </div>
-            </Suspense>
-          </>
-        ) : (
+        {isLoading ? (
           <>
             <div className="h-[400px] flex items-center justify-center bg-gray-100">
               <div className="animate-pulse w-12 h-12 rounded-full bg-gray-300"></div>
             </div>
             <div className="h-[400px] flex items-center justify-center bg-white">
               <div className="animate-pulse w-12 h-12 rounded-full bg-gray-100"></div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="relative z-20">
+              <OverviewSection key={`overview-${lastRefresh || 'initial'}`} />
+            </div>
+            <div className="relative z-10">
+              <AboutSection key={`about-${lastRefresh || 'initial'}`} />
             </div>
           </>
         )}
