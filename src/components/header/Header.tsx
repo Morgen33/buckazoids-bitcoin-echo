@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { DesktopNav } from "./header/DesktopNav";
-import { MobileNav } from "./header/MobileNav";
-import { navigationItems } from "./header/NavigationItems";
-import MatrixRain from "./ui/MatrixRain";
+import { DesktopNav } from "./DesktopNav";
+import { MobileNav } from "./MobileNav";
+import { navigationItems } from "./NavigationItems";
+import MatrixRain from "../ui/MatrixRain";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
