@@ -8,14 +8,12 @@ interface DesktopNavProps {
   navigation: NavigationItem[];
   activeDropdown: string | null;
   toggleDropdown: (name: string) => void;
-  isHomePage?: boolean;
 }
 
 export const DesktopNav = ({
   navigation,
   activeDropdown,
-  toggleDropdown,
-  isHomePage = false
+  toggleDropdown
 }: DesktopNavProps) => {
   return (
     <nav className="hidden md:flex space-x-4 items-center">
@@ -24,14 +22,14 @@ export const DesktopNav = ({
           {item.href ? (
             <Link 
               to={item.href} 
-              className={`px-3 py-2 ${isHomePage ? 'text-white hover:text-buckazoids-orange' : 'text-buckazoids-blue hover:text-buckazoids-orange'}`}
+              className="px-3 py-2 text-white hover:text-buckazoids-orange"
             >
               {item.name}
             </Link>
           ) : (
             <button 
               onClick={() => toggleDropdown(item.name)} 
-              className={`px-3 py-2 ${isHomePage ? 'text-white hover:text-buckazoids-orange' : 'text-buckazoids-blue hover:text-buckazoids-orange'} flex items-center`}
+              className="px-3 py-2 text-white hover:text-buckazoids-orange flex items-center"
             >
               {item.name}
               <ChevronDown size={16} className="ml-1" />
