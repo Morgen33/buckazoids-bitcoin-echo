@@ -13,6 +13,8 @@ const Header = () => {
   const location = useLocation();
   const [cacheBuster, setCacheBuster] = useState(`?v=${Date.now()}`);
   
+  const isHomePage = location.pathname === "/";
+  
   // Refresh cacheBuster frequently to ensure fresh content
   useEffect(() => {
     // Initialize with any global cache buster if available
@@ -33,7 +35,7 @@ const Header = () => {
   
   return (
     <header className="w-full relative">
-      {location.pathname === "/" && (
+      {isHomePage && (
         <div className="bg-[#f7931a] text-white py-3 sm:py-6 text-center text-sm relative z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link 
@@ -48,23 +50,25 @@ const Header = () => {
         </div>
       )}
 
-      <div className="bg-transparent relative z-10">
-        {/* Matrix Rain Background for Header - Updated to very dark navy blue */}
-        <div className="absolute inset-0 w-full h-full z-0 bg-[#000222] overflow-hidden">
-          <MatrixRain 
-            color="#F97316" // Bright orange color
-            characters="01BUCKAZOIDS" 
-            fontSize={16}
-            fadeOpacity={0.15}
-            speed={0.8}
-            bgColor="#000222" // Very dark navy blue background
-          />
-        </div>
+      <div className={`${isHomePage ? 'bg-transparent' : 'bg-white shadow-sm'} relative z-10`}>
+        {/* Matrix Rain Background for Header - Only on homepage */}
+        {isHomePage && (
+          <div className="absolute inset-0 w-full h-full z-0 bg-[#000222] overflow-hidden">
+            <MatrixRain 
+              color="#F97316" // Bright orange color
+              characters="01BUCKAZOIDS" 
+              fontSize={16}
+              fadeOpacity={0.15}
+              speed={0.8}
+              bgColor="#000222" // Very dark navy blue background
+            />
+          </div>
+        )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center h-16 sm:h-20">
             <div className="mr-auto">
-              <Link to="/" className="font-bold italic text-2xl md:text-3xl text-white">
+              <Link to="/" className={`font-bold italic text-2xl md:text-3xl ${isHomePage ? 'text-white' : 'text-buckazoids-blue'}`}>
                 Buckazoids
               </Link>
             </div>
@@ -72,13 +76,14 @@ const Header = () => {
             <DesktopNav 
               navigation={navigationItems} 
               activeDropdown={activeDropdown} 
-              toggleDropdown={toggleDropdown} 
+              toggleDropdown={toggleDropdown}
+              isHomePage={isHomePage}
             />
 
             <div className="flex items-center md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
-                className="text-white" 
+                className={isHomePage ? "text-white" : "text-buckazoids-blue"} 
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,7 +98,8 @@ const Header = () => {
         setIsOpen={setIsOpen} 
         navigation={navigationItems} 
         activeDropdown={activeDropdown} 
-        toggleDropdown={toggleDropdown} 
+        toggleDropdown={toggleDropdown}
+        isHomePage={isHomePage}
       />
     </header>
   );
