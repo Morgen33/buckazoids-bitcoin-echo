@@ -81,15 +81,15 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Spinning Coin GIF - replaced video with gif */}
-        <div className="mb-12 relative h-[160px]">
+        {/* Spinning Coin GIF - made bigger */}
+        <div className="mb-12 relative h-[200px]">
           {!isImageLoaded && (
-            <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
+            <div className="mx-auto w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 bg-gray-100 rounded-full animate-pulse"></div>
           )}
           <img
             src={`/lovable-uploads/finalcointrans.gif${cacheBuster}`}
             alt="Spinning Buckazoid Coin"
-            className={`mx-auto w-32 h-32 sm:w-40 sm:h-40 ${isImageLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
+            className={`mx-auto w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 ${isImageLoaded ? 'visible' : 'invisible'} absolute top-0 left-0 right-0 bottom-0 m-auto`}
             onLoad={handleImageLoad}
             data-refresh="true"
             key={`coin-${cacheBuster}`} // Key forces React to recreate the element
