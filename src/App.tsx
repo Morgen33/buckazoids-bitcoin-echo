@@ -17,29 +17,31 @@ import Buy from "./pages/Buy";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <HelmetProvider>
-        <BrowserRouter>
-          <AnalyticsProvider>
-            <Toaster />
-            <Sonner />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/news" element={<NewsPage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/contact-us" element={<ContactUs />} />
-              <Route path="/community" element={<CommunityPage />} />
-              <Route path="/buy" element={<Buy />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AnalyticsProvider>
-        </BrowserRouter>
-      </HelmetProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <HelmetProvider>
+          <BrowserRouter>
+            <AnalyticsProvider>
+              <Toaster />
+              <Sonner />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/news" element={<NewsPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/community" element={<CommunityPage />} />
+                <Route path="/buy" element={<Buy />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AnalyticsProvider>
+          </BrowserRouter>
+        </HelmetProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
