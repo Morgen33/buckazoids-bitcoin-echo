@@ -1,3 +1,4 @@
+
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -43,13 +44,13 @@ export const MobileNav = ({
                   <ChevronDown size={16} />
                 </button>
                 {activeDropdown === item.name && (
-                  <div className="pl-4">
+                  <div className="pl-4 bg-[#020530] rounded-md my-1">
                     {item.submenu?.map((subItem) => (
                       item.submenu && subItem.href.startsWith('/') ? (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-3 py-2 text-sm text-white/80 hover:text-white"
+                          className="block px-3 py-2 text-sm text-white hover:text-buckazoids-orange"
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);
@@ -61,7 +62,7 @@ export const MobileNav = ({
                         <a
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-3 py-2 text-sm text-white/80 hover:text-white"
+                          className="block px-3 py-2 text-sm text-white hover:text-buckazoids-orange"
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);
