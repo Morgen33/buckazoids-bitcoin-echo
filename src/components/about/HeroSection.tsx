@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="text-center mb-16 p-12 rounded-2xl bg-gradient-to-r from-[#000222] to-[#feb73f]">
+    <div className="text-center mb-16 p-12 rounded-2xl bg-[#000222]">
       <h1 className="text-5xl font-bold text-white mb-6">
         The Greatest Discovery in Crypto History
       </h1>
