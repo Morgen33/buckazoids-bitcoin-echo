@@ -1,9 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { TextRotate } from "@/components/ui/text-rotate";
 import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
 import CountdownTimer from "./CountdownTimer";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import MatrixRain from "./ui/MatrixRain";
 
 const HeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -30,8 +32,19 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="bg-[#ffffff] relative z-10 py-[16px] mb-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="relative z-10 py-[16px] mb-24 overflow-hidden">
+      {/* Matrix Rain Background */}
+      <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
+        <MatrixRain 
+          color="#F97316" // Bright orange color
+          characters="01BUCKAZOIDS" 
+          fontSize={isMobile ? 14 : 18}
+          fadeOpacity={0.15}
+          speed={0.8}
+        />
+      </div>
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Logo Section - Increased size significantly */}
         <div className="mt-[60px] mb-12">
           <div className="flex justify-center">
