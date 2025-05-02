@@ -24,7 +24,7 @@ export const MobileNav = ({
   if (!isOpen) return null;
 
   return (
-    <div className={`md:hidden ${isHomePage ? 'bg-[#000222]' : 'bg-white'} border-t ${isHomePage ? 'border-white/10' : 'border-gray-200'} relative z-[100]`}>
+    <div className={`md:hidden ${isHomePage ? 'bg-[#000222]' : 'bg-white'} border-t ${isHomePage ? 'border-white/10' : 'border-gray-200'} relative z-[1000]`}>
       <div className="px-2 pt-2 pb-3 space-y-1">
         {navigation.map((item) => (
           <div key={item.name}>
@@ -46,13 +46,13 @@ export const MobileNav = ({
                   <ChevronDown size={16} />
                 </button>
                 {activeDropdown === item.name && (
-                  <div className={`pl-4 ${isHomePage ? 'bg-[#020530]' : 'bg-gray-100'} rounded-md my-1 shadow-inner`}>
+                  <div className={`pl-4 ${isHomePage ? 'bg-white' : 'bg-gray-100'} rounded-md my-1 shadow-inner`}>
                     {item.submenu?.map((subItem) => (
                       subItem.href.startsWith('/') ? (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className={`block px-3 py-2 text-sm ${isHomePage ? 'text-white hover:text-buckazoids-orange' : 'text-gray-700 hover:text-buckazoids-orange'}`}
+                          className={`block px-3 py-2 text-sm text-gray-700 hover:bg-gray-200`}
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);
@@ -64,7 +64,7 @@ export const MobileNav = ({
                         <a
                           key={subItem.name}
                           href={subItem.href}
-                          className={`block px-3 py-2 text-sm ${isHomePage ? 'text-white hover:text-buckazoids-orange' : 'text-gray-700 hover:text-buckazoids-orange'}`}
+                          className={`block px-3 py-2 text-sm text-gray-700 hover:bg-gray-200`}
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);

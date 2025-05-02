@@ -39,7 +39,7 @@ export const DesktopNav = ({
           )}
 
           {!item.href && activeDropdown === item.name && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[100]">
+            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-[1000]">
               <div className="py-1">
                 {item.submenu?.map(subItem => (
                   subItem.href.startsWith('/') ? (
