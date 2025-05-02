@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -8,7 +9,6 @@ import MatrixRain from "./ui/MatrixRain";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   const [cacheBuster, setCacheBuster] = useState(`?v=${Date.now()}`);
   const isHomePage = location.pathname === "/";
@@ -27,10 +27,6 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
   
-  const toggleDropdown = (name: string) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
-  };
-  
   return (
     <header className="w-full relative">
       {isHomePage && (
@@ -48,7 +44,7 @@ const Header = () => {
         </div>
       )}
 
-      <div className={`${isHomePage ? 'bg-transparent' : 'bg-white shadow-sm'} relative z-10`}>
+      <div className={`${isHomePage ? 'bg-transparent' : 'bg-[#000222]'} relative z-10`}>
         {/* Matrix Rain Background for Header - Only on homepage */}
         {isHomePage && (
           <div className="absolute inset-0 w-full h-full z-0 bg-[#000222] overflow-hidden">
@@ -66,22 +62,20 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center h-16 sm:h-20">
             <div className="mr-auto">
-              <Link to="/" className={`font-bold italic text-2xl md:text-3xl ${isHomePage ? 'text-white' : 'text-gray-800'}`}>
+              <Link to="/" className="font-bold italic text-2xl md:text-3xl text-white">
                 Buckazoids
               </Link>
             </div>
 
             <DesktopNav 
               navigation={navigationItems} 
-              activeDropdown={activeDropdown} 
-              toggleDropdown={toggleDropdown}
               isHomePage={isHomePage}
             />
 
             <div className="flex items-center md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
-                className={isHomePage ? 'text-white' : 'text-gray-800'} 
+                className="text-white" 
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,8 +89,6 @@ const Header = () => {
         isOpen={isOpen} 
         setIsOpen={setIsOpen} 
         navigation={navigationItems} 
-        activeDropdown={activeDropdown} 
-        toggleDropdown={toggleDropdown}
         isHomePage={isHomePage}
       />
     </header>
