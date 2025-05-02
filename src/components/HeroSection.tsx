@@ -33,14 +33,15 @@ const HeroSection = () => {
 
   return (
     <div className="relative z-10 pt-0 mb-24 overflow-hidden">
-      {/* Matrix Rain Background - Continued from header */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
+      {/* Matrix Rain Background - Updated background color */}
+      <div className="absolute inset-0 w-full h-full z-0 bg-[#01153e] overflow-hidden">
         <MatrixRain 
           color="#F97316" // Bright orange color
           characters="01BUCKAZOIDS" 
           fontSize={isMobile ? 14 : 18}
           fadeOpacity={0.15}
           speed={0.8}
+          bgColor="#01153e" // New background color
         />
       </div>
       

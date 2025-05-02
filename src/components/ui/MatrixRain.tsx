@@ -7,6 +7,7 @@ interface MatrixRainProps {
   characters?: string;
   fadeOpacity?: number;
   speed?: number; // New prop for controlling speed
+  bgColor?: string; // Added background color prop
 }
 
 const MatrixRain: React.FC<MatrixRainProps> = ({
@@ -14,7 +15,8 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
   color = '#00ff00',
   characters = '01',
   fadeOpacity = 0.1,
-  speed = 1 // Default speed multiplier
+  speed = 1, // Default speed multiplier
+  bgColor = '#01153e' // Default background color
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -48,7 +50,7 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
     }
 
     const draw = () => {
-      ctx.fillStyle = `rgba(3, 28, 43, ${fadeOpacity})`; // Changed to #031c2b (darker blue)
+      ctx.fillStyle = `rgba(${parseInt(bgColor.slice(1, 3), 16)}, ${parseInt(bgColor.slice(3, 5), 16)}, ${parseInt(bgColor.slice(5, 7), 16)}, ${fadeOpacity})`; // Convert hex to rgba
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = color;
@@ -82,7 +84,7 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
       clearInterval(interval);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [fontSize, color, characters, fadeOpacity, speed]);
+  }, [fontSize, color, characters, fadeOpacity, speed, bgColor]);
 
   return (
     <canvas

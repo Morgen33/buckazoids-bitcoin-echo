@@ -22,7 +22,7 @@ export const MobileNav = ({
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden bg-[#031c2b] border-t border-white/10 relative z-20">
+    <div className="md:hidden bg-[#01153e] border-t border-white/10 relative z-20">
       <div className="px-2 pt-2 pb-3 space-y-1">
         {navigation.map((item) => (
           <div key={item.name}>
