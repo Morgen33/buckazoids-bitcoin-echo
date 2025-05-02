@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 interface MatrixRainProps {
@@ -16,7 +15,7 @@ const MatrixRain: React.FC<MatrixRainProps> = ({
   characters = '01',
   fadeOpacity = 0.1,
   speed = 1, // Default speed multiplier
-  bgColor = '#01153e' // Default background color
+  bgColor = '#000222' // Changed to very dark navy blue
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

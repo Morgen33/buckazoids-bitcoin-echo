@@ -49,15 +49,15 @@ const Header = () => {
       )}
 
       <div className="bg-transparent relative z-10">
-        {/* Matrix Rain Background for Header - Updated background color */}
-        <div className="absolute inset-0 w-full h-full z-0 bg-[#01153e] overflow-hidden">
+        {/* Matrix Rain Background for Header - Updated to very dark navy blue */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-[#000222] overflow-hidden">
           <MatrixRain 
             color="#F97316" // Bright orange color
             characters="01BUCKAZOIDS" 
             fontSize={16}
             fadeOpacity={0.15}
             speed={0.8}
-            bgColor="#01153e" // New background color
+            bgColor="#000222" // Very dark navy blue background
           />
         </div>
 
