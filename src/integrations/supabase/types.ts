@@ -36,6 +36,60 @@ export type Database = {
         }
         Relationships: []
       }
+      events: {
+        Row: {
+          event_data: Json | null
+          event_name: string
+          id: string
+          page_path: string
+          session_id: string
+          timestamp: string
+        }
+        Insert: {
+          event_data?: Json | null
+          event_name: string
+          id?: string
+          page_path: string
+          session_id: string
+          timestamp?: string
+        }
+        Update: {
+          event_data?: Json | null
+          event_name?: string
+          id?: string
+          page_path?: string
+          session_id?: string
+          timestamp?: string
+        }
+        Relationships: []
+      }
+      page_views: {
+        Row: {
+          id: string
+          page_path: string
+          referrer: string | null
+          session_id: string
+          timestamp: string
+          user_agent: string | null
+        }
+        Insert: {
+          id?: string
+          page_path: string
+          referrer?: string | null
+          session_id: string
+          timestamp?: string
+          user_agent?: string | null
+        }
+        Update: {
+          id?: string
+          page_path?: string
+          referrer?: string | null
+          session_id?: string
+          timestamp?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

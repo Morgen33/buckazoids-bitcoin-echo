@@ -4,10 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { analyticsConfig } from '@/config/analytics-config';
 import { PageView, AnalyticsEvent, UseAnalyticsReturn } from '@/types/analytics';
-
-// We'll need to add the uuid package
-// <lov-add-dependency>uuid@latest</lov-add-dependency>
-// <lov-add-dependency>@types/uuid@latest</lov-add-dependency>
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 // Session management helper functions
 const getOrCreateSessionId = (): string => {
@@ -47,29 +45,11 @@ const getOrCreateSessionId = (): string => {
   return newSessionId;
 };
 
-// Anonymous supabase client function
-// Note: This is a simplified version - in reality we'd connect to Supabase here
-const trackToSupabase = async (table: 'page_views' | 'events', data: PageView | AnalyticsEvent): Promise<void> => {
-  // Since we're using the supabase integration, we would use supabase.from(table).insert(data)
-  // For now, we'll just log the tracking data
-  console.log(`[Analytics] Tracking to ${table}:`, data);
-  
-  try {
-    // Here we would send the data to Supabase
-    // const { error } = await supabase.from(table).insert(data);
-    // if (error) throw error;
-    
-    // For now we're just simulating the insertion with a console log
-    // Once the Supabase integration is connected, replace this with the actual Supabase call
-  } catch (error) {
-    console.error(`Error tracking ${table}:`, error);
-  }
-};
-
 export const useAnalytics = (): UseAnalyticsReturn => {
   const location = useLocation();
   const [sessionId, setSessionId] = useState<string>('');
   const [isEnabled] = useState<boolean>(analyticsConfig.enabled);
+  const { toast } = useToast();
 
   // Initialize session ID on component mount
   useEffect(() => {
@@ -98,7 +78,24 @@ export const useAnalytics = (): UseAnalyticsReturn => {
       timestamp: new Date().toISOString(),
     };
 
-    await trackToSupabase('page_views', pageView);
+    try {
+      const { error } = await supabase.from('page_views').insert(pageView);
+      
+      if (error) {
+        console.error('Error tracking page view:', error);
+        if (analyticsConfig.showErrors) {
+          toast({
+            title: "Analytics Error",
+            description: "Failed to track page view",
+            variant: "destructive",
+          });
+        }
+      } else {
+        console.log(`[Analytics] Page view tracked: ${path}`);
+      }
+    } catch (err) {
+      console.error('Error tracking page view:', err);
+    }
   };
 
   // Function to track custom events
@@ -113,7 +110,24 @@ export const useAnalytics = (): UseAnalyticsReturn => {
       timestamp: new Date().toISOString(),
     };
 
-    await trackToSupabase('events', event);
+    try {
+      const { error } = await supabase.from('events').insert(event);
+      
+      if (error) {
+        console.error(`Error tracking event ${name}:`, error);
+        if (analyticsConfig.showErrors) {
+          toast({
+            title: "Analytics Error",
+            description: `Failed to track event: ${name}`,
+            variant: "destructive",
+          });
+        }
+      } else {
+        console.log(`[Analytics] Event tracked: ${name}`, data);
+      }
+    } catch (err) {
+      console.error(`Error tracking event ${name}:`, err);
+    }
   };
 
   return {

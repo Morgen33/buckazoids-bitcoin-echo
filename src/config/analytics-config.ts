@@ -13,6 +13,9 @@ export const analyticsConfig = {
   // Whether to track user agent information
   trackUserAgent: true,
   
+  // Show errors in UI (as toast notifications)
+  showErrors: false,
+  
   // Events to automatically track
   autoTrackEvents: {
     pageViews: true,
