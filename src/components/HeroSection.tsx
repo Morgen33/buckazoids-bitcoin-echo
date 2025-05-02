@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { TextRotate } from "@/components/ui/text-rotate";
 import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
@@ -59,24 +58,24 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Button section - Updated with active state styling */}
+        {/* Button section - Updated with hover and active state styling */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button 
-            className="bg-[#f7931a] hover:bg-[#f7931a]/90 text-white px-8 active:bg-[#feb73f] active:text-white"
+            className="bg-[#f7931a] hover:bg-[#feb73f] text-white px-8 active:bg-[#feb73f] active:text-white"
             onClick={() => window.location.href = '/about'}
           >
             Get started with Buckazoids
           </Button>
           <Button 
             variant="outline" 
-            className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10 text-xs sm:text-sm break-all sm:break-normal px-3 sm:px-6 overflow-hidden active:bg-[#feb73f] active:text-white active:border-[#feb73f]"
+            className="border-[#f7931a] text-[#f7931a] hover:bg-[#feb73f] hover:text-white hover:border-[#feb73f] text-xs sm:text-sm break-all sm:break-normal px-3 sm:px-6 overflow-hidden active:bg-[#feb73f] active:text-white active:border-[#feb73f]"
             onClick={() => window.open('https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku', '_blank')}
           >
             <span className="truncate">BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump</span>
           </Button>
           <Button 
             variant="outline" 
-            className="border-[#f7931a] text-[#f7931a] hover:bg-[#f7931a]/10 active:bg-[#feb73f] active:text-white active:border-[#feb73f]"
+            className="border-[#f7931a] text-[#f7931a] hover:bg-[#feb73f] hover:text-white hover:border-[#feb73f] active:bg-[#feb73f] active:text-white active:border-[#feb73f]"
             onClick={() => window.location.href = '/buy'}
           >
             Buy Buckazoids
