@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { TextRotate } from "@/components/ui/text-rotate";
 import { OptimizedTextRotate } from "@/components/ui/optimized-text-rotate";
@@ -45,13 +44,13 @@ const HeroSection = () => {
       </div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Logo Section - Increased size significantly */}
+        {/* Logo Section - Updated with new logo */}
         <div className="mt-[60px] mb-12">
           <div className="flex justify-center">
             <img 
-              src="/lovable-uploads/d93c1ad7-d6c5-4bfc-b00e-b28a0e9c022b.png" 
+              src="/lovable-uploads/87fecfb6-21fd-4996-b702-ac86db1214bf.png" 
               alt="Buckazoids Logo" 
-              className="h-48 sm:h-64 lg:h-80 object-contain" /* Increased from h-32/h-40 to h-48/h-64/h-80 */
+              className="h-48 sm:h-64 lg:h-80 object-contain" 
               data-refresh="true"
             />
           </div>
@@ -81,7 +80,7 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Spinning Coin Video moved here - between buttons and countdown timer */}
+        {/* Spinning Coin Video */}
         <div className="mb-12 relative h-[160px]">
           {!isVideoLoaded && (
             <div className="mx-auto w-32 h-32 sm:w-40 sm:h-40 bg-gray-100 rounded-full animate-pulse"></div>
