@@ -16,7 +16,7 @@ const HeroSection = () => {
       </p>
       <div className="mt-8">
         <Button
-          className="bg-white text-[#000222] hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+          className="bg-white text-[#000222] hover:bg-gray-100 px-8 py-6 text-lg font-semibold active:bg-[#feb73f] active:text-white"
           onClick={() => window.open('https://dexscreener.com/solana/dujfqjqj69psrqhgczetd5qcalanyy12tbwvfcpqxvku', '_blank')}
         >
           Buy Buckazoids <ExternalLink className="ml-2" />
