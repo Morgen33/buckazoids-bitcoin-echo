@@ -39,7 +39,7 @@ export const defaultSeo: PageSeo & { siteUrl: string } = {
     "buckazoids", "bitcoin", "meme coin", "crypto", "cryptocurrency", 
     "solana", "digital currency", "space quest", "blockchain", "altcoin"
   ],
-  ogImage: `${SITE_URL}/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png`,
+  ogImage: `${SITE_URL}/lovable-uploads/buckazoid-token.png`,
   ogType: "website",
   jsonLd: {
     '@context': 'https://schema.org',
@@ -52,7 +52,7 @@ export const defaultSeo: PageSeo & { siteUrl: string } = {
       name: 'Buckazoids Team',
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png`
+        url: `${SITE_URL}/lovable-uploads/buckazoid-token.png`
       }
     }
   }
