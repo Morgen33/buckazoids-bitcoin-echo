@@ -6,6 +6,7 @@ import CountdownTimer from "./CountdownTimer";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import MatrixRain from "./ui/MatrixRain";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const HeroSection = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -82,10 +83,14 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Spinning Coin GIF - made bigger */}
+        {/* Spinning Coin GIF - with improved loading state */}
         <div className="mb-12 relative h-[200px]">
           {!isImageLoaded && (
-            <div className="mx-auto w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 bg-gray-100 rounded-full animate-pulse"></div>
+            <div className="mx-auto w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full 
+                        bg-[#000222] border border-[#f7931a]/20 
+                        animate-pulse flex items-center justify-center overflow-hidden">
+              <div className="w-16 h-16 rounded-full bg-[#f7931a]/10 animate-ping"></div>
+            </div>
           )}
           <img
             src={`/lovable-uploads/finalcointrans.gif${cacheBuster}`}
