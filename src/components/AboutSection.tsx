@@ -84,7 +84,7 @@ const AboutSection = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4">Community & Growth</h3>
             <p className="text-gray-600 mb-6">
-              Today, Buckazoids boasts over 10,000 dedicated wallet holders and an organically grown, international community spanning China, Brazil, Greece, Southeast Asia, and Spanish-speaking regions. With no presale or venture capital backing, its growth remains authentic and community-driven.
+              Today, Buckazoids boasts over 10,000 dedicated wallet holders and growing — backed by an organically built, international community spanning the USA, China, Brazil, Greece, Southeast Asia, and Spanish-speaking regions. With no presale and zero VC funding, its rise is 100% authentic and community-driven.
             </p>
             <Button 
               variant="outline" 
