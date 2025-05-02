@@ -4,11 +4,11 @@ import { ExternalLink } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="text-center mb-16 p-12 rounded-2xl bg-[#000222]">
-      <h1 className="text-5xl font-bold text-white mb-6">
+    <div className="text-center mb-16 p-12 rounded-2xl bg-[#fde1d3]">
+      <h1 className="text-5xl font-bold text-[#000222] mb-6">
         The Greatest Discovery in Crypto History
       </h1>
-      <p className="text-xl text-white mb-8">
+      <p className="text-xl text-[#000222] mb-8">
         Welcome to the most groundbreaking revelation in the world of digital currency.
         We are excited to share what we believe to be one of the greatest discoveries
         in crypto history — a revelation that has reshaped our understanding of Bitcoin,
