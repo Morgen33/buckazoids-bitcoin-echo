@@ -39,14 +39,14 @@ export const DesktopNav = ({
           )}
 
           {!item.href && activeDropdown === item.name && (
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-[1000]">
+            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-[1500]">
               <div className="py-1">
                 {item.submenu?.map(subItem => (
                   subItem.href.startsWith('/') ? (
                     <Link
                       key={subItem.name}
                       to={subItem.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                       onClick={() => toggleDropdown(item.name)}
                     >
                       {subItem.name}
@@ -55,7 +55,7 @@ export const DesktopNav = ({
                     <a
                       key={subItem.name}
                       href={subItem.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                       onClick={() => toggleDropdown(item.name)}
                       target="_blank"
                       rel="noopener noreferrer"
