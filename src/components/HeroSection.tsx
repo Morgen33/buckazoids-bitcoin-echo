@@ -32,8 +32,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative z-10 py-[16px] mb-24 overflow-hidden">
-      {/* Matrix Rain Background */}
+    <div className="relative z-10 pt-0 mb-24 overflow-hidden">
+      {/* Matrix Rain Background - Continued from header */}
       <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
         <MatrixRain 
           color="#F97316" // Bright orange color
@@ -46,7 +46,7 @@ const HeroSection = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Logo Section - Updated with new logo */}
-        <div className="mt-[60px] mb-12">
+        <div className="mt-8 mb-12">
           <div className="flex justify-center">
             <img 
               src="/lovable-uploads/87fecfb6-21fd-4996-b702-ac86db1214bf.png" 

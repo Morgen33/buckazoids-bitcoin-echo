@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { DesktopNav } from "./header/DesktopNav";
 import { MobileNav } from "./header/MobileNav";
 import { navigationItems } from "./header/NavigationItems";
+import MatrixRain from "./ui/MatrixRain";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +32,9 @@ const Header = () => {
   };
   
   return (
-    <header className="w-full">
+    <header className="w-full relative">
       {location.pathname === "/" && (
-        <div className="bg-[#f7931a] text-white py-3 sm:py-6 text-center text-sm">
+        <div className="bg-[#f7931a] text-white py-3 sm:py-6 text-center text-sm relative z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link 
               to="https://x.com/buckazoidssol/status/1915622276986527770?s=42"
@@ -47,11 +48,22 @@ const Header = () => {
         </div>
       )}
 
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-transparent relative z-10">
+        {/* Matrix Rain Background for Header */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-[#031c2b] overflow-hidden">
+          <MatrixRain 
+            color="#F97316" // Bright orange color
+            characters="01BUCKAZOIDS" 
+            fontSize={16}
+            fadeOpacity={0.15}
+            speed={0.8}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center h-16 sm:h-20">
             <div className="mr-auto">
-              <Link to="/" className="font-bold italic text-2xl md:text-3xl">
+              <Link to="/" className="font-bold italic text-2xl md:text-3xl text-white">
                 Buckazoids
               </Link>
             </div>
@@ -65,7 +77,7 @@ const Header = () => {
             <div className="flex items-center md:hidden">
               <button 
                 onClick={() => setIsOpen(!isOpen)} 
-                className="text-gray-700" 
+                className="text-white" 
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}

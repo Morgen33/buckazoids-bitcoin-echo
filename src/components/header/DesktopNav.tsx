@@ -22,14 +22,14 @@ export const DesktopNav = ({
           {item.href ? (
             <Link 
               to={item.href} 
-              className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange"
+              className="px-3 py-2 text-white hover:text-buckazoids-orange"
             >
               {item.name}
             </Link>
           ) : (
             <button 
               onClick={() => toggleDropdown(item.name)} 
-              className="px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center"
+              className="px-3 py-2 text-white hover:text-buckazoids-orange flex items-center"
             >
               {item.name}
               <ChevronDown size={16} className="ml-1" />

@@ -22,14 +22,14 @@ export const MobileNav = ({
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden bg-white border-t border-gray-200">
+    <div className="md:hidden bg-[#031c2b] border-t border-white/10 relative z-20">
       <div className="px-2 pt-2 pb-3 space-y-1">
         {navigation.map((item) => (
           <div key={item.name}>
             {item.href ? (
               <Link
                 to={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-buckazoids-orange"
+                className="block px-3 py-2 text-white hover:text-buckazoids-orange"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -38,7 +38,7 @@ export const MobileNav = ({
               <>
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-buckazoids-orange flex items-center justify-between"
+                  className="w-full text-left px-3 py-2 text-white hover:text-buckazoids-orange flex items-center justify-between"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -50,7 +50,7 @@ export const MobileNav = ({
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-3 py-2 text-sm text-white/80 hover:text-white"
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);
@@ -62,7 +62,7 @@ export const MobileNav = ({
                         <a
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-3 py-2 text-sm text-white/80 hover:text-white"
                           onClick={() => {
                             toggleDropdown(item.name);
                             setIsOpen(false);
