@@ -173,5 +173,31 @@ export const pageSeoData: Record<string, PageSeo> = {
       name: 'Contact Buckazoids',
       description: "Contact the Buckazoids team. Have questions or suggestions? We'd love to hear from you."
     }
+  },
+  constitution: {
+    ...defaultSeo,
+    title: "Constitution of Buckazoids | Guiding Principles",
+    description: "Explore the Constitution of Buckazoids - the values, principles, and vision that guide our community as we bridge the past and future of cryptocurrency.",
+    keywords: ["buckazoids constitution", "buckazoids principles", "crypto community values", "buckazoids manifesto", "cryptocurrency ethics", "buckazoids mission"],
+    ogType: "article",
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Constitution of Buckazoids',
+      description: "The guiding principles and values that unite the Buckazoids community.",
+      image: `${SITE_URL}/lovable-uploads/9e99bc57-104a-4916-adcf-1ace2fe48074.png`,
+      publisher: {
+        '@type': 'Organization',
+        name: 'Buckazoids Team',
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}/constitution`
+      }
+    }
   }
 };

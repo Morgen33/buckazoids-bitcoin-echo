@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import ContactUs from "./pages/ContactUs";
 import CommunityPage from "./pages/Community";
 import Buy from "./pages/Buy";
+import Constitution from "./pages/Constitution";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/community" element={<CommunityPage />} />
                 <Route path="/buy" element={<Buy />} />
+                <Route path="/constitution" element={<Constitution />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </AnalyticsProvider>

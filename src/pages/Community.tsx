@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Github, MessageCircle, Pill, Youtube, Instagram } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 import { SEO } from "@/components/seo/SEO";
 import { pageSeoData } from "@/config/seo-metadata";
@@ -192,6 +192,22 @@ const CommunityPage = () => {
                   onClick={() => window.open('https://www.instagram.com/buckazoidsgr?igsh=MXZ5Zm81d3kzNXdnYQ%3D%3D&utm_source=qr', '_blank')}
                 >
                   Follow on Instagram
+                </Button>
+              </div>
+
+              <div className="md:col-span-3 bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="mb-6 w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
+                  <BookOpen className="text-buckazoid-orange w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-buckazoid-orange mb-4">Constitution</h3>
+                <p className="text-gray-600 mb-6">
+                  Explore the Constitution of Buckazoids, the guiding principles and values that unite our community across time and space.
+                </p>
+                <Button 
+                  className="bg-buckazoid-orange hover:bg-buckazoid-yellow text-white"
+                  onClick={() => window.location.href = '/constitution'}
+                >
+                  View Constitution
                 </Button>
               </div>
             </div>
