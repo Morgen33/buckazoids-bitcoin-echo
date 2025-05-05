@@ -32,14 +32,7 @@ const Header = () => {
       {isHomePage && (
         <div className="bg-[#f7931a] text-white py-3 sm:py-6 text-center text-sm relative z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link 
-              to="https://x.com/buckazoidssol/status/1915622276986527770?s=42"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-extrabold hover:underline"
-            >
-              Buckazoids.world needs your support!
-            </Link>
+            {/* Orange bar kept without text */}
           </div>
         </div>
       )}
