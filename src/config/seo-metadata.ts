@@ -1,4 +1,3 @@
-
 // Default SEO data types
 export interface JsonLdWebsite {
   '@context': string;
@@ -39,7 +38,7 @@ export const defaultSeo: PageSeo & { siteUrl: string } = {
     "buckazoids", "bitcoin", "meme coin", "crypto", "cryptocurrency", 
     "solana", "digital currency", "space quest", "blockchain", "altcoin"
   ],
-  ogImage: `${SITE_URL}/lovable-uploads/buckazoid-token.png`,
+  ogImage: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`,
   ogType: "website",
   jsonLd: {
     '@context': 'https://schema.org',
@@ -52,7 +51,7 @@ export const defaultSeo: PageSeo & { siteUrl: string } = {
       name: 'Buckazoids Team',
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/lovable-uploads/buckazoid-token.png`
+        url: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`
       }
     }
   }
@@ -75,7 +74,7 @@ export const pageSeoData: Record<string, PageSeo> = {
         name: 'Buckazoids Team',
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL}/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png`
+          url: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`
         }
       }
     }
@@ -91,13 +90,13 @@ export const pageSeoData: Record<string, PageSeo> = {
       '@type': 'Article',
       headline: 'About Buckazoids',
       description: "Learn about Buckazoids - the digital currency that appeared in Sierra's Space Quest decades before Bitcoin.",
-      image: `${SITE_URL}/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png`,
+      image: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`,
       publisher: {
         '@type': 'Organization',
         name: 'Buckazoids Team',
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL}/lovable-uploads/0cfa1a1f-d025-4c12-9b77-2970252ee0c8.png`
+          url: `${SITE_URL}/lovable-uploads/be97036f-b38a-475d-a943-05f8c0b1b7d2.png`
         }
       },
       mainEntityOfPage: {

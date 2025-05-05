@@ -38,6 +38,9 @@ export const SEO = ({
     __html: JSON.stringify(mergedSEO.jsonLd)
   };
 
+  // Add cache buster to image URLs for social media freshness
+  const imageCacheBuster = `${mergedSEO.ogImage}?v=${Date.now()}`;
+
   return (
     <Helmet>
       {/* Basic metadata */}
@@ -60,13 +63,15 @@ export const SEO = ({
       <meta property="og:description" content={mergedSEO.description} />
       <meta property="og:url" content={mergedSEO.canonical} />
       <meta property="og:type" content={mergedSEO.ogType} />
-      <meta property="og:image" content={mergedSEO.ogImage} />
+      <meta property="og:image" content={imageCacheBuster} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="1200" />
       
       {/* Twitter metadata */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageName ? `${pageName} | Buckazoids` : mergedSEO.title} />
       <meta name="twitter:description" content={mergedSEO.description} />
-      <meta name="twitter:image" content={mergedSEO.ogImage} />
+      <meta name="twitter:image" content={imageCacheBuster} />
       
       {/* JSON-LD Structured Data */}
       {mergedSEO.jsonLd && (
