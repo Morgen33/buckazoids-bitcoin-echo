@@ -29,21 +29,6 @@ const Header = () => {
   
   return (
     <header className="w-full relative">
-      {isHomePage && (
-        <div className="bg-[#f7931a] text-white py-3 sm:py-6 text-center text-sm relative z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link 
-              to="https://x.com/BuckazoidsWorld"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-extrabold hover:underline"
-            >
-              Buckazoids.world needs your support!
-            </Link>
-          </div>
-        </div>
-      )}
-
       <div className={`${isHomePage ? 'bg-transparent' : 'bg-[#000222]'} relative z-10`}>
         {/* Matrix Rain Background for Header - Only on homepage */}
         {isHomePage && (
