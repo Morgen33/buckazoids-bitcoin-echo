@@ -11,8 +11,7 @@ const ContributorsSection = () => {
           <ul className="list-none space-y-4 text-gray-700">
             {['Scott Murphy and Mark Crowe (known as "The Two Guys from Andromeda")',
               'Satoshi Uesaka',
-              'Rod Nakamoto and Nancy Nakamoto',
-              'Hal Finney — a prolific game designer, cryptographer, cypherpunk, and Bitcoin contributor'
+              'Rod Nakamoto and Nancy Nakamoto'
             ].map((item, index) => (
               <li key={index} className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#045c94]" />
@@ -21,7 +20,13 @@ const ContributorsSection = () => {
             ))}
           </ul>
           <p className="mt-6 text-[#02314d] font-semibold p-4 bg-[#fff3e2] rounded-lg">
-            Put those names together, and what do you get? Satoshi Nakamoto.
+            Put those last two names together and what do you get? Satoshi Nakamoto.
+          </p>
+          <p className="mt-6 text-gray-700 leading-relaxed">
+            What's also very interesting...
+          </p>
+          <p className="mt-4 text-gray-700 leading-relaxed">
+            Hal Finney — a prolific game designer, cryptographer, cypherpunk, and Bitcoin contributor was known to be working on sci fi and space related games in the late 1970's. He had a knack for Sci Fi and Space related games, and initially contributed in the area of sound effects (according to Wikipedia, and Atari Compendium, <a href="https://ataricompendium.com/archives/interviews/hal_finney/interview_hal_finney.html" target="_blank" rel="noopener noreferrer" className="text-[#045c94] hover:underline">https://ataricompendium.com/archives/interviews/hal_finney/interview_hal_finney.html</a>)
           </p>
         </div>
       </div>
