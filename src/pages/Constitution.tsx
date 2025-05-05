@@ -19,7 +19,7 @@ const ConstitutionPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/9e99bc57-104a-4916-adcf-1ace2fe48074.png" 
+                src="/lovable-uploads/6258f9d8-003d-4411-aa8a-52d54a0fa21e.png" 
                 alt="Articles I-V of the Buckazoids Constitution" 
                 className="w-full max-w-2xl shadow-2xl rounded-lg"
               />
@@ -27,7 +27,7 @@ const ConstitutionPage = () => {
             
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/3f1d23f2-d0cb-4041-b5d5-45eba24afa10.png" 
+                src="/lovable-uploads/4a516eff-35e7-43c6-9889-5c942f322f2e.png" 
                 alt="The 10 Commandments of the Buckazoids Community" 
                 className="w-full max-w-2xl shadow-2xl rounded-lg"
               />
