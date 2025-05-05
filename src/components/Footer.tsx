@@ -39,6 +39,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="https://dexscreener.com/solana/buckazoids"
+                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Dexscreener
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+              <li>
                 <a href="https://reddit.com/r/buckazoids"
                    className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
                    target="_blank" 
