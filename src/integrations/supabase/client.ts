@@ -10,42 +10,38 @@ const SUPABASE_PUBLISHABLE_KEY = "disconnected";
 // This client won't actually connect to Supabase
 console.log("[Supabase] Disconnected: No actual connections will be established");
 
-// Create a properly typed mock client that matches the SupabaseClient interface
-export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+// Create the client with mock credentials first (required for TypeScript)
+const client = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
-    persistSession: false, // Don't save auth state to localStorage
-    autoRefreshToken: false, // Don't auto-refresh token
-  },
+    persistSession: false,
+    autoRefreshToken: false,
+  }
 });
 
-// Override client methods with mock implementations
-// This approach uses the actual client type but replaces the implementation
-// with no-op functions that return expected shapes
-Object.defineProperties(supabase, {
-  from: {
-    value: () => ({
-      insert: async () => ({ data: null, error: null }),
-      select: async () => ({ data: null, error: null }),
-      update: async () => ({ data: null, error: null }),
-      delete: async () => ({ data: null, error: null }),
-    }),
-  },
+// Create a type-safe mock implementation
+export const supabase = {
+  ...client,
+  // Override methods with mock implementations
+  from: () => ({
+    insert: async () => ({ data: null, error: null }),
+    select: async () => ({ data: null, error: null }),
+    update: async () => ({ data: null, error: null }),
+    delete: async () => ({ data: null, error: null }),
+  }),
   auth: {
-    value: {
-      signUp: async () => ({ data: null, error: null }),
-      signIn: async () => ({ data: null, error: null }),
-      signOut: async () => ({ error: null }),
-      getUser: async () => ({ data: { user: null }, error: null }),
-      getSession: async () => ({ data: { session: null }, error: null }),
-      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } }, error: null }),
-    },
+    ...client.auth,
+    signUp: async () => ({ data: null, error: null }),
+    signIn: async () => ({ data: null, error: null }),
+    signOut: async () => ({ error: null }),
+    getUser: async () => ({ data: { user: null }, error: null }),
+    getSession: async () => ({ data: { session: null }, error: null }),
+    onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } }, error: null }),
   },
   storage: {
-    value: {
-      from: () => ({
-        upload: async () => ({ data: null, error: null }),
-        getPublicUrl: () => ({ data: { publicUrl: '' } }),
-      }),
-    },
+    ...client.storage,
+    from: () => ({
+      upload: async () => ({ data: null, error: null }),
+      getPublicUrl: () => ({ data: { publicUrl: '' } }),
+    }),
   },
-});
+} as unknown as typeof client;
