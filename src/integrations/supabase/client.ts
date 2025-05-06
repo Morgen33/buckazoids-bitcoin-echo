@@ -10,30 +10,42 @@ const SUPABASE_PUBLISHABLE_KEY = "disconnected";
 // This client won't actually connect to Supabase
 console.log("[Supabase] Disconnected: No actual connections will be established");
 
-// Create a dummy client that doesn't connect
-const createDummyClient = () => {
-  // Return a mock client with methods that don't do anything
-  return {
-    from: () => ({
+// Create a properly typed mock client that matches the SupabaseClient interface
+export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+  auth: {
+    persistSession: false, // Don't save auth state to localStorage
+    autoRefreshToken: false, // Don't auto-refresh token
+  },
+});
+
+// Override client methods with mock implementations
+// This approach uses the actual client type but replaces the implementation
+// with no-op functions that return expected shapes
+Object.defineProperties(supabase, {
+  from: {
+    value: () => ({
       insert: async () => ({ data: null, error: null }),
       select: async () => ({ data: null, error: null }),
       update: async () => ({ data: null, error: null }),
       delete: async () => ({ data: null, error: null }),
     }),
-    auth: {
+  },
+  auth: {
+    value: {
       signUp: async () => ({ data: null, error: null }),
       signIn: async () => ({ data: null, error: null }),
       signOut: async () => ({ error: null }),
+      getUser: async () => ({ data: { user: null }, error: null }),
+      getSession: async () => ({ data: { session: null }, error: null }),
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } }, error: null }),
     },
-    storage: {
+  },
+  storage: {
+    value: {
       from: () => ({
         upload: async () => ({ data: null, error: null }),
         getPublicUrl: () => ({ data: { publicUrl: '' } }),
       }),
     },
-    // Add any other methods used in your app here
-  };
-};
-
-// Export a dummy client that won't actually connect
-export const supabase = createDummyClient() as ReturnType<typeof createClient<Database>>;
+  },
+});
