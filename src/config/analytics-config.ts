@@ -2,7 +2,7 @@
 // Configuration for analytics
 export const analyticsConfig = {
   // Whether analytics is enabled
-  enabled: true,
+  enabled: false,
   
   // Session duration in minutes (default: 30 minutes)
   sessionDurationMinutes: 30,
@@ -18,7 +18,7 @@ export const analyticsConfig = {
   
   // Events to automatically track
   autoTrackEvents: {
-    pageViews: true,
+    pageViews: false,
     clicks: false, // Set to true to track all clicks
     formSubmissions: false, // Set to true to track all form submissions
   }

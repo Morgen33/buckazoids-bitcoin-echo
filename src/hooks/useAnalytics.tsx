@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { analyticsConfig } from '@/config/analytics-config';
 import { PageView, AnalyticsEvent, UseAnalyticsReturn } from '@/types/analytics';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 // Session management helper functions
@@ -48,7 +47,7 @@ const getOrCreateSessionId = (): string => {
 export const useAnalytics = (): UseAnalyticsReturn => {
   const location = useLocation();
   const [sessionId, setSessionId] = useState<string>('');
-  const [isEnabled] = useState<boolean>(analyticsConfig.enabled);
+  const [isEnabled] = useState<boolean>(false); // Force disabled
   const { toast } = useToast();
 
   // Initialize session ID on component mount
@@ -59,75 +58,18 @@ export const useAnalytics = (): UseAnalyticsReturn => {
     }
   }, [isEnabled]);
 
-  // Track page views automatically when route changes
-  useEffect(() => {
-    if (isEnabled && sessionId && analyticsConfig.autoTrackEvents.pageViews) {
-      trackPageView(location.pathname).catch(console.error);
-    }
-  }, [location.pathname, sessionId, isEnabled]);
-
-  // Function to track page views
+  // Function to track page views (now just logs to console)
   const trackPageView = async (path: string): Promise<void> => {
-    if (!isEnabled || !sessionId) return;
-
-    const pageView: PageView = {
-      page_path: path,
-      referrer: document.referrer || null,
-      user_agent: analyticsConfig.trackUserAgent ? navigator.userAgent : null,
-      session_id: sessionId,
-      timestamp: new Date().toISOString(),
-    };
-
-    try {
-      const { error } = await supabase.from('page_views').insert(pageView);
-      
-      if (error) {
-        console.error('Error tracking page view:', error);
-        if (analyticsConfig.showErrors) {
-          toast({
-            title: "Analytics Error",
-            description: "Failed to track page view",
-            variant: "destructive",
-          });
-        }
-      } else {
-        console.log(`[Analytics] Page view tracked: ${path}`);
-      }
-    } catch (err) {
-      console.error('Error tracking page view:', err);
-    }
+    if (!isEnabled) return;
+    console.log(`[Analytics Disabled] Would track page view: ${path}`);
+    return;
   };
 
-  // Function to track custom events
+  // Function to track custom events (now just logs to console)
   const trackEvent = async (name: string, data: Record<string, any> = {}): Promise<void> => {
-    if (!isEnabled || !sessionId) return;
-
-    const event: AnalyticsEvent = {
-      event_name: name,
-      event_data: data,
-      page_path: location.pathname,
-      session_id: sessionId,
-      timestamp: new Date().toISOString(),
-    };
-
-    try {
-      const { error } = await supabase.from('events').insert(event);
-      
-      if (error) {
-        console.error(`Error tracking event ${name}:`, error);
-        if (analyticsConfig.showErrors) {
-          toast({
-            title: "Analytics Error",
-            description: `Failed to track event: ${name}`,
-            variant: "destructive",
-          });
-        }
-      } else {
-        console.log(`[Analytics] Event tracked: ${name}`, data);
-      }
-    } catch (err) {
-      console.error(`Error tracking event ${name}:`, err);
-    }
+    if (!isEnabled) return;
+    console.log(`[Analytics Disabled] Would track event: ${name}`, data);
+    return;
   };
 
   return {
