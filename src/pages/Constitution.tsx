@@ -27,7 +27,7 @@ const ConstitutionPage = () => {
             
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/4a516eff-35e7-43c6-9889-5c942f322f2e.png" 
+                src="/lovable-uploads/a5eed063-24b2-433b-a973-704116a38cb7.png" 
                 alt="The 10 Commandments of the Buckazoids Community" 
                 className="w-full max-w-2xl shadow-2xl rounded-lg"
               />
