@@ -50,8 +50,8 @@ const CommunityPlatforms: React.FC = () => {
             />
           </svg>
         }
-        buttonText="Follow @Buckazoids"
-        buttonUrl="https://x.com/BuckazoidsWorld"
+        buttonText="Follow Project B59"
+        buttonUrl="https://x.com/59Buckazoids"
         accentColor="secondary"
       />
 
