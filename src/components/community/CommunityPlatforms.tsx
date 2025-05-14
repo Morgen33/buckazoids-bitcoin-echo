@@ -1,6 +1,7 @@
+
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -52,6 +53,16 @@ const CommunityPlatforms: React.FC = () => {
         buttonText="Follow Project B59"
         buttonUrl="https://x.com/59Buckazoids"
         accentColor="secondary"
+      />
+
+      {/* Project B59 Research Initiative */}
+      <CommunityCard
+        title="Project B59 Research Initiative"
+        description="Explore the academic research and historical analysis of the Buckazoids phenomenon through Project B59."
+        icon={<Search className="text-[#02314d] w-8 h-8" />}
+        buttonText="Visit Project B59"
+        buttonUrl="https://projectb59.github.io/buckazoids-site/index.html"
+        accentColor="primary"
       />
 
       {/* White Paper */}
