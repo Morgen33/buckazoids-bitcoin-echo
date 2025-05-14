@@ -75,13 +75,13 @@ const CommunityPlatforms: React.FC = () => {
         accentColor="primary"
       />
 
-      {/* YouTube */}
+      {/* Constitution */}
       <CommunityCard
-        title="YouTube"
-        description="Subscribe to our YouTube channel to watch videos about Buckazoids history, updates, and community highlights."
-        icon={<Youtube className="text-buckazoid-orange w-8 h-8" />}
-        buttonText="Watch on YouTube"
-        buttonUrl="https://www.youtube.com/@DocumentingBuckazoids"
+        title="Constitution"
+        description="Explore the Constitution of Buckazoids, the guiding principles and values that unite our community across time and space."
+        icon={<BookOpen className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="View Constitution"
+        buttonUrl="/constitution"
         accentColor="secondary"
       />
 
@@ -135,13 +135,13 @@ const CommunityPlatforms: React.FC = () => {
         accentColor="primary"
       />
 
-      {/* Constitution */}
+      {/* YouTube */}
       <CommunityCard
-        title="Constitution"
-        description="Explore the Constitution of Buckazoids, the guiding principles and values that unite our community across time and space."
-        icon={<BookOpen className="text-buckazoid-orange w-8 h-8" />}
-        buttonText="View Constitution"
-        buttonUrl="/constitution"
+        title="YouTube"
+        description="Subscribe to our YouTube channel to watch videos about Buckazoids history, updates, and community highlights."
+        icon={<Youtube className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="Watch on YouTube"
+        buttonUrl="https://www.youtube.com/@DocumentingBuckazoids"
         accentColor="secondary"
       />
     </div>
