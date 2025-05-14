@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CommunityCard from './CommunityCard';
 import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen } from "lucide-react";
@@ -61,7 +60,7 @@ const CommunityPlatforms: React.FC = () => {
         description="Read our comprehensive white paper to understand the history and vision behind the Buckazoids project."
         icon={<Github className="text-[#02314d] w-8 h-8" />}
         buttonText="View White Paper"
-        buttonUrl="https://github.com/Buckazoidscto/Buckazoids-white-paper-"
+        buttonUrl="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)"
         accentColor="primary"
       />
 
