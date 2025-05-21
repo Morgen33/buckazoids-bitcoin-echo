@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -83,6 +83,31 @@ const CommunityPlatforms: React.FC = () => {
         buttonText="View Constitution"
         buttonUrl="/constitution"
         accentColor="secondary"
+      />
+
+      {/* Telegram */}
+      <CommunityCard
+        title="Telegram"
+        description="Join our Telegram group to connect with the Buckazoids community, get real-time updates, and participate in discussions."
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-[#02314d] w-8 h-8"
+          >
+            <path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" />
+          </svg>
+        }
+        buttonText="Join Telegram"
+        buttonUrl="https://t.me/+VHE4A-3iYOA4YTQ5"
+        accentColor="primary"
       />
 
       {/* Reddit */}
