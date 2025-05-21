@@ -13,6 +13,10 @@ const Buy = () => {
       <SEO {...pageSeoData.buy} pageName="Buy Buckazoids" />
       <Header />
       <main className="flex-grow">
+        <div className="pt-6 md:pt-10 px-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-buckazoid-navy">Buy Buckazoids</h1>
+          <p className="mt-2 text-gray-600 max-w-2xl mx-auto">Follow these simple steps to purchase Buckazoids on the Solana blockchain.</p>
+        </div>
         <VideoSection />
         <BuyInstructions />
       </main>
