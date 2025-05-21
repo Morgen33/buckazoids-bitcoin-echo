@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, Telegram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -73,6 +73,16 @@ const Footer = () => {
                    target="_blank" 
                    rel="noopener noreferrer">
                   X (Twitter)
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/+VHE4A-3iYOA4YTQ5"
+                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <Telegram className="h-3 w-3 mr-1" />
+                  Telegram
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
