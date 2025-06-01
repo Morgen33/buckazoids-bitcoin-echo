@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Timer } from "lucide-react";
 
-const CONFERENCE_DATE = new Date('2025-05-27T00:00:00');
+const CONFERENCE_DATE = new Date('2026-04-27T00:00:00');
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -42,7 +42,7 @@ const CountdownTimer = () => {
       <Card className="bg-white/90 backdrop-blur p-6">
         <div className="flex items-center justify-center gap-2 mb-4 text-[#f7931a]">
           <Timer className="w-6 h-6" />
-          <h3 className="text-lg font-semibold">Bitcoin 2025 Las Vegas Countdown</h3>
+          <h3 className="text-lg font-semibold">Bitcoin 2026 Countdown</h3>
         </div>
         <div className="grid grid-cols-4 gap-4 text-center">
           <div className="flex flex-col">
