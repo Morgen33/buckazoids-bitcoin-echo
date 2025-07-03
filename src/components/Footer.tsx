@@ -86,7 +86,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://t.me/+VHE4A-3iYOA4YTQ5"
+                <a href="https://t.me/+c5SAfu7rI2tiMmYx"
                    className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
                    target="_blank" 
                    rel="noopener noreferrer">

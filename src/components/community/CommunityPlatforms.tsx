@@ -106,7 +106,7 @@ const CommunityPlatforms: React.FC = () => {
           </svg>
         }
         buttonText="Join Telegram"
-        buttonUrl="https://t.me/+VHE4A-3iYOA4YTQ5"
+        buttonUrl="https://t.me/+c5SAfu7rI2tiMmYx"
         accentColor="primary"
       />
 
