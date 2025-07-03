@@ -174,20 +174,20 @@ const CommunityPlatforms: React.FC = () => {
       <CommunityCard
         title="Newsletter"
         description="Subscribe to our newsletter to stay updated with the latest Buckazoids news, developments, and community highlights."
-        icon={<Mail className="text-buckazoid-orange w-8 h-8" />}
+        icon={<Mail className="text-[#02314d] w-8 h-8" />}
         buttonText="Subscribe Newsletter"
         buttonUrl="https://factual-cinema-e47.notion.site/1e0b7bec064980dbbd9de3c43e474c95?v=220b7bec0649805787ee000c8cb0c9ad"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Linktree */}
       <CommunityCard
         title="Linktree"
         description="Access all our social media platforms and important links in one convenient place through our Linktree."
-        icon={<ExternalLink className="text-[#02314d] w-8 h-8" />}
+        icon={<ExternalLink className="text-buckazoid-orange w-8 h-8" />}
         buttonText="Visit Linktree"
         buttonUrl="https://linktr.ee/Buckazoids"
-        accentColor="primary"
+        accentColor="secondary"
       />
     </div>
   );
