@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -168,6 +168,16 @@ const CommunityPlatforms: React.FC = () => {
         buttonText="Watch on YouTube"
         buttonUrl="https://www.youtube.com/@DocumentingBuckazoids"
         accentColor="secondary"
+      />
+
+      {/* Linktree */}
+      <CommunityCard
+        title="Linktree"
+        description="Access all our social media platforms and important links in one convenient place through our Linktree."
+        icon={<ExternalLink className="text-[#02314d] w-8 h-8" />}
+        buttonText="Visit Linktree"
+        buttonUrl="https://linktr.ee/Buckazoids"
+        accentColor="primary"
       />
     </div>
   );
