@@ -126,7 +126,7 @@ const CommunityPlatforms: React.FC = () => {
         description="Join our vibrant Discord community to discuss theories, share discoveries, and connect with like-minded enthusiasts."
         icon={<MessageCircle className="text-buckazoid-orange w-8 h-8" />}
         buttonText="Join Discord"
-        buttonUrl="https://discord.gg/HqdBVYa4qq"
+        buttonUrl="https://discord.com/invite/FcQBF6GyZM"
         accentColor="secondary"
       />
 
