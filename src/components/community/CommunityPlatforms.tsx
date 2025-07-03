@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -167,6 +167,16 @@ const CommunityPlatforms: React.FC = () => {
         icon={<Youtube className="text-buckazoid-orange w-8 h-8" />}
         buttonText="Watch on YouTube"
         buttonUrl="https://www.youtube.com/@DocumentingBuckazoids"
+        accentColor="secondary"
+      />
+
+      {/* Newsletter */}
+      <CommunityCard
+        title="Newsletter"
+        description="Subscribe to our newsletter to stay updated with the latest Buckazoids news, developments, and community highlights."
+        icon={<Mail className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="Subscribe Newsletter"
+        buttonUrl="https://factual-cinema-e47.notion.site/1e0b7bec064980dbbd9de3c43e474c95?v=220b7bec0649805787ee000c8cb0c9ad"
         accentColor="secondary"
       />
 
