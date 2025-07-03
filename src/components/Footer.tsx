@@ -65,6 +65,15 @@ const Footer = () => {
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
+              <li>
+                <a href="https://projectb59.github.io/buckazoids-site/index.html"
+                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Project B59
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
             </ul>
           </div>
 
