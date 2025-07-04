@@ -7,6 +7,26 @@ import TikTokIcon from "@/components/icons/TikTokIcon";
 const CommunityPlatforms: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-9 gap-8">
+      {/* Linktree */}
+      <CommunityCard
+        title="Linktree"
+        description="Access all our social media platforms and important links in one convenient place through our Linktree."
+        icon={<ExternalLink className="text-[#02314d] w-8 h-8" />}
+        buttonText="Visit Linktree"
+        buttonUrl="https://linktr.ee/Buckazoids"
+        accentColor="primary"
+      />
+
+      {/* Buckazoids Calendar */}
+      <CommunityCard
+        title="Buckazoids Calendar"
+        description="Stay up to date with upcoming Buckazoids events, community meetings, and important dates."
+        icon={<Calendar className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="View Calendar"
+        buttonUrl="https://calendar.google.com/calendar/u/1/r?cid=ZjJlYzBhNjQ0ZjZlMjc3Zjk2NzlkYWZiYmJiMTkyNmFjYWExN2JiYzcwMjk3NjBlNmQ1YjVkNjA2MGFhNmYwZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&pli=1"
+        accentColor="secondary"
+      />
+
       {/* X (Twitter) */}
       <CommunityCard
         title="X (Twitter)"
@@ -200,25 +220,6 @@ const CommunityPlatforms: React.FC = () => {
         accentColor="primary"
       />
 
-      {/* Buckazoids Calendar */}
-      <CommunityCard
-        title="Buckazoids Calendar"
-        description="Stay up to date with upcoming Buckazoids events, community meetings, and important dates."
-        icon={<Calendar className="text-buckazoid-orange w-8 h-8" />}
-        buttonText="View Calendar"
-        buttonUrl="https://calendar.google.com/calendar/u/1/r?cid=ZjJlYzBhNjQ0ZjZlMjc3Zjk2NzlkYWZiYmJiMTkyNmFjYWExN2JiYzcwMjk3NjBlNmQ1YjVkNjA2MGFhNmYwZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&pli=1"
-        accentColor="secondary"
-      />
-
-      {/* Linktree */}
-      <CommunityCard
-        title="Linktree"
-        description="Access all our social media platforms and important links in one convenient place through our Linktree."
-        icon={<ExternalLink className="text-[#02314d] w-8 h-8" />}
-        buttonText="Visit Linktree"
-        buttonUrl="https://linktr.ee/Buckazoids"
-        accentColor="primary"
-      />
     </div>
   );
 };
