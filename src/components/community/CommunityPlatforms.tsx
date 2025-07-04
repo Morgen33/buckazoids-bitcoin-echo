@@ -62,7 +62,7 @@ const CommunityPlatforms: React.FC = () => {
             viewBox="0 0 24 24" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            className="text-buckazoid-orange"
+            className="text-[#02314d]"
           >
             <path 
               d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
@@ -72,17 +72,17 @@ const CommunityPlatforms: React.FC = () => {
         }
         buttonText="Follow Project B59"
         buttonUrl="https://x.com/59Buckazoids"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Project B59 Research Initiative */}
       <CommunityCard
         title="Project B59 Research Initiative"
         description="Explore the academic research and historical analysis of the Buckazoids phenomenon through Project B59."
-        icon={<Search className="text-[#02314d] w-8 h-8" />}
+        icon={<Search className="text-buckazoid-orange w-8 h-8" />}
         buttonText="Visit Project B59"
         buttonUrl="https://projectb59.github.io/buckazoids-site/index.html"
-        accentColor="primary"
+        accentColor="secondary"
       />
 
       {/* White Paper */}
@@ -99,10 +99,10 @@ const CommunityPlatforms: React.FC = () => {
       <CommunityCard
         title="Constitution"
         description="Explore the Constitution of Buckazoids, the guiding principles and values that unite our community across time and space."
-        icon={<BookOpen className="text-buckazoid-orange w-8 h-8" />}
+        icon={<BookOpen className="text-[#02314d] w-8 h-8" />}
         buttonText="View Constitution"
         buttonUrl="/constitution"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Telegram */}
@@ -120,14 +120,14 @@ const CommunityPlatforms: React.FC = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-[#02314d] w-8 h-8"
+            className="text-buckazoid-orange w-8 h-8"
           >
             <path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" />
           </svg>
         }
         buttonText="Join Telegram"
         buttonUrl="https://t.me/+c5SAfu7rI2tiMmYx"
-        accentColor="primary"
+        accentColor="secondary"
       />
 
       {/* Reddit */}
@@ -144,30 +144,30 @@ const CommunityPlatforms: React.FC = () => {
       <CommunityCard
         title="Discord"
         description="Join our vibrant Discord community to discuss theories, share discoveries, and connect with like-minded enthusiasts."
-        icon={<MessageCircle className="text-buckazoid-orange w-8 h-8" />}
+        icon={<MessageCircle className="text-[#02314d] w-8 h-8" />}
         buttonText="Join Discord"
         buttonUrl="https://discord.com/invite/FcQBF6GyZM"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Pump.fun */}
       <CommunityCard
         title="Pump.fun"
         description="Visit the birthplace of Buckazoids on the Solana blockchain and explore where it all began."
-        icon={<Pill className="text-[#02314d] w-8 h-8" />}
+        icon={<Pill className="text-buckazoid-orange w-8 h-8" />}
         buttonText="View on Pump.fun"
         buttonUrl="https://pump.fun/coin/BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJipump"
-        accentColor="primary"
+        accentColor="secondary"
       />
 
       {/* TikTok */}
       <CommunityCard
         title="TikTok"
         description="Follow our TikTok for short-form content, behind-the-scenes, and exciting Buckazoids updates."
-        icon={<TikTokIcon className="text-buckazoid-orange w-8 h-8" />}
+        icon={<TikTokIcon className="text-[#02314d] w-8 h-8" />}
         buttonText="Follow @Buckazoids"
         buttonUrl="https://www.tiktok.com/@buckazoids1991?_t=ZT-8v8v4WBLwmU&_r=1"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Instagram Greece */}
