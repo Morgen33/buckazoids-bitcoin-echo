@@ -184,30 +184,30 @@ const CommunityPlatforms: React.FC = () => {
       <CommunityCard
         title="Buckazoids Merch"
         description="Shop official Buckazoids merchandise and show your support for the project with exclusive items."
-        icon={<ShoppingBag className="text-[#02314d] w-8 h-8" />}
+        icon={<ShoppingBag className="text-buckazoid-orange w-8 h-8" />}
         buttonText="Shop Merch"
         buttonUrl="https://buckazoids.online/"
-        accentColor="primary"
+        accentColor="secondary"
       />
 
       {/* eBay Challenge Coins */}
       <CommunityCard
         title="eBay Challenge Coins"
         description="Purchase official Buckazoids / Bitcoin Bronze Challenge Coin Tokens on eBay from authorized seller Roger Wilco."
-        icon={<Coins className="text-buckazoid-orange w-8 h-8" />}
+        icon={<Coins className="text-[#02314d] w-8 h-8" />}
         buttonText="Shop on eBay"
         buttonUrl="https://www.ebay.com/usr/proje_9423"
-        accentColor="secondary"
+        accentColor="primary"
       />
 
       {/* Linktree */}
       <CommunityCard
         title="Linktree"
         description="Access all our social media platforms and important links in one convenient place through our Linktree."
-        icon={<ExternalLink className="text-buckazoid-orange w-8 h-8" />}
+        icon={<ExternalLink className="text-[#02314d] w-8 h-8" />}
         buttonText="Visit Linktree"
         buttonUrl="https://linktr.ee/Buckazoids"
-        accentColor="secondary"
+        accentColor="primary"
       />
     </div>
   );
