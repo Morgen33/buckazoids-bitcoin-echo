@@ -21,6 +21,15 @@ const Footer = () => {
             <h3 className="text-buckazoids-blue font-semibold text-lg">Resources</h3>
             <ul className="space-y-3">
               <li>
+                <a href="https://linktr.ee/Buckazoids"
+                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group font-bold italic"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Linktree
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+              <li>
                 <a href="https://github.com/Buckazoidscto/Buckazoids-white-paper-CTO-/wiki/Buckazoids-white-paper-English(CTO)" 
                    className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
                    target="_blank" 
@@ -53,15 +62,6 @@ const Footer = () => {
                    target="_blank" 
                    rel="noopener noreferrer">
                   Reddit
-                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              </li>
-              <li>
-                <a href="https://linktr.ee/Buckazoids"
-                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                  Linktree
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
