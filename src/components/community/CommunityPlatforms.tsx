@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail, ShoppingBag } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail, ShoppingBag, Coins } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -188,6 +188,16 @@ const CommunityPlatforms: React.FC = () => {
         buttonText="Shop Merch"
         buttonUrl="https://buckazoids.online/"
         accentColor="primary"
+      />
+
+      {/* eBay Challenge Coins */}
+      <CommunityCard
+        title="eBay Challenge Coins"
+        description="Purchase official Buckazoids / Bitcoin Bronze Challenge Coin Tokens on eBay from authorized seller Roger Wilco."
+        icon={<Coins className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="Shop on eBay"
+        buttonUrl="https://www.ebay.com/usr/proje_9423"
+        accentColor="secondary"
       />
 
       {/* Linktree */}
