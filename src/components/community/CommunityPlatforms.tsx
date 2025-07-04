@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail, ShoppingBag, Coins } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail, ShoppingBag, Coins, Calendar } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -198,6 +198,16 @@ const CommunityPlatforms: React.FC = () => {
         buttonText="Shop on eBay"
         buttonUrl="https://www.ebay.com/usr/proje_9423"
         accentColor="primary"
+      />
+
+      {/* Buckazoids Calendar */}
+      <CommunityCard
+        title="Buckazoids Calendar"
+        description="Stay up to date with upcoming Buckazoids events, community meetings, and important dates."
+        icon={<Calendar className="text-buckazoid-orange w-8 h-8" />}
+        buttonText="View Calendar"
+        buttonUrl="https://calendar.google.com/calendar/u/1/r?cid=ZjJlYzBhNjQ0ZjZlMjc3Zjk2NzlkYWZiYmJiMTkyNmFjYWExN2JiYzcwMjk3NjBlNmQ1YjVkNjA2MGFhNmYwZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&pli=1"
+        accentColor="secondary"
       />
 
       {/* Linktree */}
