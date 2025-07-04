@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CommunityCard from './CommunityCard';
-import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail } from "lucide-react";
+import { Github, MessageCircle, Pill, Youtube, Instagram, BookOpen, FileSearch, Search, MessageSquare, ExternalLink, Mail, ShoppingBag } from "lucide-react";
 import TikTokIcon from "@/components/icons/TikTokIcon";
 
 const CommunityPlatforms: React.FC = () => {
@@ -177,6 +177,16 @@ const CommunityPlatforms: React.FC = () => {
         icon={<Mail className="text-[#02314d] w-8 h-8" />}
         buttonText="Subscribe Newsletter"
         buttonUrl="https://factual-cinema-e47.notion.site/1e0b7bec064980dbbd9de3c43e474c95?v=220b7bec0649805787ee000c8cb0c9ad"
+        accentColor="primary"
+      />
+
+      {/* Buckazoids Merch */}
+      <CommunityCard
+        title="Buckazoids Merch"
+        description="Shop official Buckazoids merchandise and show your support for the project with exclusive items."
+        icon={<ShoppingBag className="text-[#02314d] w-8 h-8" />}
+        buttonText="Shop Merch"
+        buttonUrl="https://buckazoids.online/"
         accentColor="primary"
       />
 
