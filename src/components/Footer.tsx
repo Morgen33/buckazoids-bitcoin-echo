@@ -118,6 +118,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="https://discord.com/invite/AfqZENqbuJ"
+                   className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  Discord
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </li>
+              <li>
                 <a href="https://www.youtube.com/@DocumentingBuckazoids"
                    className="text-sm text-gray-600 hover:text-buckazoids-orange flex items-center gap-1 group"
                    target="_blank" 
