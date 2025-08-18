@@ -162,6 +162,12 @@ const Footer = () => {
           {/* Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
             <p>© 2025 Buckazoids. All rights reserved.</p>
+            <div className="mt-2 md:mt-0">
+              <a href="mailto:Buckazoids@ProjectB59.com" 
+                 className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors">
+                Buckazoids@ProjectB59.com
+              </a>
+            </div>
           </div>
         </div>
       </div>

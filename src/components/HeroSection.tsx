@@ -103,6 +103,14 @@ const HeroSection = () => {
 
         <CountdownTimer />
         
+        {/* Contact Email */}
+        <div className="mt-8 mb-4">
+          <a href="mailto:Buckazoids@ProjectB59.com" 
+             className="text-[#f7931a] hover:text-[#feb73f] transition-colors text-lg font-semibold">
+            Buckazoids@ProjectB59.com
+          </a>
+        </div>
+        
         {/* Version indicator */}
         <div className="text-[8px] text-gray-300 mt-2 opacity-30">v2.1.2-nocache-{new Date().toISOString().split('T')[0]}</div>
       </div>
