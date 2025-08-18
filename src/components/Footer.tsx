@@ -15,6 +15,12 @@ const Footer = () => {
               bridging nostalgia with modern blockchain technology. Join our growing 
               community and be part of the future of digital currency.
             </p>
+            <div className="mt-4">
+              <a href="mailto:Buckazoids@ProjectB59.com" 
+                 className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors font-semibold">
+                Buckazoids@ProjectB59.com
+              </a>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -162,12 +168,6 @@ const Footer = () => {
           {/* Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
             <p>© 2025 Buckazoids. All rights reserved.</p>
-            <div className="mt-2 md:mt-0">
-              <a href="mailto:Buckazoids@ProjectB59.com" 
-                 className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors">
-                Buckazoids@ProjectB59.com
-              </a>
-            </div>
           </div>
         </div>
       </div>

@@ -18,7 +18,16 @@ const ContactUs = () => {
             description="Connect with fellow Buckazoid enthusiasts, developers, and crypto historians to explore this rediscovered piece of digital currency history."
           />
 
-          <div className="max-w-xl mx-auto mb-16">
+          <div className="max-w-xl mx-auto mb-16 space-y-8">
+            {/* Email Contact */}
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
+              <h3 className="text-lg font-semibold text-buckazoids-blue mb-3">Email Us</h3>
+              <a href="mailto:Buckazoids@ProjectB59.com" 
+                 className="text-buckazoids-orange hover:text-buckazoids-blue transition-colors text-lg font-medium">
+                Buckazoids@ProjectB59.com
+              </a>
+            </div>
+            
             <TwitterCard />
           </div>
         </div>
