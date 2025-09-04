@@ -27,11 +27,11 @@ const exchanges: Exchange[] = [
     height: 40
   },
   {
-    name: "Bitget",
-    logo: "/lovable-uploads/677f9c45-66ae-4413-9593-902da6db2363.png",
-    url: "https://x.com/Bitget_zh/status/1906972298604638539",
-    width: 120,
-    height: 45
+    name: "WeEx",
+    logo: "/lovable-uploads/047d2720-6931-4f09-bc35-7c9e99a9945a.png",
+    url: "https://www.weex.com/spot/BUCKAZOIDS-USDT",
+    width: 80,
+    height: 40
   },
   {
     name: "MaxBid",
