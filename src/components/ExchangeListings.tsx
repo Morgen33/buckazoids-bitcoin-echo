@@ -42,7 +42,7 @@ const exchanges: Exchange[] = [
   },
   {
     name: "Blynex",
-    logo: "/lovable-uploads/852b1e46-a215-4a95-8824-a5fc6d6c1ee3.png",
+    logo: "/lovable-uploads/787a3443-45c4-459e-81e8-13d2099cfcca.png",
     url: "https://blynex.com/spot/BUCKAZOIDS_USDT",
     width: 120,
     height: 45
