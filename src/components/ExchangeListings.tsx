@@ -21,7 +21,7 @@ const exchanges: Exchange[] = [
   },
   {
     name: "CoinEx",
-    logo: "/lovable-uploads/63d03c74-3892-4fb3-86fa-d16efa09d057.png",
+    logo: "/lovable-uploads/5052c01b-e789-4266-abe0-ba59a0dcc082.png",
     url: "https://www.coinex.network/en/exchange/buckazoids-usdt",
     width: 80,
     height: 40
