@@ -41,9 +41,9 @@ const exchanges: Exchange[] = [
     height: 40
   },
   {
-    name: "LBank",
-    logo: "/lovable-uploads/fb2287c5-ac6a-4372-bc30-b06337157743.png",
-    url: "https://www.lbank.com/trade/buckazoids_usdt",
+    name: "Blynex",
+    logo: "/lovable-uploads/852b1e46-a215-4a95-8824-a5fc6d6c1ee3.png",
+    url: "https://blynex.com/spot/BUCKAZOIDS_USDT",
     width: 120,
     height: 45
   },
