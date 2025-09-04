@@ -20,9 +20,9 @@ const exchanges: Exchange[] = [
     height: 40
   },
   {
-    name: "Gate.io",
-    logo: "/lovable-uploads/2bcff12f-e806-46c5-b957-052d88cfec4f.png",
-    url: "https://www.gate.io/pilot/solana/buckazoids-buckazoids",
+    name: "CoinEx",
+    logo: "/lovable-uploads/63d03c74-3892-4fb3-86fa-d16efa09d057.png",
+    url: "https://www.coinex.network/en/exchange/buckazoids-usdt",
     width: 80,
     height: 40
   },
@@ -93,10 +93,10 @@ const ExchangeListings = () => {
               src={exchange.logo}
               alt={`${exchange.name} logo`}
               className="w-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
-              loading={exchange.name === "MEXC" || exchange.name === "Gate.io" ? "eager" : "lazy"}
+              loading={exchange.name === "MEXC" || exchange.name === "CoinEx" ? "eager" : "lazy"}
               width={exchange.width}
               height={exchange.height}
-              decoding={exchange.name === "MEXC" || exchange.name === "Gate.io" ? "sync" : "async"}
+              decoding={exchange.name === "MEXC" || exchange.name === "CoinEx" ? "sync" : "async"}
             />
           </Card>
         </a>
