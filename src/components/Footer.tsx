@@ -169,6 +169,38 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
             <p>© 2025 Buckazoids. All rights reserved.</p>
           </div>
+
+          <div className="mt-4 text-center text-xs text-gray-500">
+            <p>
+              Web design By{" "}
+              <a
+                href="https://builtbycmh.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors"
+              >
+                Morgen
+              </a>{" "}
+              &{" "}
+              <a
+                href="https://ruskworld.art/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors"
+              >
+                Rusk
+              </a>
+              {" "}· Art by{" "}
+              <a
+                href="https://ruskworld.art/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-buckazoids-blue hover:text-buckazoids-orange transition-colors"
+              >
+                Rusk
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
