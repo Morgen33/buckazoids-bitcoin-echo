@@ -40,9 +40,9 @@ const OptimizedTextRotate = forwardRef<OptimizedTextRotateRef, OptimizedTextRota
     const isMobile = useIsMobile();
     
     // Simpler animation settings for better performance
-    const transition = isMobile 
-      ? { type: "tween", duration: 0.3 } 
-      : { type: "spring", damping: 25, stiffness: 300 };
+    const transition = isMobile
+      ? { type: "tween" as const, duration: 0.3 }
+      : { type: "spring" as const, damping: 25, stiffness: 300 };
     
     useEffect(() => {
       setMounted(true);
